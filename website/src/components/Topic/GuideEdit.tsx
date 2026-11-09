@@ -1,51 +1,40 @@
-import { For, Show, onMount } from "solid-js"
-import { Guide, useEditGuide } from "../../GlobalContext/edit-guide"
-import { signedIn } from "../../../lib/auth"
+import { For, Show, createMemo, onMount } from "solid-js"
+import { useParams } from "solid-start"
+import { useEditGuide } from "../../GlobalContext/edit-guide"
 import { useMobius } from "../../root"
-import { createStore } from "solid-js/store"
+import { safeQuery } from "../../../lib/api"
+import { getTopicGuide } from "../../content"
+import { sourcesByStage } from "../../lib/roadmap"
 
 export default function GuideSummaryEdit() {
   const editedGuide = useEditGuide()
   const mobius = useMobius()
+  const params = useParams()
+  const guide = createMemo(() => getTopicGuide(params.topic))
 
-  // const [editedGuideForm, setEditedGuideForm] = createStore<Guide>({
-  //   summary: "",
-  //   sections: []
-  // });
+  // the editor starts from the bundled guide of the topic (its sources)
+  // instead of a hard coded topic
+  onMount(() => {
+    const current = guide()
+    if (!current || editedGuide.guide.sections.length > 0) return
 
-  // const updateEditedGuideFormField = (fieldName: string) => (event: Event) => {
-  //   const inputElement = event.currentTarget as HTMLInputElement;
-  //   setEditedGuideForm({
-  //     [fieldName]: inputElement.value
-  //   });
-  // };
-
-
-  onMount(async () => {
-    if (signedIn()) {
-      const globalTopic = await mobius.query({
-        getGlobalTopic: {
-          where: {
-            // TODO: get topic name from route
-            topicName: "3d-printing",
-          },
-          select: {
-            prettyName: true,
-            topicSummary: true,
-          },
-        },
-      })
-      if (globalTopic !== null) {
-        // @ts-ignore
-        editedGuide.set(globalTopic.data.getGlobalTopic)
-      }
-    } else {
-      // TODO: check that user is signed in admin of topic
-      // in future allow all users to edit guides, for now just admins
-      // if not, navigate back to <topic>
-      // await mobius.
-      // if (!admin) { navigate() }
-    }
+    editedGuide.set({
+      summary: current.topicSummary,
+      sections: sourcesByStage(current).map((group, index) => ({
+        order: index,
+        title: group.label,
+        ordered: true,
+        summary: undefined,
+        links: group.steps.flatMap(({ step, sources }) =>
+          sources.map((source) => ({
+            title: source.title,
+            url: source.url,
+            author: source.author,
+            year: source.year,
+          })),
+        ),
+      })),
+    })
   })
 
   // createEffect(() => {
@@ -89,7 +78,7 @@ export default function GuideSummaryEdit() {
       <div class="w-full flex flex-col gap-4 text-[16px] leading-[18.78px]">
         <div class="flex justify-between items-center ">
           <div
-            class="border-[#696969] border p-[8px] px-[10px] rounded-[4px] text-[#696969] font-light hover:bg-gray-300 hover:bg-opacity-50 cursor-pointer transition-all"
+            class="border border-neutral-700 p-[8px] px-[10px] rounded-[4px] text-neutral-300 font-light hover:bg-neutral-800 cursor-pointer transition-all"
             onClick={() => { }}
           >
             Cancel
@@ -103,17 +92,17 @@ export default function GuideSummaryEdit() {
                 console.log(document.getElementById(`${section.title}-link-title-${index}`), "link title")
               })
             })
-          }} class="bg-[#3B5CCC] text-white border-[#3B5CCC] border px-[10px] p-[8px] rounded-[4px] font-light cursor-pointer">
+          }} class="bg-blue-600 text-white border-blue-600 border px-[10px] p-[8px] rounded-[4px] font-light cursor-pointer hover:bg-blue-500">
             Submit Changes
           </div>
         </div>
         <div
-          class="bg-[#FAFAFA] flex flex-col gap-2 rounded-[2px] p-4 w-full"
+          class="bg-neutral-900 border border-neutral-800 flex flex-col gap-2 rounded-[6px] p-4 w-full"
         >
           <div class="flex justify-between items-center">
-            <div class="text-[#696969] ">Summary</div>
+            <div class="text-neutral-400 ">Summary</div>
             <div
-              class="text-[#3B5CCC] cursor-pointer select-none"
+              class="text-[#8AB4FF] cursor-pointer select-none"
               onClick={() => {
               }}
             >
@@ -123,7 +112,7 @@ export default function GuideSummaryEdit() {
             when={editedGuide.guide.summary.length > 0}
             fallback={
               <div
-                class="text-[#696969] font-light overflow-hidden text-ellipsis outline-none"
+                class="text-neutral-400 font-light overflow-hidden text-ellipsis outline-none"
                 id="GuideSummary"
                 onClick={() => {
                 }}
@@ -133,7 +122,7 @@ export default function GuideSummaryEdit() {
             }
           >
             <div
-              class="text-[#696969] font-light overflow-hidden text-ellipsis outline-none"
+              class="text-neutral-400 font-light overflow-hidden text-ellipsis outline-none"
               id="GuideSummary"
               onClick={() => {
               }}
@@ -143,7 +132,7 @@ export default function GuideSummaryEdit() {
           </Show>
         </div>
         <div
-          class="bg-[#3B5CCC] text-white p-3 rounded-[4px] flex justify-center items-center cursor-pointer hover:bg-[#3554b9] transition-all"
+          class="bg-blue-600 text-white p-3 rounded-[6px] flex justify-center items-center cursor-pointer hover:bg-blue-500 transition-all"
           onClick={() => {
             editedGuide.addSection({
               order: 0,
@@ -159,12 +148,12 @@ export default function GuideSummaryEdit() {
         <For each={editedGuide.guide.sections}>
           {(section, index) => {
             return (
-              <div class="border border-slate-400 border-opacity-30 rounded-lg flex flex-col gap-4 p-4">
+              <div class="border border-neutral-800 rounded-lg flex flex-col gap-4 p-4">
                 <Show
                   when={section.title.length > 0}
                   fallback={
                     <div
-                      class="text-[#696969] font-light overflow-hidden text-ellipsis outline-none"
+                      class="text-neutral-400 font-light overflow-hidden text-ellipsis outline-none"
                       id={`${section.title}${index()}`}
                       onClick={() => { }}
                     >
@@ -173,7 +162,7 @@ export default function GuideSummaryEdit() {
                   }
                 >
                   <div
-                    class="text-[#696969] font-light overflow-hidden text-ellipsis outline-none"
+                    class="text-neutral-400 font-light overflow-hidden text-ellipsis outline-none"
                     id={`${section.title}${index()}`}
                     onClick={() => { }}
                   >
@@ -189,9 +178,9 @@ export default function GuideSummaryEdit() {
                         <div class="flex items-center gap-6 justify-between border-b border-slate-400 border-opacity-30 p-2">
                           <div class="w-full  h-full flex justify-between items-center">
                             <div class="w-fit gap-1 flex flex-col">
-                              <div class="font-bold text-[#3B5CCC]">
+                              <div class="font-bold text-[#8AB4FF]">
                                 <input
-                                  class="border border-slate-400 border-opacity-30 rounded-[6px] px-2 py-1"
+                                  class="border border-neutral-700 bg-neutral-900 text-white placeholder:text-neutral-500 rounded-[6px] px-2 py-1"
                                   id={linkTitleId}
                                   type="text"
                                   placeholder="Title"
@@ -200,18 +189,18 @@ export default function GuideSummaryEdit() {
                               </div>
                               <div class="flex w-full">
                                 <Show when={link?.year}>
-                                  <div class="font-light text-[12px] text-[#696969] border-r border-[#CCCCCC] px-2">
+                                  <div class="font-light text-[12px] text-neutral-400 border-r border-[#CCCCCC] px-2">
                                     {link?.year}
                                   </div>
                                 </Show>
                                 <Show when={link?.author}>
-                                  <div class="font-light text-[12px] text-[#696969] border-r border-[#CCCCCC] px-2">
+                                  <div class="font-light text-[12px] text-neutral-400 border-r border-[#CCCCCC] px-2">
                                     {link?.author}
                                   </div>
                                 </Show>
-                                <div class="font-light w-full text-[12px] text-[#696969]">
+                                <div class="font-light w-full text-[12px] text-neutral-400">
                                   <input
-                                    class="border border-slate-400 border-opacity-30 rounded-[6px] px-2 py-1 w-full"
+                                    class="border border-neutral-700 bg-neutral-900 text-white placeholder:text-neutral-500 rounded-[6px] px-2 py-1 w-full"
                                     type="text"
                                     id={linkUrlId}
                                     placeholder="URL"
@@ -221,22 +210,31 @@ export default function GuideSummaryEdit() {
                               </div>
                             </div>
                             <div class="flex gap-5 text-[14px] opacity-50">
-                              <div onClick={async () => {
-                                {/* @ts-ignore */ }
-                                const linkUrl = document.getElementById(linkUrlId)?.value
-                                const res = await mobius.query({
-                                  checkForGlobalLink: {
-                                    where: {
-                                      linkUrl: linkUrl
-                                    },
-                                    select: {
-                                      url: true,
-                                      title: true
-                                    }
-                                  }
-                                })
-                                console.log(res, "res")
-                              }} class="cursor-pointer">Check URL</div>
+                              <div
+                                onClick={async () => {
+                                  const input = document.getElementById(linkUrlId) as HTMLInputElement | null
+                                  const linkUrl = input?.value
+                                  if (!linkUrl) return
+
+                                  const res = await safeQuery(async () => {
+                                    return mobius.query({
+                                      checkForGlobalLink: {
+                                        where: {
+                                          linkUrl,
+                                        },
+                                        select: {
+                                          url: true,
+                                          title: true,
+                                        },
+                                      },
+                                    })
+                                  })
+                                  console.log(res, "res")
+                                }}
+                                class="cursor-pointer"
+                              >
+                                Check URL
+                              </div>
                               <div class="cursor-pointer">Sort</div>
                               <div class="cursor-pointer">Delete</div>
                             </div>
@@ -248,7 +246,7 @@ export default function GuideSummaryEdit() {
                 </div>
                 <div class="w-full justify-end flex">
                   <div
-                    class="bg-[#3B5CCC] text-white text-[14px] p-2 px-4 rounded-[6px] flex justify-center items-center cursor-pointer hover:bg-[#3554b9] transition-all"
+                    class="bg-blue-600 text-white text-[14px] p-2 px-4 rounded-[6px] flex justify-center items-center cursor-pointer hover:bg-blue-500 transition-all"
                     onClick={() => {
                       editedGuide.addLinkToSection(0, {
                         title: "",

@@ -45,34 +45,34 @@ export default function UserProfile() {
 
     }
     `}</style>
-      <div class="w-screen h-full text-black bg-white">
+      <div class="w-screen h-full text-white bg-neutral-950">
         <TopicNav />
 
         <div id="ProfileMain" class="h-full w-full flex justify-center">
           <div
             id="ProfileSidebar"
-            class="p-[40px] min-w-[250px] h-screen w-[30%] flex flex-col gap-6 overflow-auto bg-[#F6F6F7]"
+            class="p-[40px] min-w-[250px] h-screen w-[30%] flex flex-col gap-6 overflow-auto bg-neutral-900"
           >
             <div class="flex justify-between items-center">
               <div class="font-bold gap-2 flex items-center">
-                <div class="h-[35px] w-[35px] bg-neutral-300 rounded-full"></div>
+                <div class="h-[35px] w-[35px] bg-neutral-700 rounded-full"></div>
                 <div>Name</div>
               </div>
-              <div class="border-[#CCCCCC] border rounded-[4px] text-[14px] px-2 text-[#696969] p-0.5">
+              <div class="border-neutral-700 border rounded-[4px] text-[14px] px-2 text-neutral-400 p-0.5">
                 Edit
               </div>
             </div>
-            <div class=" text-[#6B6B70] font-light">
+            <div class=" text-neutral-400 font-light">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque
               ipsum aspernatur numquam quis quam ducimus illo tenetur veritatis
             </div>
-            <div class="text-[#3B5CCC] font-light">Link</div>
-            <div class="text-[#6B6B70] font-light">Joined August 2023</div>
+            <div class="text-[#8AB4FF] font-light">Link</div>
+            <div class="text-neutral-400 font-light">Joined August 2023</div>
             <div class="flex justify-between w-full">
-              <div class="font-light text-[#6B6B70]">
+              <div class="font-light text-neutral-400">
                 <span class="font-bold ">220</span> followers
               </div>
-              <div class="text-[#6B6B70] font-light">
+              <div class="text-neutral-400 font-light">
                 <span class="font-bold">100</span> following
               </div>
             </div>
@@ -82,19 +82,19 @@ export default function UserProfile() {
             id="ProfileInfo"
             class="h-full min-h-screen flex gap-6 flex-col p-[40px]"
           >
-            <div class="w-full bg-[#FAFAFA] rounded-[4px]">
+            <div class="w-full bg-neutral-900 rounded-[4px]">
               <input
                 type="text"
-                class="bg-transparent w-full p-3 outline-none font-light text-[#696969]"
+                class="bg-transparent w-full p-3 outline-none font-light text-neutral-400"
                 placeholder="Search Users Topics"
               />
             </div>
-            <div class="w-full flex text-[#696969] text-[14px] justify-between">
+            <div class="w-full flex text-neutral-400 text-[14px] justify-between">
               <div
                 class={clsx(
                   "p-2 cursor-pointer",
                   currentTab() === "All" &&
-                    "border-b border-black text-black font-bold",
+                    "border-b border-white text-white font-bold",
                 )}
                 onClick={() => {
                   setCurrentTab("All")
@@ -106,7 +106,7 @@ export default function UserProfile() {
                 class={clsx(
                   "p-2 cursor-pointer",
                   currentTab() === "ToLearn" &&
-                    "border-b border-black text-black font-bold",
+                    "border-b border-white text-white font-bold",
                 )}
                 onClick={() => {
                   setCurrentTab("ToLearn")
@@ -118,7 +118,7 @@ export default function UserProfile() {
                 class={clsx(
                   "p-2 cursor-pointer",
                   currentTab() === "Learning" &&
-                    "border-b border-black text-black font-bold",
+                    "border-b border-white text-white font-bold",
                 )}
                 onClick={() => {
                   setCurrentTab("Learning")
@@ -130,7 +130,7 @@ export default function UserProfile() {
                 class={clsx(
                   "p-2 cursor-pointer",
                   currentTab() === "Learned" &&
-                    "border-b border-black text-black font-bold",
+                    "border-b border-white text-white font-bold",
                 )}
                 onClick={() => {
                   setCurrentTab("Learned")

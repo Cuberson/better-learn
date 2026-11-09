@@ -1,24 +1,18 @@
-import { createShortcut } from "@solid-primitives/keyboard"
-import {
-  For,
-  Show,
-  createEffect,
-  createResource,
-  createSignal,
-  onCleanup,
-  onMount,
-  untrack,
-} from "solid-js"
+import { Show, createSignal, onCleanup, onMount } from "solid-js"
 import { useNavigate } from "solid-start"
 import { Canvas, Graph, Anim } from "@nothing-but/force-graph"
 import { Num } from "@nothing-but/utils"
 import { getHankoCookie } from "../../lib/auth"
+import { safeQuery, type TopicsQueryResult } from "../../lib/api"
 import { useMobius } from "../root"
 import { useGlobalState } from "../GlobalContext/global"
-import Icon from "../components/Icon"
+import { catalogStats } from "../content"
+import {
+  buildTopicSearchItems,
+  topicHref,
+  type TopicSearchItem,
+} from "../lib/search"
 import Search from "../components/Search"
-
-// TODO: add fuzzy search of topics, especially consider lower case should also match
 
 export const graph_options = Graph.graphOptions({
   inertia_strength: 0.3,
@@ -51,37 +45,38 @@ export function generateInitialGraph(length: number = 256): Graph.Graph {
   return Graph.makeGraph(graph_options, nodes, edges)
 }
 
-// TODO: load the graph with graph data from server (no undefined flying around)
 export default function Home() {
   const navigate = useNavigate()
   const mobius = useMobius()
   const global = useGlobalState()
 
+  // everything in the bundled catalog is searchable right away, topics that
+  // only exist on the server are merged in when the request succeeds
+  const [searchItems, setSearchItems] = createSignal(buildTopicSearchItems())
+
   onMount(async () => {
-    if (global.state.globalTopicsSearchList.length < 1) {
-      const res = await mobius.query({
+    if (global.state.globalTopicsSearchList.length > 0) {
+      setSearchItems(buildTopicSearchItems(global.state.globalTopicsSearchList))
+      return
+    }
+
+    const result = await safeQuery<TopicsQueryResult>(async () => {
+      return (await mobius.query({
         publicGetGlobalTopics: {
           prettyName: true,
-          name: true
-        }
-      })
-      console.log(res, "res")
-      if (res) {
-        // @ts-ignore
-        global.setGlobalTopicsSearchList(res.data?.publicGetGlobalTopics)
-      }
+          name: true,
+        },
+      })) as TopicsQueryResult
+    })
+
+    const serverTopics = result?.data?.publicGetGlobalTopics
+    if (Array.isArray(serverTopics) && serverTopics.length > 0) {
+      global.setGlobalTopicsSearchList(serverTopics)
+      setSearchItems(buildTopicSearchItems(serverTopics))
     }
   })
 
-  const [topicSearchResults, setTopicSearchResults] = createSignal<string[]>([])
-  const [topicSearchInput, setTopicSearchInput] = createSignal("")
-  const [focusedTopic, setFocusedTopic] = createSignal(0)
-  const [focusedTodoTitle, setFocusedTodoTitle] = createSignal("")
-
-  const [hankoCookie] = createResource(() => {
-    const hankoCookie = getHankoCookie()
-    return hankoCookie
-  })
+  const [hankoCookie] = createSignal(getHankoCookie())
 
   const graph = generateInitialGraph()
 
@@ -142,52 +137,14 @@ export default function Home() {
   })
   onCleanup(() => Canvas.cleanupCanvasGestures(gestures))
 
-  createShortcut(["ARROWDOWN"], () => {
-    if (focusedTopic() === topicSearchResults().length - 1) {
-      setFocusedTopic(0)
-      return
-    }
-    setFocusedTopic(focusedTopic() + 1)
-  })
-  createShortcut(["ARROWUP"], () => {
-    if (focusedTopic() === 0) {
-      setFocusedTopic(topicSearchResults().length - 1)
-      return
-    }
-    setFocusedTopic(focusedTopic() - 1)
-  })
-
-  createEffect(() => {
-    if (topicSearchInput()) {
-      untrack(() => {
-        setTopicSearchResults(global.state.globalTopicsSearchList.map(topic => topic.prettyName))
-        setTopicSearchResults(
-          topicSearchResults().filter((word: any) =>
-            topicSearchInput()
-              .split("")
-              .every((v) => {
-                return word.split("").includes(v)
-              }),
-          ),
-        )
-        console.log(topicSearchResults())
-      })
-      setFocusedTodoTitle(topicSearchResults()[focusedTopic()])
-    }
-  })
+  const openTopic = (topic: TopicSearchItem) => {
+    navigate(topicHref(topic.name))
+  }
 
   return (
     <>
       <style>
         {`
-    #Focused {
-      background-color: rgb(237 237 237);
-      color: rgb(23 23 23);
-    }
-    #UnFocused {
-      background-color: transparent;
-      color: rgb(38 38 38);
-    }
     #RotatePlanet {
       animation: 20s RotatePlanets infinite linear;
     }
@@ -204,79 +161,39 @@ export default function Home() {
       </style>
       <div class="w-full h-full">
         <div class="w-screen bg-neutral-950 text-white h-screen flex flex-col  items-center justify-start">
-          <div class="flex flex-col gap-1 items-center p-[50px] z-50">
+          <div class="flex flex-col gap-2 items-center p-[50px] w-full max-w-[720px] z-50 pt-[70px]">
             <div
               class=" tracking-wide font-bold bg-clip-text text-transparent"
               style={{
                 "background-image":
                   "linear-gradient(145deg, #fff 65%, rgba(255,255,255,.43))",
-                "font-size": "clamp(3rem, 10vw, 5rem)",
+                "font-size": "clamp(2.6rem, 9vw, 5rem)",
               }}
             >
               I want to learn
             </div>
-            {/* TODO: make this work using <Search /> instead of mess that is currently here */}
-            {/* <Search placeholder="Physics" searchResults={[
-              {
-                name: "Math",
-                action: () => {
-                  navigate("math")
-                }
-              },
-              {
-                name: "Physics",
-                action: () => {
-                  navigate("physics")
-                }
-              },
-            ]}  /> */}
+
             <div class="w-full relative flex flex-col gap-3">
-              <input
-                type="text"
-                placeholder="Search"
-                onInput={(e) => {
-                  setTopicSearchInput(e.target.value)
-                }}
-                onKeyPress={(e) => {
-                  if (e.key === "Enter") {
-                    // console.log(e.target.value)
-                    console.log(focusedTodoTitle())
-                    if (focusedTodoTitle()) {
-                      navigate(
-                        focusedTodoTitle().toLowerCase().replace(/ /g, "-"),
-                      )
-                    }
-                  }
-                }}
-                class=" rounded text-lg font-semibold py-2 px-4 outline-none text-black"
-                style={{ width: "100%" }}
+              <Search
+                variant="dark"
+                autofocus
+                placeholder="Search a topic — physics, rust, machine learning…"
+                searchResults={searchItems()}
+                onSelect={openTopic}
               />
-              <Show
-                when={
-                  topicSearchInput() !== "" && topicSearchResults().length !== 0
-                }
-              >
-                <div class="bg-white p-2 absolute top-12 left-0 text-black font-semibold text-opacity-40 flex flex-col rounded w-full">
-                  <For each={topicSearchResults()}>
-                    {(topic) => (
-                      <div
-                        id={
-                          focusedTodoTitle() === topic ? "Focused" : "UnFocused"
-                        }
-                        onClick={() => {
-                          setFocusedTopic(topicSearchResults().indexOf(topic))
-                        }}
-                        class="px-4 overflow-auto py-2 rounded-lg"
-                      >
-                        <div>{topic}</div>
-                      </div>
-                    )}
-                  </For>
-                </div>
-              </Show>
+              <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[12px] text-neutral-400">
+                <span>
+                  {searchItems().length} topics · {catalogStats.sourceCount} curated
+                  sources
+                </span>
+                <span class="text-neutral-600">·</span>
+                <span>every topic has a roadmap</span>
+              </div>
             </div>
           </div>
+
           <div class="w-[80%] flex justify-center">{el}</div>
+
           <Show when={!hankoCookie}>
             <div
               onClick={() => {

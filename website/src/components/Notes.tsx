@@ -1,5 +1,8 @@
-import { Note } from "grafbase/db/topic"
 import { For } from "solid-js"
+
+type Note = {
+  content: string
+}
 
 interface Props {
   notes: Note[]
