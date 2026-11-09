@@ -1,73 +1,57 @@
-import { For, Show, createEffect, createSignal, untrack } from "solid-js"
+import { Show, createSignal, onMount } from "solid-js"
 import { A, useNavigate } from "solid-start"
-import { createShortcut } from "@solid-primitives/keyboard"
 import { useUser } from "../../GlobalContext/user"
 import Icon from "../Icon"
-import { useGlobalTopic } from "../../GlobalContext/global-topic"
+import Search from "../Search"
+import { safeQuery, type TopicsQueryResult } from "../../../lib/api"
+import { useMobius } from "../../root"
 import { useGlobalState } from "../../GlobalContext/global"
+import {
+  buildTopicSearchItems,
+  topicHref,
+  type TopicSearchItem,
+} from "../../lib/search"
 
-// TODO: add fuzzy searching for topics. also consider lower case inputs matching results too
 export default function TopicNav() {
   const [showInput, setShowInput] = createSignal(false)
   const navigate = useNavigate()
-  const topic = useGlobalTopic()
-  const global = useGlobalState()
   const user = useUser()
+  const mobius = useMobius()
+  const global = useGlobalState()
 
-  const [topicSearchResults, setTopicSearchResults] = createSignal<string[]>([])
-  const [topicSearchInput, setTopicSearchInput] = createSignal("")
-  const [focusedTopic, setFocusedTopic] = createSignal(0)
-  const [focusedTodoTitle, setFocusedTodoTitle] = createSignal("")
+  const [searchItems, setSearchItems] = createSignal(buildTopicSearchItems())
 
-  createShortcut(["ARROWDOWN"], () => {
-    if (focusedTopic() === topicSearchResults().length - 1) {
-      setFocusedTopic(0)
+  onMount(async () => {
+    if (global.state.globalTopicsSearchList.length > 0) {
+      setSearchItems(buildTopicSearchItems(global.state.globalTopicsSearchList))
       return
     }
-    setFocusedTopic(focusedTopic() + 1)
-  })
-  createShortcut(["ARROWUP"], () => {
-    if (focusedTopic() === 0) {
-      setFocusedTopic(topicSearchResults().length - 1)
-      return
+
+    const result = await safeQuery<TopicsQueryResult>(async () => {
+      return (await mobius.query({
+        publicGetGlobalTopics: {
+          prettyName: true,
+          name: true,
+        },
+      })) as TopicsQueryResult
+    })
+
+    const serverTopics = result?.data?.publicGetGlobalTopics
+    if (Array.isArray(serverTopics) && serverTopics.length > 0) {
+      global.setGlobalTopicsSearchList(serverTopics)
+      setSearchItems(buildTopicSearchItems(serverTopics))
     }
-    setFocusedTopic(focusedTopic() - 1)
   })
 
-  createEffect(() => {
-    if (topicSearchInput()) {
-      untrack(() => {
-        // TODO: breaking.. need custom search component
-        // setTopicSearchResults(global.state.globalTopicsSearchList)
-        setTopicSearchResults(
-          topicSearchResults().filter((word: string) =>
-            topicSearchInput()
-              .split("")
-              .every((value) => {
-                return word.split("").includes(value)
-              }),
-          ),
-        )
-      })
-      setFocusedTodoTitle(topicSearchResults()[focusedTopic()])
-    }
-  })
+  const openTopic = (topic: TopicSearchItem) => {
+    setShowInput(false)
+    navigate(topicHref(topic.name))
+  }
+
   return (
     <>
       <style>
         {`
-      #InputMinimised {
-        width: 212px;
-      }
-      #InputExpanded {
-        width: 500px;
-      }
-    #Focused {
-      background-color: rgba(124,124,124,0.4);
-    }
-    #UnFocused {
-      background-color: transparent;
-    }
     #NavMenu {
       display: block;
     }
@@ -85,97 +69,57 @@ export default function TopicNav() {
       `}
       </style>
       <div class="flex flex-col">
-        <div class="h-[80px] w-full p-4 flex items-center justify-between border-b border-[#69696951]">
-          <div class="flex gap-4 h-full items-center">
-            <div class="w-[40px] h-[40px] bg-neutral-200 rounded-full">
-              <div
-                class="cursor-pointer"
-                onClick={() => {
-                  navigate("/")
-                }}
-              >
-                <img src="/logo.jpg" alt="" />
-              </div>
-            </div>
+        <div class="h-[80px] w-full p-4 flex items-center justify-between gap-4 border-b border-neutral-800">
+          <div class="flex gap-4 h-full items-center min-w-0 flex-1">
             <div
+              class="w-[40px] h-[40px] rounded-full shrink-0 cursor-pointer overflow-hidden"
               onClick={() => {
-                setShowInput(true)
+                navigate("/")
               }}
-              id={showInput() ? "InputExpanded" : "InputMinimised"}
-              class="rounded-[4px] transition-all h-full flex items-center text-[#696969] font-light border border-slate-400 drop-shadow-lg"
+            >
+              <img src="/logo.jpg" alt="Learn Anything" />
+            </div>
+
+            <div
+              onClick={() => setShowInput(true)}
+              class="relative rounded-[4px] h-full flex items-center text-neutral-400 font-light border border-neutral-700 w-full max-w-[500px] min-w-0 px-3 transition-all hover:border-neutral-500"
+              style={{ "min-height": "44px" }}
             >
               <Show
                 when={showInput()}
-                fallback={<div class="p-[12px]">Search Topic</div>}
+                fallback={
+                  <div class="p-[6px] cursor-text select-none">Search Topic</div>
+                }
               >
-                <div class="relative w-full p-[12px]">
-                  <div class="flex items-center">
-                    <input
-                      type="text"
-                      class="w-full bg-transparent outline-none"
-                      placeholder="Search Topic"
-                      onInput={(e) => {
-                        setTopicSearchInput(e.target.value)
-                      }}
-                    />
-                  </div>
-                  <Show
-                    when={
-                      topicSearchInput() !== "" &&
-                      topicSearchResults().length !== 0
-                    }
-                  >
-                    <div class=" absolute top-[54px] bg-neutral-200 left-0 text-black font-semibold text-opacity-40 flex flex-col rounded w-full">
-                      <For each={topicSearchResults()}>
-                        {(topic) => (
-                          <div
-                            id={
-                              focusedTodoTitle() === topic
-                                ? "Focused"
-                                : "UnFocused"
-                            }
-                            onClick={() => {
-                              setFocusedTopic(
-                                topicSearchResults().indexOf(topic),
-                              )
-                            }}
-                            class="px-4 overflow-auto py-2"
-                          >
-                            <div>{topic}</div>
-                          </div>
-                        )}
-                      </For>
-                    </div>
-                  </Show>
-                </div>
+                <Search
+                  variant="night"
+                  autofocus
+                  placeholder="Search Topic"
+                  searchResults={searchItems()}
+                  onSelect={openTopic}
+                />
               </Show>
             </div>
           </div>
-          <div id="NavMenu">Burger</div>
-          <div id="NavButtons" class="flex items-center justify-center gap-4">
-            {/* TODO:  */}
-            {/* <div>Dark/Light switch</div> */}
-            {/* <div
-              class="text-black cursor-pointer font-medium"
-              onClick={() => {
-                navigate("/about")
-              }}
+
+          <div id="NavMenu" class="shrink-0">
+            <button
+              type="button"
+              class="text-neutral-400 hover:text-white text-sm font-medium"
+              onClick={() => setShowInput(true)}
             >
-              About
-            </div>
-            <a
-              class="text-black font-medium"
-              href="https://github.com/learn-anything/learn-anything.xyz"
-            >
-              GitHub
-            </a>/ */}
+              Search
+            </button>
+          </div>
+
+          <div id="NavButtons" class="flex items-center justify-center gap-4 shrink-0">
             <Show
               when={!user.user.signedIn}
               fallback={
                 <A
                   class="cursor-pointer"
                   style={{
-                    color: "black",
+                    color: "white",
                   }}
                   href={`/@${user.user.username}`}
                 >
@@ -183,24 +127,18 @@ export default function TopicNav() {
                 </A>
               }
             >
-              <A class="text-black font-medium" href="/auth">
+              <A class="text-white font-medium" href="/auth">
                 Sign In
               </A>
               <A
                 href="/auth"
-                class="bg-black hover:scale-[1.1] leading-[23.48px] w-fit text-white h-[39px] flex items-center justify-center font-medium text-[17px] px-4 p-2 rounded-full cursor-pointer"
+                class="bg-white hover:scale-[1.05] leading-[23.48px] w-fit text-black h-[39px] flex items-center justify-center font-medium text-[17px] px-4 p-2 rounded-full cursor-pointer"
               >
                 Sign Up
               </A>
             </Show>
-            {/* <div>Menu</div> */}
           </div>
         </div>
-        {/* <Show when={topic.topic.path}>
-          <div class="flex items-center font-light text-[14px] px-2 h-[30px] w-full bg-[#f5f5f5] text-[#696969]">
-            {topic.topic.path}
-          </div>
-        </Show> */}
       </div>
     </>
   )

@@ -1,5 +1,4 @@
 // @refresh reload
-import { MatchFilters } from "@solidjs/router/dist/types"
 import Mobius from "graphql-mobius"
 import { Suspense, createContext, createSignal, useContext } from "solid-js"
 import {
@@ -23,6 +22,7 @@ import "./root.css"
 import UserProfile from "./routes/@(username)"
 import { getHankoCookie } from "../lib/auth"
 import createEditGuide, { EditGuideProvider } from "./GlobalContext/edit-guide"
+import createTopicState, { TopicProvider } from "./GlobalContext/topic"
 
 // TODO: https://github.com/nikitavoloboev/la-issues/issues/54 (should stop having to manually update this schema )
 const typeDefs = `
@@ -125,8 +125,9 @@ export default function Root() {
   const global = createGlobalState()
   const globalTopic = createGlobalTopic()
   const editGuide = createEditGuide()
+  const topic = createTopicState()
 
-  const filters: MatchFilters = {
+  const filters: Record<string, RegExp> = {
     username: /^@.+/,
   }
 
@@ -152,14 +153,16 @@ export default function Root() {
                   <GlobalStateProvider value={global}>
                     <GlobalTopicProvider value={globalTopic}>
                       <EditGuideProvider value={editGuide}>
-                        <Routes>
-                          <Route
-                            path="/:username"
-                            component={UserProfile}
-                            matchFilters={filters}
-                          />
-                          <FileRoutes />
-                        </Routes>
+                        <TopicProvider value={topic}>
+                          <Routes>
+                            <Route
+                              path="/:username"
+                              component={UserProfile}
+                              matchFilters={filters}
+                            />
+                            <FileRoutes />
+                          </Routes>
+                        </TopicProvider>
                       </EditGuideProvider>
                     </GlobalTopicProvider>
                   </GlobalStateProvider>

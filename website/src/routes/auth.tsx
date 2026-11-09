@@ -1,6 +1,8 @@
 import { makeEventListener } from "@solid-primitives/event-listener"
 import { onMount } from "solid-js"
 import { register } from "@teamhanko/hanko-elements"
+// hanko ships types through an `exports` map that this tsconfig cannot resolve
+// @ts-ignore
 import { UserClient } from "@teamhanko/hanko-frontend-sdk"
 import { useNavigate } from "solid-start"
 import { getHankoCookie } from "../../lib/auth"
@@ -13,65 +15,75 @@ export default function SignInPage() {
   const signIn = useSignIn()
   const mobius = useMobius()
 
+  // auth is optional: without a Hanko project configured the rest of the site
+  // keeps working, the page just explains that sign in is unavailable
+  const hankoApi = import.meta.env.VITE_HANKO_API
+
   onMount(async () => {
-    console.log(import.meta.env.VITE_HANKO_API, "hanko api")
+    if (!hankoApi) return
 
-    // checks if user is already logged in with valid token
-    // TODO: perhaps there is better way to do this?
-    const res = await fetch(`${import.meta.env.VITE_HANKO_API}/me`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${await getHankoCookie()}`,
-      },
-    })
-    // if status 200, means user is logged in
-    // navigate to using the app
-    if (res.status === 200) {
-      // navigate("/")
-    }
+    try {
+      // checks if user is already logged in with valid token
+      // TODO: perhaps there is better way to do this?
+      const res = await fetch(`${hankoApi}/me`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${await getHankoCookie()}`,
+        },
+      })
+      // if status 200, means user is logged in
+      // navigate to using the app
+      if (res.status === 200) {
+        // navigate("/")
+      }
 
-    // register hanko component
-    register(import.meta.env.VITE_HANKO_API, {
-      shadow: true, // can use https://github.com/teamhanko/hanko/blob/main/frontend/elements/README.md#css-shadow-parts
-      injectStyles: true,
-    }).catch(async (error) => {
+      // register hanko component
+      await register(hankoApi, {
+        shadow: true, // can use https://github.com/teamhanko/hanko/blob/main/frontend/elements/README.md#css-shadow-parts
+        injectStyles: true,
+      })
+    } catch (error) {
       // TODO: log with Tinybird
       console.log(error, "error")
-    })
+    }
   })
 
   makeEventListener(
     document,
     "hankoAuthSuccess",
-    async (e) => {
-      const userClient = new UserClient(import.meta.env.VITE_HANKO_API, {
-        timeout: 0,
-        cookieName: "hanko",
-        localStorageKey: "hanko",
-      })
-      const user = await userClient.getCurrent()
-      const email = user.email
+    async () => {
+      if (!hankoApi) return
 
-      localStorage.setItem("email", email)
-
-      const allCookies = document.cookie
-      const hankoCookie = allCookies
-        .split(";")
-        .find((cookie) => {
-          return cookie
+      try {
+        const userClient = new UserClient(hankoApi, {
+          timeout: 0,
+          cookieName: "hanko",
+          localStorageKey: "hanko",
         })
-        ?.split("=")[1]
-      signIn(hankoCookie!)
+        const user = await userClient.getCurrent()
+        const email = user.email
 
-      await mobius.mutate({
-        createUser: {
-          where: {
-            email: email,
+        localStorage.setItem("email", email)
+
+        const hankoCookie = document.cookie
+          .split(";")
+          .find((cookie) => cookie.trim().startsWith("hanko="))
+          ?.split("=")[1]
+
+        if (hankoCookie) signIn(hankoCookie)
+
+        await mobius.mutate({
+          createUser: {
+            where: {
+              email: email,
+            },
+            select: true,
           },
-          select: true,
-        },
-      })
-      navigate("/")
+        })
+        navigate("/")
+      } catch (error) {
+        console.log(error, "could not finish sign in")
+      }
     },
     { passive: true },
   )
@@ -164,8 +176,21 @@ export default function SignInPage() {
               {/* TODO: types.d.ts not helping solve type error, maybe wrong place for the file? */}
               {/* TODO: there is also CORS issue */}
               {/* hanko-auth element does not render */}
-              {/* @ts-ignore */}
-              <hanko-auth />
+              {hankoApi ? (
+                // @ts-ignore custom element registered by hanko at runtime
+                <hanko-auth />
+              ) : (
+                <div class="flex flex-col items-center gap-3 text-center max-w-[420px]">
+                  <div class="text-[15px] text-neutral-300 leading-[1.5]">
+                    Sign in is not configured in this environment. Set
+                    <code class="px-1"> VITE_HANKO_API </code>
+                    in <code class="px-1">website/.env</code> to enable it.
+                  </div>
+                  <a href="/" class="text-[#AEDFFF] font-semibold">
+                    Keep exploring topics →
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>

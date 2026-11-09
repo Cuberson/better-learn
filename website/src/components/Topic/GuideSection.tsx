@@ -1,69 +1,77 @@
-import { For } from "solid-js"
-import Icon from "../Icon"
-import { Show } from "solid-js"
-import { Link } from "../../GlobalContext/global-topic"
+import { For, Show } from "solid-js"
+import { sourceKindLabel } from "../../content/types"
+import type { Link } from "../../GlobalContext/global-topic"
+import { sourceKindStyle } from "./sourceKindStyles"
 
 type Props = {
   title: string
   links: Link[]
+  summary?: string
 }
 
 export default function GuideSection(props: Props) {
   return (
-    <div class="pt-6 flex flex-col gap-6 leading-[18.78px] border-[#EAEAEA] border rounded-lg p-3">
-      <div class="text-[#131313] font-bold">{props.title}</div>
-      <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-4 leading-[18.78px] border border-neutral-800 rounded-lg p-3">
+      <div class="flex flex-col gap-1">
+        <div class="text-white font-bold">{props.title}</div>
+        <Show when={props.summary}>
+          <div class="text-[12px] text-neutral-400">{props.summary}</div>
+        </Show>
+      </div>
+
+      <div class="flex flex-col gap-2">
         <For each={props.links}>
-          {(link) => {
-            return (
-              <div class="flex items-center gap-6 justify-between">
-                {/* <div class="">
-                  <div class="bg-neutral-400 w-10 h-10 rounded-full"></div>
-                </div> */}
-                <div class="w-full  h-full flex justify-between items-center">
-                  <div class="w-fit flex flex-col">
-                    <div class="font-bold text-[#3B5CCC]">{link.title}</div>
-                    <div class="flex">
-                      {/* <Show when={link?.type}>
-                        <div class="font-light text-[12px] text-[#696969] border-r border-[#CCCCCC] px-2">
-                          {link?.type}
-                        </div>
-                      </Show> */}
-                      <Show when={link?.year}>
-                        <div class="font-light text-[12px] text-[#696969] border-r border-[#CCCCCC] px-2">
-                          {link?.year}
-                        </div>
-                      </Show>
-                      <Show when={link?.author}>
-                        <div class="font-light text-[12px] text-[#696969] border-r border-[#CCCCCC] px-2">
-                          {link?.author}
-                        </div>
-                      </Show>
-                      {/* <Show when={link?.time}>
-                        <div class="font-light text-[12px] text-[#696969] border-r border-[#CCCCCC] px-2">
-                          {link?.time}
-                        </div>
-                      </Show> */}
-                      <div class="font-light text-[12px] text-[#696969] px-2">
-                        {link.url}
-                      </div>
-                    </div>
-                    {/* <div class="font-light text-[12px] text-[#696969]">PDF</div> */}
-                  </div>
-                  <div class="flex items-center gap-[34px]">
-                    <div class="gap-4 flex ">
-                      <div class="rounded-[2px] border h-[28px] w-[28px] border-[#CCCCCC]">
-                        <Icon name="Plus" />
-                      </div>
-                      <div class="rounded-[2px] border h-[28px] w-[28px] border-[#CCCCCC]">
-                        <Icon name="Checkmark" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          }}
+          {(link) => (
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex items-start gap-3 rounded-md px-2 py-2 hover:bg-neutral-900 transition-colors"
+            >
+              <span
+                class={`shrink-0 text-[11px] font-medium border rounded-full px-2 py-[2px] mt-[1px] ${sourceKindStyle(
+                  link.kind,
+                )}`}
+              >
+                {sourceKindLabel[link.kind ?? "article"]}
+              </span>
+
+              <span class="min-w-0 w-full flex flex-col gap-[2px]">
+                <span class="font-bold text-[#8AB4FF] leading-[1.35] group-hover:underline">
+                  {link.title}
+                </span>
+                <Show when={link.description}>
+                  <span class="text-[13px] text-neutral-400 leading-[1.45]">
+                    {link.description}
+                  </span>
+                </Show>
+                <span class="flex items-center gap-2 text-[12px] text-neutral-500">
+                  <Show when={link.stepTitle}>
+                    <span class="whitespace-nowrap">{link.stepTitle}</span>
+                    <span class="text-neutral-700">·</span>
+                  </Show>
+                  <span class="truncate">{link.url}</span>
+                </span>
+              </span>
+
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                class="shrink-0 mt-1 text-neutral-600 group-hover:text-[#8AB4FF]"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 1h7v7M11 1L1 11"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          )}
         </For>
       </div>
     </div>
