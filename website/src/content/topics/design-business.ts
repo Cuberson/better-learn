@@ -1,4 +1,4 @@
-import { defineTopic, s, st } from "../helpers"
+import { defineTopic, p, s, st } from "../helpers"
 
 // Design, product and business: skills that are learned by making and shipping.
 
@@ -28,7 +28,7 @@ export const uiUxDesign = defineTopic({
       "Interviews, jobs to be done and usability testing on a budget.",
       "Run five user interviews and extract a real insight.",
       [
-        s("Nielsen Norman Group — UX Research", "https://www.nngroup.com/articles/", "article"),
+        s("Usability", "https://en.wikipedia.org/wiki/Usability", "article"),
         s("Interaction Design Foundation", "https://www.interaction-design.org/literature", "course"),
       ],
     ),
@@ -51,7 +51,7 @@ export const uiUxDesign = defineTopic({
       "Build a small design system with type and colour tokens.",
       [
         s("Practical Typography", "https://practicaltypography.com/", "book"),
-        s("Material Design 3 — Foundations", "https://m3.material.io/", "docs"),
+        s("Color theory", "https://en.wikipedia.org/wiki/Color_theory", "article"),
       ],
     ),
     st(
@@ -77,6 +77,21 @@ export const uiUxDesign = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Redesign one screen", "Pick an app you use, redesign a single screen and write down every reason."),
+      p("Five person usability test", "Test your redesign with five people and record what breaks."),
+    ],
+    intermediate: [
+      p("Clickable prototype", "Prototype a three screen flow including empty, loading and error states."),
+      p("Small design system", "Build tokens and five components with the states they need."),
+    ],
+    advanced: [
+      p("Published case study", "Take a product problem end to end and publish the process and the result."),
+      p("Accessibility audit", "Audit a real product against WCAG and fix the worst issues."),
+    ],
+  },
+
 })
 
 export const graphicDesign = defineTopic({
@@ -154,6 +169,21 @@ export const graphicDesign = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Type-only poster", "One poster using only type, three weights and a strict grid."),
+      p("Layout study", "Redesign a magazine spread on a twelve column grid."),
+    ],
+    intermediate: [
+      p("Brand kit", "Logo, palette, type and rules for a fictional business."),
+      p("Poster series", "Three posters that share a system but not a layout."),
+    ],
+    advanced: [
+      p("Real client brief", "Take a brief from a real person through revisions to delivery."),
+      p("Portfolio book", "Edit your best work into a coherent printed portfolio."),
+    ],
+  },
+
 })
 
 export const productManagement = defineTopic({
@@ -172,7 +202,7 @@ export const productManagement = defineTopic({
       "Explain the difference between a feature and an outcome.",
       [
         s("SVPG — Articles", "https://www.svpg.com/articles/", "article", "Marty Cagan on product teams."),
-        s("Lenny's Newsletter", "https://www.lennysnewsletter.com/", "article"),
+        s("Product manager", "https://en.wikipedia.org/wiki/Product_manager", "article"),
       ],
     ),
     st(
@@ -194,7 +224,7 @@ export const productManagement = defineTopic({
       "Defend a prioritisation decision with evidence.",
       [
         s("Mind the Product", "https://www.mindtheproduct.com/", "article"),
-        s("SVPG — Product Discovery", "https://www.svpg.com/articles/", "article"),
+        s("Product management", "https://en.wikipedia.org/wiki/Product_management", "article"),
       ],
     ),
     st(
@@ -204,7 +234,7 @@ export const productManagement = defineTopic({
       "Specs, scoping, trade-offs and unblocking engineers and designers.",
       "Get a feature from idea to shipped without scope creep.",
       [
-        s("Lenny's Newsletter — Execution", "https://www.lennysnewsletter.com/", "article"),
+        s("Lenny's Newsletter", "https://www.lennysnewsletter.com/", "article"),
         s("Shape Up (Basecamp)", "https://basecamp.com/shapeup", "book", "Free book on scoping and cycles."),
       ],
     ),
@@ -215,8 +245,8 @@ export const productManagement = defineTopic({
       "Metrics that matter, funnels, cohorts and avoiding vanity numbers.",
       "Define the metric that would tell you a launch worked.",
       [
-        s("Reforge — Metrics", "https://www.reforge.com/blog", "article"),
-        s("Amplitude — Product Analytics", "https://amplitude.com/blog", "article"),
+        s("Performance indicator", "https://en.wikipedia.org/wiki/Performance_indicator", "article"),
+        s("Amplitude — Blog", "https://amplitude.com/blog", "article"),
       ],
     ),
     st(
@@ -227,10 +257,25 @@ export const productManagement = defineTopic({
       "Write a product strategy someone could disagree with.",
       [
         s("Good Strategy Bad Strategy", "https://www.goodreads.com/book/show/11721966-good-strategy-bad-strategy", "book"),
-        s("SVPG — Product Strategy", "https://www.svpg.com/articles/", "article"),
+        s("Product strategy", "https://en.wikipedia.org/wiki/Product_strategy", "article"),
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Five discovery interviews", "Interview five users about one problem and write the patterns."),
+      p("One page spec", "Problem, users, success metric, non-goals and risks on a single page."),
+    ],
+    intermediate: [
+      p("Prioritised backlog", "Turn a messy backlog into a ranked roadmap with a written rationale."),
+      p("Ship a small feature", "Take a feature from idea to release and measure what changed."),
+    ],
+    advanced: [
+      p("Strategy memo", "Write the strategy for a product: market, wedge, moat and the next three bets."),
+      p("Pricing change", "Design and run a pricing change with the metric and the rollback plan."),
+    ],
+  },
+
 })
 
 export const marketing = defineTopic({
@@ -281,8 +326,8 @@ export const marketing = defineTopic({
       "Attribution, cohorts, experiments and the metrics that tell you whether marketing worked.",
       "Set up tracking that answers a real business question.",
       [
-        s("CXL — Analytics", "https://cxl.com/blog/", "article"),
-        s("Google Analytics — Academy", "https://skillshop.withgoogle.com/", "course"),
+        s("Web analytics", "https://en.wikipedia.org/wiki/Web_analytics", "article"),
+        s("Google Skillshop — Analytics courses", "https://skillshop.withgoogle.com/", "course"),
       ],
     ),
     st(
@@ -303,11 +348,26 @@ export const marketing = defineTopic({
       "Brand equity, category design and marketing that compounds instead of renting attention.",
       "Build a brand strategy that outlives a single campaign.",
       [
-        s("Seth Godin — Blog", "https://seths.blog/", "article"),
+        s("Brand", "https://en.wikipedia.org/wiki/Brand", "article"),
         s("HubSpot — Branding", "https://blog.hubspot.com/marketing/branding", "article"),
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Positioning statement", "Write positioning and the landing page headline for a real product."),
+      p("Ten headlines", "Rewrite one product's hero copy ten ways and pick a winner with reasons."),
+    ],
+    intermediate: [
+      p("One growth experiment", "Full experiment plan: hypothesis, metric, sample and decision rule."),
+      p("Rank for a long tail query", "Write and publish a page for a real query and track it for a month."),
+    ],
+    advanced: [
+      p("Brand system", "Build the brand guide and the twelve month plan behind it."),
+      p("Attribution model", "Reconstruct how you would measure marketing spend without perfect tracking."),
+    ],
+  },
+
 })
 
 export const entrepreneurship = defineTopic({
@@ -348,7 +408,7 @@ export const entrepreneurship = defineTopic({
       "Launch a usable product in weeks, not months.",
       [
         s("Y Combinator — Library", "https://www.ycombinator.com/library", "video"),
-        s("Stripe — Atlas Guides", "https://stripe.com/guides", "docs"),
+        s("Minimum viable product", "https://en.wikipedia.org/wiki/Minimum_viable_product", "article"),
       ],
     ),
     st(
@@ -358,7 +418,7 @@ export const entrepreneurship = defineTopic({
       "Do things that do not scale, then find a channel that does.",
       "Acquire your first ten paying customers.",
       [
-        s("Y Combinator — Library", "https://www.ycombinator.com/library", "video"),
+        s("Customer development", "https://en.wikipedia.org/wiki/Customer_development", "article"),
         s("Paul Graham — Do Things That Don't Scale", "https://paulgraham.com/ds.html", "article"),
       ],
     ),
@@ -370,7 +430,7 @@ export const entrepreneurship = defineTopic({
       "Build a simple financial model for your business.",
       [
         s("Stripe — Guides", "https://stripe.com/guides", "docs"),
-        s("a16z — Startup Resources", "https://a16z.com/", "article"),
+        s("Andreessen Horowitz — Essays", "https://a16z.com/", "article"),
       ],
     ),
     st(
@@ -380,11 +440,26 @@ export const entrepreneurship = defineTopic({
       "Hiring, culture, delegation and the transition from founder to manager.",
       "Hire your first person and onboard them well.",
       [
-        s("Y Combinator — Library", "https://www.ycombinator.com/library", "video"),
-        s("Paul Graham — Essays", "https://paulgraham.com/articles.html", "article"),
+        s("Venture capital", "https://en.wikipedia.org/wiki/Venture_capital", "article"),
+        s("Startup company", "https://en.wikipedia.org/wiki/Startup_company", "article"),
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Fifteen problem interviews", "Talk to fifteen potential users and write down what repeats."),
+      p("Demand test", "A one page offer and twenty cold emails to see if anyone replies."),
+    ],
+    intermediate: [
+      p("Ship an MVP", "Launch the smallest version that solves the problem and get three paying users."),
+      p("Unit economics", "Model price, costs and churn and find the number that has to be true."),
+    ],
+    advanced: [
+      p("Twelve month operating plan", "Hiring, spend and milestones tied to a metric you will report on."),
+      p("Raise or bootstrap memo", "Write the honest case for both paths with the risk of each."),
+    ],
+  },
+
 })
 
 export const personalFinance = defineTopic({
@@ -413,7 +488,7 @@ export const personalFinance = defineTopic({
       "Interest rates, credit scores and which debt to pay first.",
       "Order your debts by effective interest rate.",
       [
-        s("Investor.gov — Introduction to Investing", "https://www.investor.gov/introduction-investing", "docs"),
+        s("Credit card debt", "https://en.wikipedia.org/wiki/Credit_card_debt", "article"),
         s("Khan Academy — Personal Finance", "https://www.khanacademy.org/college-careers-more/personal-finance", "course"),
       ],
     ),
@@ -425,7 +500,7 @@ export const personalFinance = defineTopic({
       "Build a simple diversified portfolio and explain the fees.",
       [
         s("Bogleheads — Investment Philosophy", "https://www.bogleheads.org/wiki/Bogleheads%C2%AE_investment_philosophy", "docs"),
-        s("Investor.gov", "https://www.investor.gov/introduction-investing", "docs"),
+        s("Investor.gov — Introduction to Investing", "https://www.investor.gov/introduction-investing", "docs"),
       ],
     ),
     st(
@@ -458,10 +533,25 @@ export const personalFinance = defineTopic({
       "Make a financial plan you could defend to an adviser.",
       [
         s("Bogleheads — Advanced Topics", "https://www.bogleheads.org/wiki/Category:Advanced_Topics", "docs"),
-        s("OpenStax — Principles of Finance", "https://openstax.org/details/books/principles-finance", "book"),
+        s("Financial plan", "https://en.wikipedia.org/wiki/Financial_plan", "article"),
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Budget and net worth", "Track one month of spending and compute your net worth."),
+      p("Debt plan", "List every debt, compare avalanche with snowball and pick one."),
+    ],
+    intermediate: [
+      p("Simple portfolio", "Build a boring index portfolio and write down the reasoning behind the split."),
+      p("Tax checklist", "Reconstruct last year's taxes and list what to change this year."),
+    ],
+    advanced: [
+      p("Ten year plan", "Write a plan with three scenarios, insurance needs and a withdrawal rule."),
+      p("Fee audit", "Audit every fee you pay and quantify what each one costs over 20 years."),
+    ],
+  },
+
 })
 
 export const economics = defineTopic({
@@ -501,8 +591,8 @@ export const economics = defineTopic({
       "Externalities, public goods, taxes and market failures — when markets work and when they do not.",
       "Argue for or against a specific policy intervention.",
       [
-        s("The Economy (CORE Econ)", "https://www.core-econ.org/the-economy/", "book"),
-        s("Marginal Revolution University — Micro", "https://mru.org/", "course"),
+        s("Supply and demand", "https://en.wikipedia.org/wiki/Supply_and_demand", "article"),
+        s("Microeconomics", "https://en.wikipedia.org/wiki/Microeconomics", "article"),
       ],
     ),
     st(
@@ -512,8 +602,8 @@ export const economics = defineTopic({
       "Growth, inflation, unemployment and the central banking tools that respond to them.",
       "Read a central bank statement and understand the decisions.",
       [
-        s("OpenStax — Principles of Economics", "https://openstax.org/details/books/principles-economics-3e", "book"),
-        s("Khan Academy — Macroeconomics", "https://www.khanacademy.org/economics-finance-domain", "course"),
+        s("Macroeconomics", "https://en.wikipedia.org/wiki/Macroeconomics", "article"),
+        s("Business cycle", "https://en.wikipedia.org/wiki/Business_cycle", "article"),
       ],
     ),
     st(
@@ -524,7 +614,7 @@ export const economics = defineTopic({
       "Read an applied economics paper and follow its identification strategy.",
       [
         s("Our World in Data", "https://ourworldindata.org/", "docs"),
-        s("Marginal Revolution University — Data", "https://mru.org/", "course"),
+        s("Econometrics", "https://en.wikipedia.org/wiki/Econometrics", "article"),
       ],
     ),
     st(
@@ -539,6 +629,21 @@ export const economics = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Opportunity cost diary", "Log a week of decisions with the alternative you gave up."),
+      p("Explain one price", "Explain the price of a product you know well with supply and demand."),
+    ],
+    intermediate: [
+      p("Data brief", "Download one series from the World Bank or FRED and explain the shape of it."),
+      p("Policy memo", "Argue for one policy change with evidence and answer the counter-argument."),
+    ],
+    advanced: [
+      p("Where the schools disagree", "Summarise Smith, Marx and Keynes and where they actually differ."),
+      p("Market design exercise", "Design an auction or matching market and simulate its outcomes."),
+    ],
+  },
+
 })
 
 export const writing = defineTopic({
@@ -579,7 +684,7 @@ export const writing = defineTopic({
       "Outline a piece before writing it and keep the draft on track.",
       [
         s("Purdue OWL — Writing Process", "https://owl.purdue.edu/owl/general_writing/the_writing_process/index.html", "docs"),
-        s("Writing Excuses", "https://writingexcuses.com/", "video", "Short weekly craft podcast."),
+        s("Narrative structure", "https://en.wikipedia.org/wiki/Narrative_structure", "article"),
       ],
     ),
     st(
@@ -590,7 +695,7 @@ export const writing = defineTopic({
       "Adapt the same idea for two very different audiences.",
       [
         s("Copyblogger", "https://copyblogger.com/", "article"),
-        s("Plain Language Guidelines", "https://www.plainlanguage.gov/guidelines/", "docs"),
+        s("Technical writing", "https://en.wikipedia.org/wiki/Technical_writing", "article"),
       ],
     ),
     st(
@@ -600,7 +705,7 @@ export const writing = defineTopic({
       "Cutting, reordering and reading out loud. The draft is not the writing; the edit is.",
       "Take a first draft to a publishable second draft.",
       [
-        s("Purdue OWL — Editing", "https://owl.purdue.edu/owl/general_writing/the_writing_process/index.html", "docs"),
+        s("Copy editing", "https://en.wikipedia.org/wiki/Copy_editing", "article"),
         s("Hemingway Editor", "https://hemingwayapp.com/", "interactive"),
       ],
     ),
@@ -616,4 +721,19 @@ export const writing = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Rewrite for clarity", "Take a confusing paragraph and cut it in half without losing meaning."),
+      p("Style drills", "Rewrite the same ten sentences in three different voices."),
+    ],
+    intermediate: [
+      p("Explainer essay", "800 words that teach a beginner something you already know."),
+      p("Edit someone else", "Edit another person's draft and annotate the reasoning."),
+    ],
+    advanced: [
+      p("Long-form piece", "A 5000 word researched piece with sources and a real point of view."),
+      p("Write every day for a month", "Thirty short pieces and an honest review of what improved."),
+    ],
+  },
+
 })

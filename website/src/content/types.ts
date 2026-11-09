@@ -29,6 +29,16 @@ export type Source = {
   description?: string
 }
 
+/**
+ * Something to build after a stage is finished. Projects are how a roadmap
+ * step turns into skill: they are deliberately small enough to finish.
+ */
+export type Project = {
+  title: string
+  /** what you build and what it proves you have learned */
+  description: string
+}
+
 /** One box on the roadmap. */
 export type Step = {
   /** unique inside the topic, used as a stable key */
@@ -39,6 +49,13 @@ export type Step = {
   summary: string
   /** what you can do once this step is done */
   outcome?: string
+  /**
+   * Introduction shown at the top of the opened step. Written for you when a
+   * step does not provide one, so the roadmap never opens an empty box.
+   */
+  intro?: string
+  /** first concrete actions. Written for you from the sources when missing. */
+  getStarted?: string[]
   sources: Source[]
 }
 
@@ -51,6 +68,8 @@ export type TopicGuide = {
   aliases?: string[]
   topicSummary: string
   steps: Step[]
+  /** projects to build after finishing each stage */
+  projects?: Partial<Record<Stage, Project[]>>
 }
 
 export const stages: Stage[] = ["beginner", "intermediate", "advanced"]

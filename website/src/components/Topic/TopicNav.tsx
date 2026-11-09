@@ -82,13 +82,40 @@ export default function TopicNav() {
 
             <div
               onClick={() => setShowInput(true)}
-              class="relative rounded-[4px] h-full flex items-center text-neutral-400 font-light border border-neutral-700 w-full max-w-[500px] min-w-0 px-3 transition-all hover:border-neutral-500"
+              class={`relative rounded-[4px] h-full flex items-center font-light border w-full max-w-[500px] min-w-0 transition-all ${
+                showInput()
+                  ? "bg-white border-white"
+                  : "bg-white border-white text-[#696969] hover:border-neutral-300"
+              }`}
               style={{ "min-height": "44px" }}
             >
               <Show
                 when={showInput()}
                 fallback={
-                  <div class="p-[6px] cursor-text select-none">Search Topic</div>
+                  <div class="p-[6px] px-3 cursor-text select-none flex items-center gap-2">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <circle
+                        cx="7"
+                        cy="7"
+                        r="5"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                      />
+                      <path
+                        d="M11 11l3.5 3.5"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                    Search Topic
+                  </div>
                 }
               >
                 <Search

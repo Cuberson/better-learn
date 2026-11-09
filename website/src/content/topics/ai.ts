@@ -1,4 +1,4 @@
-import { defineTopic, s, st } from "../helpers"
+import { defineTopic, p, s, st } from "../helpers"
 
 // Machine learning and everything built on top of it.
 
@@ -77,6 +77,21 @@ export const machineLearning = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("First classifier", "Train on a tabular dataset and report accuracy, confusion matrix and what it gets wrong."),
+      p("Linear regression from scratch", "Implement gradient descent and compare with scikit-learn."),
+    ],
+    intermediate: [
+      p("End-to-end pipeline", "Clean, engineer features, validate and explain a model to a non-expert."),
+      p("Deployed model", "Serve a model behind an API with logging and a drift check."),
+    ],
+    advanced: [
+      p("Reproduce a result", "Reproduce a small result from a paper and report where you differed."),
+      p("Theory notebook", "Derive the bias-variance trade-off and check it with experiments."),
+    ],
+  },
+
 })
 
 export const deepLearning = defineTopic({
@@ -106,7 +121,7 @@ export const deepLearning = defineTopic({
       "Train a small model on your own dataset.",
       [
         s("PyTorch — Learn the Basics", "https://pytorch.org/tutorials/beginner/basics/intro.html", "docs"),
-        s("Deep Learning with PyTorch (D2L)", "https://d2l.ai/", "book", "Free, interactive and broad."),
+        s("Dive into Deep Learning (D2L)", "https://d2l.ai/", "book", "Free, interactive and broad."),
       ],
     ),
     st(
@@ -127,7 +142,7 @@ export const deepLearning = defineTopic({
       "Convolutional networks, recurrent networks, attention and transformers — and when each is appropriate.",
       "Pick an architecture for a new problem and explain the trade-off.",
       [
-        s("D2L — Modern Convolutional Networks", "https://d2l.ai/", "book"),
+        s("Convolutional neural network", "https://en.wikipedia.org/wiki/Convolutional_neural_network", "article"),
         s("The Illustrated Transformer", "https://jalammar.github.io/illustrated-transformer/", "article"),
       ],
     ),
@@ -154,6 +169,21 @@ export const deepLearning = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("MLP from scratch", "Forward and backward passes in NumPy, then train it."),
+      p("MNIST in PyTorch", "Reach 98% and explain every line of the training loop."),
+    ],
+    intermediate: [
+      p("Transfer learning", "Fine-tune a pretrained model on your own small dataset."),
+      p("Training toolkit", "Add schedulers, augmentation and experiment tracking to your loop."),
+    ],
+    advanced: [
+      p("Reproduce a paper", "Pick a paper with code and reproduce its main table."),
+      p("Attention from scratch", "Implement multi-head attention and train a tiny transformer."),
+    ],
+  },
+
 })
 
 export const largeLanguageModels = defineTopic({
@@ -193,7 +223,7 @@ export const largeLanguageModels = defineTopic({
       "Chat completions, tool use, streaming and cost/latency trade-offs in a real application.",
       "Ship a small application that uses an LLM API safely.",
       [
-        s("OpenAI — API Documentation", "https://platform.openai.com/docs/", "docs"),
+        s("OpenAI — API documentation", "https://platform.openai.com/docs/", "docs"),
         s("Hugging Face — LLM Course", "https://huggingface.co/learn/llm-course/chapter1/1", "course"),
       ],
     ),
@@ -231,6 +261,21 @@ export const largeLanguageModels = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Prompt library", "Twenty prompts with a rubric so you can tell which ones are actually better."),
+      p("Explain the stack", "Explain tokens, embeddings and attention to someone with no background."),
+    ],
+    intermediate: [
+      p("Notes assistant", "A retrieval assistant over your own notes that cites its sources."),
+      p("Evaluation harness", "A test set and a score for three prompts or models."),
+    ],
+    advanced: [
+      p("Fine-tune a small model", "Fine-tune on a task and measure the improvement against the base model."),
+      p("Reproduce an experiment", "Reproduce a small experiment from an LLM paper and report the gaps."),
+    ],
+  },
+
 })
 
 export const naturalLanguageProcessing = defineTopic({
@@ -281,7 +326,7 @@ export const naturalLanguageProcessing = defineTopic({
       "Named entity recognition, summarisation, translation and question answering with modern tooling.",
       "Pick the right model and metric for a real product task.",
       [
-        s("spaCy — Examples", "https://spacy.io/usage", "docs"),
+        s("Named-entity recognition", "https://en.wikipedia.org/wiki/Named-entity_recognition", "article"),
         s("Hugging Face — Tasks", "https://huggingface.co/tasks", "docs"),
       ],
     ),
@@ -292,7 +337,7 @@ export const naturalLanguageProcessing = defineTopic({
       "Precision, recall, F1, BLEU, ROUGE and human evaluation. Language tasks are easy to measure badly.",
       "Design an evaluation for a task without a single right answer.",
       [
-        s("Stanford CS224N — Lectures", "https://web.stanford.edu/class/cs224n/", "video"),
+        s("BLEU", "https://en.wikipedia.org/wiki/BLEU", "article"),
         s("Hugging Face — Evaluate", "https://huggingface.co/docs/evaluate/index", "docs"),
       ],
     ),
@@ -308,6 +353,21 @@ export const naturalLanguageProcessing = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Text pipeline", "Tokenise, clean and analyse a corpus you care about."),
+      p("Embedding exploration", "Train word vectors and inspect what ends up next to what."),
+    ],
+    intermediate: [
+      p("Classification model", "Fine-tune a transformer for a task with your own labelled data."),
+      p("Evaluation harness", "Build a held-out evaluation with an error analysis section."),
+    ],
+    advanced: [
+      p("Reproduce an NLP result", "Reproduce a published result and analyse the failures."),
+      p("Tokenizer study", "Compare three tokenizers on a domain corpus and measure the damage."),
+    ],
+  },
+
 })
 
 export const computerVision = defineTopic({
@@ -385,6 +445,21 @@ export const computerVision = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Filters by hand", "Implement convolution, blur and edge detection without a library."),
+      p("Small image classifier", "Train a CNN on a dataset you collected yourself."),
+    ],
+    intermediate: [
+      p("Object detector", "Fine-tune YOLO on a custom dataset and evaluate it."),
+      p("Segmentation", "Segment a real image set and score it with IoU."),
+    ],
+    advanced: [
+      p("Reproduce a vision paper", "Reproduce a result and report the numbers honestly."),
+      p("Deploy on the edge", "Run a model on a phone or a small board at a usable frame rate."),
+    ],
+  },
+
 })
 
 export const reinforcementLearning = defineTopic({
@@ -414,7 +489,7 @@ export const reinforcementLearning = defineTopic({
       "Implement exploration strategies for a simple decision problem.",
       [
         s("Sutton & Barto — Reinforcement Learning", "http://incompleteideas.net/book/the-book-2nd.html", "book", "The free canonical textbook."),
-        s("Hugging Face — Deep RL Course", "https://huggingface.co/learn/deep-rl-course/unit0/introduction", "course"),
+        s("Multi-armed bandit", "https://en.wikipedia.org/wiki/Multi-armed_bandit", "article"),
       ],
     ),
     st(
@@ -424,8 +499,8 @@ export const reinforcementLearning = defineTopic({
       "Policy and value iteration, temporal difference learning and Q-learning in a grid world.",
       "Train an agent to solve a small maze from scratch.",
       [
-        s("Sutton & Barto — Tabular Methods", "http://incompleteideas.net/book/the-book-2nd.html", "book"),
-        s("Gymnasium Documentation", "https://gymnasium.farama.org/", "docs"),
+        s("Q-learning", "https://en.wikipedia.org/wiki/Q-learning", "article"),
+        s("Markov decision process", "https://en.wikipedia.org/wiki/Markov_decision_process", "article"),
       ],
     ),
     st(
@@ -458,10 +533,25 @@ export const reinforcementLearning = defineTopic({
       "Read an RL paper's algorithm section and reproduce the core loop.",
       [
         s("arXiv — Machine Learning", "https://arxiv.org/list/cs.LG/recent", "paper"),
-        s("Hugging Face — Deep RL Course", "https://huggingface.co/learn/deep-rl-course/unit0/introduction", "course"),
+        s("Reinforcement learning", "https://en.wikipedia.org/wiki/Reinforcement_learning", "article"),
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Multi-armed bandit", "Compare epsilon-greedy with UCB on a simulated bandit."),
+      p("Gridworld value iteration", "Implement it and draw the policy it finds."),
+    ],
+    intermediate: [
+      p("DQN on CartPole", "Train it and plot the learning curve with the seeds you used."),
+      p("Solve one environment", "Pick an environment, tune it and document every change."),
+    ],
+    advanced: [
+      p("Tool-using agent", "Build an LLM agent with tools and an evaluation suite."),
+      p("Reproduce an RL paper", "Reproduce a result and write down what did not transfer."),
+    ],
+  },
+
 })
 
 export const dataScience = defineTopic({
@@ -502,7 +592,7 @@ export const dataScience = defineTopic({
       "Find and explain an unexpected pattern in a dataset.",
       [
         s("Kaggle — Data Visualization", "https://www.kaggle.com/learn/data-visualization", "interactive"),
-        s("Storytelling with Data", "https://www.storytellingwithdata.com/", "article"),
+        s("Exploratory data analysis", "https://en.wikipedia.org/wiki/Exploratory_data_analysis", "article"),
       ],
     ),
     st(
@@ -539,4 +629,19 @@ export const dataScience = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Clean a messy CSV", "Turn a dirty dataset into a tidy one with a documented, re-runnable script."),
+      p("Notebook report", "A notebook that answers three questions with plots and a summary."),
+    ],
+    intermediate: [
+      p("EDA project", "Explore a public dataset nobody has explained to you and write up the findings."),
+      p("Model from SQL", "Pull the data with SQL, then build and validate a model on it."),
+    ],
+    advanced: [
+      p("Decision memo", "Turn an analysis into a five slide memo a stakeholder can act on."),
+      p("Reproducible pipeline", "Package an analysis so someone else can rerun it from raw data."),
+    ],
+  },
+
 })

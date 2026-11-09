@@ -238,6 +238,14 @@ function ZoneBridge(props: { from: RoadmapZone; to: RoadmapZone }) {
   )
 }
 
+function SectionLabel(props: { children: any }) {
+  return (
+    <div class="text-[11px] uppercase tracking-[0.08em] text-neutral-500">
+      {props.children}
+    </div>
+  )
+}
+
 function StepModal(props: {
   node: RoadmapNode
   total: number
@@ -301,8 +309,35 @@ function StepModal(props: {
           </button>
         </header>
 
-        <div class="px-5 py-4 flex flex-col gap-4">
-          <p class="text-[15px] text-neutral-200 leading-[1.55]">{props.node.step.summary}</p>
+        <div class="px-5 py-4 flex flex-col gap-5">
+          <section class="flex flex-col gap-2" data-section="introduction">
+            <SectionLabel>Introduction</SectionLabel>
+            <For each={props.node.introduction}>
+              {(paragraph) => (
+                <p class="text-[14.5px] text-neutral-300 leading-[1.6]">{paragraph}</p>
+              )}
+            </For>
+          </section>
+
+          <section class="flex flex-col gap-2" data-section="get-started">
+            <SectionLabel>Get started</SectionLabel>
+            <ol class="flex flex-col gap-2.5">
+              <For each={props.node.getStarted}>
+                {(action, index) => (
+                  <li class="flex items-start gap-3">
+                    <span
+                      class={`shrink-0 mt-[1px] w-6 h-6 rounded-full border ${meta().accentBorder} ${
+                        meta().accentBg
+                      } ${meta().accentText} text-[12px] font-bold flex items-center justify-center`}
+                    >
+                      {index() + 1}
+                    </span>
+                    <span class="text-[14px] text-neutral-200 leading-[1.55]">{action}</span>
+                  </li>
+                )}
+              </For>
+            </ol>
+          </section>
 
           <Show when={props.node.step.outcome}>
             <div class="rounded-lg bg-neutral-900 border border-neutral-800 px-4 py-3">
@@ -315,10 +350,33 @@ function StepModal(props: {
             </div>
           </Show>
 
-          <div class="flex flex-col gap-2">
-            <div class="text-[11px] uppercase tracking-[0.08em] text-neutral-500">
-              Sources to explore
-            </div>
+          <Show when={props.node.projects.length > 0}>
+            <section class="flex flex-col gap-2" data-section="projects">
+              <SectionLabel>Projects after this stage</SectionLabel>
+              <p class="text-[13px] text-neutral-400 leading-[1.5]">
+                Finish every box in the {meta().label.toLowerCase()} stage first, then
+                build one of these end to end — that is what makes the stage stick.
+              </p>
+              <For each={props.node.projects}>
+                {(project) => (
+                  <div
+                    class="rounded-lg bg-neutral-900 border border-neutral-800 px-3.5 py-3 flex flex-col gap-1"
+                    data-project
+                  >
+                    <div class="text-[14px] font-semibold text-white leading-[1.35]">
+                      {project.title}
+                    </div>
+                    <div class="text-[13px] text-neutral-400 leading-[1.5]">
+                      {project.description}
+                    </div>
+                  </div>
+                )}
+              </For>
+            </section>
+          </Show>
+
+          <section class="flex flex-col gap-2">
+            <SectionLabel>Sources to explore</SectionLabel>
             <For each={props.node.step.sources}>
               {(source) => (
                 <a
@@ -348,7 +406,7 @@ function StepModal(props: {
                 </a>
               )}
             </For>
-          </div>
+          </section>
         </div>
 
         <footer class="sticky bottom-0 bg-neutral-950 border-t border-neutral-800 px-5 py-3 flex items-center justify-between gap-3">

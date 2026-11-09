@@ -9,9 +9,12 @@ type Props = {
   onSelect: (topic: TopicSearchItem) => void
   autofocus?: boolean
   /**
-   * `dark` is a white input on the black landing page,
-   * `night` is the dark search used in the top bar of a topic page,
-   * `light` is the light search used outside the dark pages.
+   * `dark` is the big white search on the black landing page,
+   * `night` is the white search inside the black top bar of a topic page,
+   * `light` is the plain search used outside the dark pages.
+   *
+   * Both dark variants are white boxes with black text: on a black page the
+   * white field is the thing that says "type here", so it stays white.
    */
   variant?: "dark" | "night" | "light"
   inputClass?: string
@@ -97,11 +100,10 @@ export default function Search(props: Props) {
   })
 
   const theme = () => props.variant ?? "dark"
-  const isNight = () => theme() === "night"
 
   const defaultInputClass = () => {
-    if (isNight()) {
-      return "w-full bg-transparent text-white placeholder:text-neutral-500 font-light outline-none"
+    if (theme() === "night") {
+      return "w-full bg-white text-black placeholder:text-neutral-500 text-[14px] font-light outline-none px-3 py-[9px] rounded-[4px]"
     }
     if (theme() === "light") {
       return "w-full bg-transparent text-black font-light outline-none"
@@ -113,20 +115,10 @@ export default function Search(props: Props) {
     const base =
       "absolute top-full left-0 mt-2 w-full max-h-[320px] overflow-auto rounded-lg z-50 p-2 flex flex-col gap-1"
 
-    if (isNight()) {
-      return `${base} bg-neutral-900 text-white border border-neutral-800 shadow-2xl`
-    }
-    if (theme() === "light") {
-      return `${base} bg-white text-black border border-[#EAEAEA] shadow-2xl`
-    }
-    return `${base} bg-white text-black shadow-2xl`
+    return `${base} bg-white text-black border border-[#EAEAEA] shadow-2xl`
   }
 
-  const activeBackground = () => {
-    if (isNight()) return "#262626"
-    if (theme() === "light") return "rgba(124,124,124,0.14)"
-    return "rgb(237 237 237)"
-  }
+  const activeBackground = () => "rgb(237 237 237)"
 
   return (
     // clicks inside the search (opening a result, focusing the input) should
@@ -162,11 +154,7 @@ export default function Search(props: Props) {
           <Show
             when={results().length > 0}
             fallback={
-              <div
-                class={`px-4 py-3 text-sm ${
-                  isNight() ? "text-neutral-400" : "text-[#696969]"
-                }`}
-              >
+              <div class="px-4 py-3 text-sm text-[#696969]">
                 No topic matches “{query()}”. Try “physics”, “rust” or “cooking”.
               </div>
             }
@@ -179,9 +167,7 @@ export default function Search(props: Props) {
                   aria-selected={index() === activeIndex()}
                   onClick={() => choose(topic)}
                   onMouseEnter={() => setSelected(index())}
-                  class={`w-full text-left px-4 py-2 rounded-lg flex items-center justify-between gap-3 transition-colors ${
-                    isNight() ? "text-white" : "text-black"
-                  }`}
+                  class="w-full text-left px-4 py-2 rounded-lg flex items-center justify-between gap-3 transition-colors text-black"
                   style={{
                     "background-color":
                       index() === activeIndex() ? activeBackground() : "transparent",
@@ -190,33 +176,21 @@ export default function Search(props: Props) {
                   <span class="flex items-center gap-2 min-w-0">
                     <span class="font-semibold truncate">{topic.prettyName}</span>
                     <Show when={topic.category}>
-                      <span
-                        class={`text-[11px] font-medium rounded-full px-2 py-[1px] whitespace-nowrap border ${
-                          isNight()
-                            ? "text-neutral-400 border-neutral-700"
-                            : "text-[#696969] border-[#DDDDDD]"
-                        }`}
-                      >
+                      <span class="text-[11px] font-medium rounded-full px-2 py-[1px] whitespace-nowrap border text-[#696969] border-[#DDDDDD]">
                         {topic.category}
                       </span>
                     </Show>
                   </span>
-                  <Show when={topic.sourceCount !== undefined}>
-                    <span
-                      class={`text-[12px] whitespace-nowrap ${
-                        isNight() ? "text-neutral-500" : "text-[#696969]"
-                      }`}
-                    >
+                  <Show
+                    when={topic.sourceCount !== undefined}
+                    fallback={
+                      <span class="text-[12px] whitespace-nowrap text-[#9A9A9A]">
+                        open topic
+                      </span>
+                    }
+                  >
+                    <span class="text-[12px] whitespace-nowrap text-[#696969]">
                       {topic.sourceCount} sources
-                    </span>
-                  </Show>
-                  <Show when={topic.sourceCount === undefined}>
-                    <span
-                      class={`text-[12px] whitespace-nowrap ${
-                        isNight() ? "text-neutral-600" : "text-[#9A9A9A]"
-                      }`}
-                    >
-                      open topic
                     </span>
                   </Show>
                 </button>

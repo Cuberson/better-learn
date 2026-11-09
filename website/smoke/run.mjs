@@ -172,6 +172,8 @@ if (path === "/" || path === "") {
   const input = document.querySelector('input[role="combobox"]')
   if (!input) throw new Error("landing page has no search input")
 
+  report("landing search background", background(input))
+
   input.value = "pyhton"
   input.dispatchEvent(new window.Event("input", { bubbles: true }))
   await wait(60)
@@ -212,6 +214,20 @@ if (path === "/" || path === "") {
   if (!dialog) throw new Error("clicking a roadmap step did not open it")
   report("step dialog", dialog.textContent.replace(/\s+/g, " ").slice(0, 120))
   report("dialog background", background(dialog))
+
+  // every opened box has to introduce the step, get the reader started and
+  // hand over projects for the stage
+  for (const section of ["introduction", "get-started", "projects"]) {
+    const el = dialog.querySelector(`[data-section='${section}']`)
+    if (!el) throw new Error(`step dialog is missing the ${section} section`)
+    report(`${section} section`, el.textContent.replace(/\s+/g, " ").slice(0, 90))
+  }
+  const actions = dialog.querySelectorAll("[data-section='get-started'] ol li").length
+  const projects = dialog.querySelectorAll("[data-project]").length
+  report("get started actions", actions)
+  report("stage projects", projects)
+  if (actions < 3) throw new Error("get started lists fewer than three actions")
+  if (projects < 2) throw new Error("stage has fewer than two projects")
 
   // keyboard navigation through the roadmap
   document.dispatchEvent(
@@ -257,7 +273,12 @@ if (path === "/" || path === "") {
 
   const option = document.querySelector('[role="option"]')
   if (!option) throw new Error("top bar search returned no results")
-  report("nav search background", background(document.querySelector('[role="listbox"]')))
+  report(
+    "topic search bar",
+    `${background(navInput)} on ${window.getComputedStyle(navInput).color}, panel ${background(
+      document.querySelector('[role="listbox"]'),
+    )}`,
+  )
   report("nav search first result", normalise(option))
   option.click()
   await wait(80)

@@ -1,4 +1,4 @@
-import { defineTopic, s, st } from "../helpers"
+import { defineTopic, p, s, st } from "../helpers"
 
 // Making things: the web, security, games, blockchains and physical objects.
 
@@ -77,6 +77,21 @@ export const webDevelopment = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Static personal site", "Hand-written HTML and CSS, responsive, deployed to a real URL."),
+      p("Interactive widget", "A calculator or countdown built with plain JavaScript and the DOM."),
+    ],
+    intermediate: [
+      p("Full-stack app", "Frontend, API and database with accounts, deployed end to end."),
+      p("Explain the request", "Document every hop from typing a URL to pixels, with a diagram."),
+    ],
+    advanced: [
+      p("Ship and measure", "Add caching, a CDN, monitoring and a load test to your app."),
+      p("Scale a bottleneck", "Push your app to 10k requests per minute and write down what broke first."),
+    ],
+  },
+
 })
 
 export const cybersecurity = defineTopic({
@@ -117,7 +132,7 @@ export const cybersecurity = defineTopic({
       "Explain why HTTPS is secure and where it is not.",
       [
         s("Crypto101", "https://www.crypto101.io/", "book", "Free introduction to cryptography."),
-        s("PortSwigger — Cryptography", "https://portswigger.net/web-security", "course"),
+        s("Cryptography", "https://en.wikipedia.org/wiki/Cryptography", "article"),
       ],
     ),
     st(
@@ -154,6 +169,21 @@ export const cybersecurity = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Build a lab network", "Two virtual machines, a capture and a written reading of the traffic."),
+      p("Break your own app", "Find and fix XSS, SQL injection and CSRF in something you wrote."),
+    ],
+    intermediate: [
+      p("Beginner CTF track", "Finish a full beginner track and write up every challenge."),
+      p("Crypto exercises", "Work through the Crypto101 exercises and use AES-GCM correctly in code."),
+    ],
+    advanced: [
+      p("Write a detection rule", "Write a detection for a real attack and test it against collected logs."),
+      p("Responsible disclosure", "Find a bug in a bug-bounty target and write the report."),
+    ],
+  },
+
 })
 
 export const gameDevelopment = defineTopic({
@@ -183,7 +213,7 @@ export const gameDevelopment = defineTopic({
       "Finish and share a complete small game.",
       [
         s("Godot — Your First 2D Game", "https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html", "docs"),
-        s("Game Programming Patterns", "https://gameprogrammingpatterns.com/", "book", "Free book on the code structures games need."),
+        s("Game loop", "https://en.wikipedia.org/wiki/Game_loop", "article"),
       ],
     ),
     st(
@@ -227,10 +257,25 @@ export const gameDevelopment = defineTopic({
       "Explain the architecture of a game engine you use.",
       [
         s("Game Engine Architecture", "https://www.gameenginebook.com/", "book"),
-        s("Learn OpenGL — Advanced", "https://learnopengl.com/", "course"),
+        s("Game engine", "https://en.wikipedia.org/wiki/Game_engine", "article"),
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Pong clone", "A complete Pong with score, sound and restart."),
+      p("Game jam entry", "Ship something small for a 48 hour jam against a theme."),
+    ],
+    intermediate: [
+      p("Platformer vertical slice", "One level with physics, camera, enemies and menus."),
+      p("Shader toy set", "Recreate three effects as shaders in your engine."),
+    ],
+    advanced: [
+      p("Small engine", "Write a 2D engine loop with an entity system and profiling."),
+      p("Netcode prototype", "Add rollback or client-side prediction to a two player game."),
+    ],
+  },
+
 })
 
 export const blockchain = defineTopic({
@@ -308,6 +353,21 @@ export const blockchain = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Decode a block", "Pick a real block and decode its transactions by hand."),
+      p("Testnet wallet", "Create a wallet, send a test transaction and verify it on an explorer."),
+    ],
+    intermediate: [
+      p("Deploy a contract", "Write, test and deploy an ERC-20 or a small NFT on a testnet."),
+      p("Break a contract", "Complete Ethernaut and write the exploit for each level."),
+    ],
+    advanced: [
+      p("Consensus simulation", "Simulate a proof-of-work and proof-of-stake chain and show the cost of an attack."),
+      p("Bridge or rollup study", "Compare two scaling designs and write the trade-offs with numbers."),
+    ],
+  },
+
 })
 
 export const threeDPrinting = defineTopic({
@@ -326,7 +386,7 @@ export const threeDPrinting = defineTopic({
       "Explain what your printer will do with a model you download.",
       [
         s("All3DP — Beginner's Guide", "https://all3dp.com/1/beginners-guide-to-3d-printing-3d-printing-basics/", "article"),
-        s("Prusa Knowledge Base", "https://help.prusa3d.com/", "docs", "Practical, honest documentation."),
+        s("3D printing", "https://en.wikipedia.org/wiki/3D_printing", "article"),
       ],
     ),
     st(
@@ -336,8 +396,8 @@ export const threeDPrinting = defineTopic({
       "Bed levelling, filament loading, temperatures and your first calibration test.",
       "Print a calibration cube that comes out dimensionally accurate.",
       [
-        s("Printables", "https://www.printables.com/", "practice", "Free models, many with print profiles."),
-        s("Prusa Knowledge Base — First print", "https://help.prusa3d.com/", "docs"),
+        s("Printables — Models", "https://www.printables.com/", "practice", "Free models, many with print profiles."),
+        s("Prusa Knowledge Base", "https://help.prusa3d.com/", "docs"),
       ],
     ),
     st(
@@ -358,7 +418,7 @@ export const threeDPrinting = defineTopic({
       "Parametric CAD lets you design a part that actually fits what you measured.",
       "Design and print a functional part that solves a real problem.",
       [
-        s("FreeCAD — Documentation", "https://wiki.freecad.org/", "docs"),
+        s("FreeCAD — Wiki", "https://wiki.freecad.org/", "docs"),
         s("Fusion 360 — Learning", "https://www.autodesk.com/learn/ondemand/product/fusion-360", "course"),
       ],
     ),
@@ -370,7 +430,7 @@ export const threeDPrinting = defineTopic({
       "Pick the right material for a load-bearing or outdoor part.",
       [
         s("All3DP — Filament Guide", "https://all3dp.com/1/3d-printer-filament-types-3d-printing-3d-filament/", "article"),
-        s("Printables — Community", "https://www.printables.com/", "practice"),
+        s("3D printing filament", "https://en.wikipedia.org/wiki/3D_printing_filament", "article"),
       ],
     ),
     st(
@@ -380,9 +440,24 @@ export const threeDPrinting = defineTopic({
       "Printer maintenance, tuning, upgrades and small-batch manufacturing.",
       "Diagnose a mechanical failure and print reliably at scale.",
       [
-        s("Prusa Knowledge Base — Maintenance", "https://help.prusa3d.com/", "docs"),
+        s("3D printing processes", "https://en.wikipedia.org/wiki/3D_printing_processes", "article"),
         s("3D Printing Industry", "https://3dprintingindustry.com/", "article"),
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Calibration set", "Print a calibration cube, a benchy and a tolerance test and log the results."),
+      p("A part you actually need", "Design and print something useful for your desk or your bike."),
+    ],
+    intermediate: [
+      p("Two-part enclosure", "Model an enclosure with screw bosses and print both halves so they fit."),
+      p("Material comparison", "Print the same part in three materials and compare strength and finish."),
+    ],
+    advanced: [
+      p("Small production run", "Print 20 identical parts with consistent quality and cost them out."),
+      p("Printer rebuild", "Upgrade or rebuild a printer and document the accuracy before and after."),
+    ],
+  },
+
 })

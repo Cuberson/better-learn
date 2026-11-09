@@ -1,7 +1,6 @@
 import { Show, createSignal, onCleanup, onMount } from "solid-js"
 import { useNavigate } from "solid-start"
 import { Canvas, Graph, Anim } from "@nothing-but/force-graph"
-import { Num } from "@nothing-but/utils"
 import { getHankoCookie } from "../../lib/auth"
 import { safeQuery, type TopicsQueryResult } from "../../lib/api"
 import { useMobius } from "../root"
@@ -12,38 +11,8 @@ import {
   topicHref,
   type TopicSearchItem,
 } from "../lib/search"
+import { generateTopicGraph, themedContext } from "../lib/backgroundGraph"
 import Search from "../components/Search"
-
-export const graph_options = Graph.graphOptions({
-  inertia_strength: 0.3,
-  origin_strength: 0.01,
-  repel_distance: 22,
-  repel_strength: 0.5,
-})
-
-export function generateInitialGraph(length: number = 256): Graph.Graph {
-  const nodes: Graph.Node[] = Array.from({ length }, Graph.makeNode)
-  const edges: Graph.Edge[] = []
-
-  for (let i = 0; i < length; i++) {
-    const node = nodes[i]!
-
-    if (node.edges.length > 0 && Math.random() < 0.8) continue
-
-    const b_index = Num.random_int(length)
-    let node_b = nodes[b_index]!
-
-    if (node_b === node) {
-      node_b = nodes[(b_index + 1) % length]!
-    }
-
-    edges.push(Graph.connect(node, node_b))
-  }
-
-  Graph.randomizeNodePositions(nodes, graph_options.grid_size)
-
-  return Graph.makeGraph(graph_options, nodes, edges)
-}
 
 export default function Home() {
   const navigate = useNavigate()
@@ -78,7 +47,9 @@ export default function Home() {
 
   const [hankoCookie] = createSignal(getHankoCookie())
 
-  const graph = generateInitialGraph()
+  // every topic we support, drawn behind the search box
+  const background = generateTopicGraph(buildTopicSearchItems())
+  const graph = background.graph
 
   const el = (<canvas class="absolute w-full h-full" />) as HTMLCanvasElement
 
@@ -88,9 +59,10 @@ export default function Home() {
   const canvas = Canvas.canvasState({
     ...Canvas.default_options,
     el,
-    ctx,
+    ctx: themedContext(ctx),
     graph,
     init_scale: 2,
+    nodeLabel: (node) => background.labels.get(String(node.key)) ?? "",
   })
 
   const animation = Anim.frameAnimation({
@@ -118,7 +90,8 @@ export default function Home() {
       Anim.requestFrame(animation)
     },
     onNodeClick(node) {
-      console.log("click", node)
+      const topic = background.topics.get(String(node.key))
+      if (topic) navigate(topicHref(topic.name))
     },
     onNodeHover(node) {
       canvas.hovered_node = node

@@ -111,6 +111,7 @@ function validateCatalog(topics: TopicGuide[]) {
       problems.push(`topic "${topic.name}" has no steps`)
     }
 
+    const urlsInTopic = new Map<string, string>()
     const stepIds = new Set<string>()
     for (const step of topic.steps) {
       if (stepIds.has(step.id)) {
@@ -136,6 +137,16 @@ function validateCatalog(topics: TopicGuide[]) {
           )
         }
         stepUrls.add(source.url)
+
+        // the same link in two steps of one topic means one of the two titles
+        // is lying about what is behind it
+        const otherStep = urlsInTopic.get(source.url)
+        if (otherStep && otherStep !== step.id) {
+          problems.push(
+            `topic "${topic.name}" links ${source.url} from both "${otherStep}" and "${step.id}"`,
+          )
+        }
+        urlsInTopic.set(source.url, step.id)
       }
     }
   }

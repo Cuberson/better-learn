@@ -1,4 +1,4 @@
-import { defineTopic, s, st } from "../helpers"
+import { defineTopic, p, s, st } from "../helpers"
 
 // Programming languages + the tools every programmer ends up needing.
 // Every step lists the sources used both by the guide and by the roadmap.
@@ -88,7 +88,7 @@ export const javascript = defineTopic({
           "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules",
           "docs",
         ),
-        s("npm — Getting started", "https://docs.npmjs.com/getting-started", "docs"),
+        s("npm — Documentation", "https://docs.npmjs.com/", "docs"),
       ],
     ),
     st(
@@ -137,6 +137,21 @@ export const javascript = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Interactive to-do page", "Add, complete and delete tasks with plain DOM APIs and localStorage. Proves you can select elements, handle events and keep state in the page."),
+      p("Quiz game", "Ten questions, a score and an end screen. Proves functions, arrays and objects working together."),
+    ],
+    intermediate: [
+      p("Weather dashboard", "Fetch a public weather API, show loading and error states and cache the last result. Proves async JavaScript and modules."),
+      p("Bundled habit tracker", "Split a small app into ES modules, bundle it and ship a production build. Proves the tooling around the language."),
+    ],
+    advanced: [
+      p("Promise from scratch", "Implement a Promise with then/catch/finally and a microtask queue. Proves you understand the event loop."),
+      p("Profile a slow page", "Find a real bottleneck with the profiler, fix it and write down the before/after numbers."),
+    ],
+  },
+
 })
 
 export const typescript = defineTopic({
@@ -260,6 +275,21 @@ export const typescript = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Type a helper library", "Give five small utility functions real signatures and fix everything the compiler complains about."),
+      p("Convert a JavaScript file", "Take an old JS file and type it fully without falling back to any. Proves unions, narrowing and optional fields."),
+    ],
+    intermediate: [
+      p("Typed API client", "A client whose request, response and error types are inferred from the endpoint you call."),
+      p("Strict mode migration", "Turn on strict mode in a small project and fix every error honestly instead of casting it away."),
+    ],
+    advanced: [
+      p("Publish a typed package", "Ship a tiny package with declaration files, generics and a type-level test suite."),
+      p("Type-challenge set", "Solve ten type challenges and write one paragraph on why each solution works."),
+    ],
+  },
+
 })
 
 export const python = defineTopic({
@@ -376,6 +406,21 @@ export const python = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Command-line to-do", "A script that adds, lists and completes to-dos stored in a JSON file, driven by arguments."),
+      p("Word frequency report", "Read a text file and print the most common words as an aligned table."),
+    ],
+    intermediate: [
+      p("Personal web scraper", "Scrape a site into a CSV with requests and BeautifulSoup, wrapped in a small package with error handling."),
+      p("Expense tracking API", "Three endpoints, validation and tests for a small FastAPI service backed by SQLite."),
+    ],
+    advanced: [
+      p("Speed up a hot loop", "Rewrite a slow function as a compiled extension and show the benchmark before and after."),
+      p("Package with CI", "Publish a package with tests, type hints and a GitHub Actions workflow that runs on every push."),
+    ],
+  },
+
 })
 
 export const rust = defineTopic({
@@ -483,6 +528,21 @@ export const rust = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("CLI text stats", "Read a file and report lines, words and characters. Proves ownership and Cargo basics."),
+      p("Inventory program", "Model items with structs and enums and handle a missing item without panicking."),
+    ],
+    intermediate: [
+      p("Generic CSV parser", "Parse rows into any type that implements your trait. Proves traits, generics and lifetimes."),
+      p("Tested library crate", "Publish a small crate with unit tests, integration tests and doc comments."),
+    ],
+    advanced: [
+      p("Safe wrapper over C", "Wrap a C function in a documented safe API. Proves unsafe and FFI discipline."),
+      p("Declarative macro", "Write a macro that removes the boilerplate from your earlier crate."),
+    ],
+  },
+
 })
 
 export const go = defineTopic({
@@ -565,6 +625,21 @@ export const go = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("CLI file tool", "A tool that searches or renames files with flags. Proves packages, errors and the standard library."),
+      p("Link checker", "Check the status of a list of URLs and report failures with proper error wrapping."),
+    ],
+    intermediate: [
+      p("Worker pool", "Process 10k jobs with a fixed number of goroutines, a context timeout and graceful shutdown."),
+      p("Tested JSON API", "A small REST service backed by SQLite with table-driven tests."),
+    ],
+    advanced: [
+      p("Benchmark and profile", "Profile a service with pprof, fix the allocation that dominates and prove it with benchmarks."),
+      p("Scheduler visualiser", "Instrument goroutines to show how work moves between Ps and Ms in the runtime."),
+    ],
+  },
+
 })
 
 export const react = defineTopic({
@@ -642,6 +717,21 @@ export const react = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Filterable list", "A searchable list with local state and controlled inputs."),
+      p("Multi-step form", "A signup flow with per-step validation and a summary screen."),
+    ],
+    intermediate: [
+      p("Data-backed app with routing", "Three routes, fetched data and honest loading and error UI."),
+      p("Optimistic updates", "A list where edits appear instantly and roll back when the request fails."),
+    ],
+    advanced: [
+      p("Mini hooks runtime", "Implement useState and useEffect yourself and re-render a small app with it."),
+      p("Fix a re-render storm", "Find one, fix it and show the before/after render counts."),
+    ],
+  },
+
 })
 
 export const sql = defineTopic({
@@ -719,6 +809,21 @@ export const sql = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Answer ten questions", "Query a public dataset to answer ten business questions with SELECT, WHERE and ORDER BY."),
+      p("Monthly sales report", "Aggregate orders per month and per customer with GROUP BY and HAVING."),
+    ],
+    intermediate: [
+      p("Design a schema", "Model a small product with normalisation, constraints and foreign keys, then seed it."),
+      p("Speed up a slow query", "Take a query that takes seconds, add the right index and show the plan before and after."),
+    ],
+    advanced: [
+      p("Tiny storage engine", "Build a B-tree backed key/value store in a language you know. Proves how databases store data."),
+      p("Window function report", "Build a retention or ranking report on a large public dataset and optimise it."),
+    ],
+  },
+
 })
 
 export const algorithms = defineTopic({
@@ -771,7 +876,7 @@ export const algorithms = defineTopic({
       "Recognise which classic technique a new problem maps onto.",
       [
         s("CP-Algorithms", "https://cp-algorithms.com/", "docs"),
-        s("MIT 6.006 — Lectures", "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/", "video"),
+        s("Breadth-first search", "https://en.wikipedia.org/wiki/Breadth-first_search", "article"),
       ],
     ),
     st(
@@ -792,8 +897,8 @@ export const algorithms = defineTopic({
       "Divide and conquer, greedy proofs, amortised analysis and NP-completeness — the ideas behind the patterns.",
       "Prove that a solution is correct and know when it cannot be fast.",
       [
-        s("CLRS — Algorithm Design", "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/", "book"),
-        s("CP-Algorithms — Advanced", "https://cp-algorithms.com/", "docs"),
+        s("Dynamic programming", "https://en.wikipedia.org/wiki/Dynamic_programming", "article"),
+        s("Greedy algorithm", "https://en.wikipedia.org/wiki/Greedy_algorithm", "article"),
       ],
     ),
     st(
@@ -808,6 +913,21 @@ export const algorithms = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Implement the core structures", "Dynamic array, linked list, stack and queue, each with tests."),
+      p("Hash map from scratch", "Build a hash table with resizing and collision handling, then compare with the standard one."),
+    ],
+    intermediate: [
+      p("Path finder", "BFS, DFS and Dijkstra on a real grid, drawn to the screen."),
+      p("Thirty problems by pattern", "Work through 30 ordered problems, writing the pattern down before the solution."),
+    ],
+    advanced: [
+      p("Dynamic programming set", "Solve ten DP problems, writing the recurrence before any code."),
+      p("Virtual contest", "Complete a full timed contest and write up every problem you could not solve."),
+    ],
+  },
+
 })
 
 export const linux = defineTopic({
@@ -841,7 +961,7 @@ export const linux = defineTopic({
       "Find and fix a permission problem or a runaway process.",
       [
         s("Introduction to Linux (TLDP)", "https://tldp.org/LDP/intro-linux/html/index.html", "book"),
-        s("Linux Journey — Advanced", "https://linuxjourney.com/", "course"),
+        s("Linux kernel", "https://en.wikipedia.org/wiki/Linux_kernel", "article"),
       ],
     ),
     st(
@@ -852,7 +972,7 @@ export const linux = defineTopic({
       "Automate a repetitive multi-step task with a script.",
       [
         s("Advanced Bash-Scripting Guide", "https://tldp.org/LDP/abs/html/", "book"),
-        s("The Missing Semester of Your CS Education", "https://missing.csail.mit.edu/", "course", "MIT course on the tools of the trade."),
+        s("Shell script", "https://en.wikipedia.org/wiki/Shell_script", "article"),
       ],
     ),
     st(
@@ -863,7 +983,7 @@ export const linux = defineTopic({
       "Recreate your whole environment on a fresh machine in minutes.",
       [
         s("The Missing Semester — Tooling", "https://missing.csail.mit.edu/", "course"),
-        s("Linux Journey — Networking", "https://linuxjourney.com/", "course"),
+        s("Unix shell", "https://en.wikipedia.org/wiki/Unix_shell", "article"),
       ],
     ),
     st(
@@ -889,6 +1009,21 @@ export const linux = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Terminal-only day", "Do a full day of work without leaving the shell: files, search, processes, permissions."),
+      p("Permission repair", "Break a directory tree's permissions on purpose, then fix it with chmod, chown and ACLs."),
+    ],
+    intermediate: [
+      p("Idempotent backup script", "A script that can run twice safely, with cron, logging and error handling."),
+      p("Host a service", "Run an app behind a reverse proxy with systemd, logs and a firewall."),
+    ],
+    advanced: [
+      p("Trace a program", "Use strace and perf to explain exactly what a binary does when it starts."),
+      p("Load a kernel module", "Build, load and unload a trivial module and read the output in dmesg."),
+    ],
+  },
+
 })
 
 export const git = defineTopic({
@@ -922,7 +1057,7 @@ export const git = defineTopic({
           "https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell",
           "book",
         ),
-        s("Learn Git Branching — Remote", "https://learngitbranching.js.org/", "interactive"),
+        s("Git — Basic branching and merging", "https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging", "book"),
       ],
     ),
     st(
@@ -982,4 +1117,19 @@ export const git = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Build an honest history", "Take a messy folder and commit it as ten meaningful commits."),
+      p("Branch and merge", "Create a feature branch, merge it and resolve a real conflict."),
+    ],
+    intermediate: [
+      p("Collaborate on a pull request", "Open a PR in a real repository and address review comments with amend and rebase."),
+      p("Recover lost work", "Delete a commit, drop a branch, then recover both with the reflog."),
+    ],
+    advanced: [
+      p("Rebuild a commit by hand", "Inspect blobs, trees and commits with cat-file and create a commit without git commit."),
+      p("Hooks that protect you", "Add pre-commit hooks that run tests and block secrets."),
+    ],
+  },
+
 })

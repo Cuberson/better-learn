@@ -1,4 +1,4 @@
-import { defineTopic, s, st } from "../helpers"
+import { defineTopic, p, s, st } from "../helpers"
 
 // Natural sciences: the classics plus the two that explain the modern world.
 
@@ -40,7 +40,7 @@ export const physics = defineTopic({
       "Set up a problem from scratch without a template.",
       [
         s("The Physics Classroom", "https://www.physicsclassroom.com/", "course"),
-        s("MIT 8.01 — Problem sets", "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/", "practice"),
+        s("Classical mechanics", "https://en.wikipedia.org/wiki/Classical_mechanics", "article"),
       ],
     ),
     st(
@@ -77,6 +77,21 @@ export const physics = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Measure g at home", "Measure gravity with household objects and estimate the uncertainty."),
+      p("Sixty mechanics problems", "A full textbook chapter's problems, every one attempted."),
+    ],
+    intermediate: [
+      p("Simulate a system", "A pendulum, orbit or circuit simulation that matches the theory."),
+      p("Electromagnetism experiment", "Build a coil, measure the field and compare with the formula."),
+    ],
+    advanced: [
+      p("Relativity exercise set", "Lorentz transformations, time dilation and the twin paradox worked through."),
+      p("Read a paper", "Take a modern physics paper and write a summary a physicist would accept."),
+    ],
+  },
+
 })
 
 export const quantumMechanics = defineTopic({
@@ -127,7 +142,7 @@ export const quantumMechanics = defineTopic({
       "Orbitals, spin, the hydrogen atom and why the periodic table has the shape it does.",
       "Explain atomic structure using quantum numbers.",
       [
-        s("MIT 8.04 — Course notes", "https://ocw.mit.edu/courses/8-04-quantum-physics-i-spring-2016/", "course"),
+        s("Hydrogen atom", "https://en.wikipedia.org/wiki/Hydrogen_atom", "article"),
         s("HyperPhysics — Quantum", "http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html", "article"),
       ],
     ),
@@ -139,7 +154,7 @@ export const quantumMechanics = defineTopic({
       "Discuss interpretations without repeating pop-science myths.",
       [
         s("Stanford Encyclopedia of Philosophy — Quantum Mechanics", "https://plato.stanford.edu/entries/qm/", "article"),
-        s("Theoretical Minimum — Quantum Mechanics", "https://theoreticalminimum.com/", "course"),
+        s("The Theoretical Minimum — Courses", "https://theoreticalminimum.com/", "course"),
       ],
     ),
     st(
@@ -154,6 +169,21 @@ export const quantumMechanics = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Explain double slit", "Explain the experiment with the maths, no hand waving allowed."),
+      p("Operator warm-up", "Thirty complex vector and operator exercises."),
+    ],
+    intermediate: [
+      p("Infinite well", "Solve the particle in a box and plot the states."),
+      p("Hydrogen orbitals", "Plot hydrogen orbitals numerically and explain the quantum numbers."),
+    ],
+    advanced: [
+      p("Bell inequality", "Compute a Bell violation for a simple state by hand."),
+      p("Quantum circuit", "Build, run and interpret a small circuit on a simulator."),
+    ],
+  },
+
 })
 
 export const chemistry = defineTopic({
@@ -182,8 +212,8 @@ export const chemistry = defineTopic({
       "Covalent and ionic bonds, Lewis structures and VSEPR — why molecules look the way they do.",
       "Draw a valid structure and predict a molecule's geometry.",
       [
-        s("Chem LibreTexts", "https://chem.libretexts.org/", "docs", "Huge free library of chemistry notes."),
-        s("OpenStax — Chemistry 2e", "https://openstax.org/details/books/chemistry-2e", "book"),
+        s("VSEPR theory", "https://en.wikipedia.org/wiki/VSEPR_theory", "article"),
+        s("Chemical bond", "https://en.wikipedia.org/wiki/Chemical_bond", "article"),
       ],
     ),
     st(
@@ -193,8 +223,8 @@ export const chemistry = defineTopic({
       "Balancing reactions, moles, limiting reagents and yields. The quantitative core of the subject.",
       "Calculate how much product a reaction will produce.",
       [
-        s("Khan Academy — Chemical Reactions", "https://www.khanacademy.org/science/chemistry", "course"),
-        s("Chem LibreTexts — Stoichiometry", "https://chem.libretexts.org/", "docs"),
+        s("Stoichiometry", "https://en.wikipedia.org/wiki/Stoichiometry", "article"),
+        s("Limiting reagent", "https://en.wikipedia.org/wiki/Limiting_reagent", "article"),
       ],
     ),
     st(
@@ -204,8 +234,8 @@ export const chemistry = defineTopic({
       "Enthalpy, entropy and free energy decide whether a reaction can happen; kinetics decides how fast.",
       "Predict whether a reaction is spontaneous and roughly how fast.",
       [
-        s("Chem LibreTexts — Thermodynamics", "https://chem.libretexts.org/", "docs"),
-        s("OpenStax — Chemistry 2e", "https://openstax.org/details/books/chemistry-2e", "book"),
+        s("LibreTexts — Chemistry", "https://chem.libretexts.org/", "docs"),
+        s("Chemical thermodynamics", "https://en.wikipedia.org/wiki/Chemical_thermodynamics", "article"),
       ],
     ),
     st(
@@ -231,6 +261,21 @@ export const chemistry = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Periodic trends explainer", "Explain ten trends from electron configuration alone."),
+      p("Twenty molecules", "Name and build twenty molecules with the correct geometry."),
+    ],
+    intermediate: [
+      p("Stoichiometry experiment", "Calculate a yield, then run the reaction and compare."),
+      p("Titration", "Perform a titration and compute the concentration with an error estimate."),
+    ],
+    advanced: [
+      p("Mechanism set", "Draw five organic mechanisms step by step with curly arrows."),
+      p("Paper presentation", "Read a recent paper in your area and present it to someone."),
+    ],
+  },
+
 })
 
 export const biology = defineTopic({
@@ -259,7 +304,7 @@ export const biology = defineTopic({
       "DNA, transcription, translation and inheritance. This is the machinery that makes life copy itself.",
       "Explain how a gene becomes a trait.",
       [
-        s("OpenStax — Biology 2e", "https://openstax.org/details/books/biology-2e", "book"),
+        s("Genetics", "https://en.wikipedia.org/wiki/Genetics", "article"),
         s("Nature Scitable — Genetics", "https://www.nature.com/scitable/", "article"),
       ],
     ),
@@ -271,7 +316,7 @@ export const biology = defineTopic({
       "Explain a biological feature in evolutionary terms.",
       [
         s("HHMI BioInteractive", "https://www.biointeractive.org/", "course", "Free films and classroom resources."),
-        s("Khan Academy — Evolution", "https://www.khanacademy.org/science/biology", "course"),
+        s("Evolution", "https://en.wikipedia.org/wiki/Evolution", "article"),
       ],
     ),
     st(
@@ -282,7 +327,7 @@ export const biology = defineTopic({
       "Reason about how a body responds to a change.",
       [
         s("OpenStax — Anatomy and Physiology", "https://openstax.org/details/books/anatomy-and-physiology-2e", "book"),
-        s("NCBI Bookshelf — Biology", "https://www.ncbi.nlm.nih.gov/books/", "book"),
+        s("Physiology", "https://en.wikipedia.org/wiki/Physiology", "article"),
       ],
     ),
     st(
@@ -292,8 +337,8 @@ export const biology = defineTopic({
       "Gene regulation, sequencing and CRISPR. This is where modern biology is actually done.",
       "Understand a sequencing dataset at a high level.",
       [
-        s("NCBI Bookshelf — Molecular Biology", "https://www.ncbi.nlm.nih.gov/books/", "book"),
-        s("Nature Scitable", "https://www.nature.com/scitable/", "article"),
+        s("NCBI Bookshelf", "https://www.ncbi.nlm.nih.gov/books/", "book"),
+        s("Molecular biology", "https://en.wikipedia.org/wiki/Molecular_biology", "article"),
       ],
     ),
     st(
@@ -308,6 +353,21 @@ export const biology = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Cell from memory", "Draw a cell and label every organelle with its job."),
+      p("Genetics crosses", "Twenty Punnett square problems including linked traits."),
+    ],
+    intermediate: [
+      p("Genome exploration", "Find a gene in a public genome browser and explain what it does."),
+      p("Physiology data", "Analyse a public physiology dataset and report the pattern."),
+    ],
+    advanced: [
+      p("Present a paper", "Present a recent research paper with the methods you would question."),
+      p("Reproduce an analysis", "Re-run the analysis of an open dataset from a published paper."),
+    ],
+  },
+
 })
 
 export const astronomy = defineTopic({
@@ -347,7 +407,7 @@ export const astronomy = defineTopic({
       "How stars fuse elements, why they die in different ways, and what that means for the elements in your body.",
       "Trace the life cycle of a star of a given mass.",
       [
-        s("OpenStax — Astronomy 2e", "https://openstax.org/details/books/astronomy-2e", "book"),
+        s("Stellar evolution", "https://en.wikipedia.org/wiki/Stellar_evolution", "article"),
         s("Khan Academy — Cosmology and Astronomy", "https://www.khanacademy.org/science/cosmology-and-astronomy", "course"),
       ],
     ),
@@ -385,6 +445,21 @@ export const astronomy = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Star hop", "Find ten objects with binoculars using only a star chart."),
+      p("Scale model", "Build a scale model of the solar system and explain the distances."),
+    ],
+    intermediate: [
+      p("Observing log", "A month of observations with sketches and conditions."),
+      p("Deep sky image", "Take and stack a photo of a nebula or galaxy."),
+    ],
+    advanced: [
+      p("Analyse telescope data", "Take public data and extract a light curve or a spectrum."),
+      p("Exoplanet transit", "Detect a transit in public data and estimate the planet's size."),
+    ],
+  },
+
 })
 
 export const neuroscience = defineTopic({
@@ -403,7 +478,7 @@ export const neuroscience = defineTopic({
       "Explain how a signal travels from one neuron to the next.",
       [
         s("BrainFacts", "https://www.brainfacts.org/", "article", "Short vetted explainers from the Society for Neuroscience."),
-        s("Neuroscience Online (UTHealth)", "https://nba.uth.tmc.edu/neuroscience/", "book"),
+        s("Neuron", "https://en.wikipedia.org/wiki/Neuron", "article"),
       ],
     ),
     st(
@@ -435,8 +510,8 @@ export const neuroscience = defineTopic({
       "Plasticity, hippocampus and consolidation. How experience physically changes the brain.",
       "Explain what happens in the brain while you learn a new skill.",
       [
-        s("MIT 9.13 — Course notes", "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/", "course"),
-        s("BrainFacts — Learning and Memory", "https://www.brainfacts.org/", "article"),
+        s("Neuroplasticity", "https://en.wikipedia.org/wiki/Neuroplasticity", "article"),
+        s("Memory", "https://en.wikipedia.org/wiki/Memory", "article"),
       ],
     ),
     st(
@@ -446,7 +521,7 @@ export const neuroscience = defineTopic({
       "fMRI, EEG, electrophysiology and optogenetics — what each technique can and cannot show.",
       "Critique a brain imaging headline.",
       [
-        s("Neuroscience Online", "https://nba.uth.tmc.edu/neuroscience/", "book"),
+        s("Electroencephalography", "https://en.wikipedia.org/wiki/Electroencephalography", "article"),
         s("Nature Neuroscience", "https://www.nature.com/neuro/", "paper"),
       ],
     ),
@@ -462,4 +537,19 @@ export const neuroscience = defineTopic({
       ],
     ),
   ],
+  projects: {
+    beginner: [
+      p("Neuron explainer", "Explain resting and action potentials with the equations behind them."),
+      p("Brain atlas", "Learn thirty structures and what each one does."),
+    ],
+    intermediate: [
+      p("Analyse EEG data", "Take a public EEG dataset and find an effect in it."),
+      p("Methods comparison", "Compare fMRI, EEG and single cell recording on what they can and cannot show."),
+    ],
+    advanced: [
+      p("Hodgkin-Huxley model", "Implement it and reproduce a spike."),
+      p("Network model", "Build a small spiking network and study one emergent behaviour."),
+    ],
+  },
+
 })
