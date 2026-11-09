@@ -13,6 +13,8 @@ export type RoadmapNode = {
   introduction: string[]
   /** concrete first actions, one per list item */
   getStarted: string[]
+  /** hands on practice for this step */
+  exercises: string[]
   /** projects to build once the stage this step belongs to is finished */
   projects: Project[]
 }
@@ -169,6 +171,50 @@ export function buildGetStarted(node: RoadmapNode): string[] {
   return actions
 }
 
+
+/**
+ * Practice for a step. Roads are learned by doing, so every step gets a set of
+ * drills built from its own sources: a hands on task, a recall test and
+ * something to build on top of it.
+ */
+export function buildExercises(node: RoadmapNode): string[] {
+  if (node.step.exercises && node.step.exercises.length > 0) {
+    return node.step.exercises
+  }
+
+  const exercises: string[] = []
+  const practice = node.step.sources.filter(
+    (source) => source.kind === "practice" || source.kind === "interactive",
+  )
+  const primary = node.step.sources[0]
+
+  if (practice[0]) {
+    exercises.push(
+      `Do every exercise inside ${practice[0].title}. Mark the ones you could not finish and redo them a day later.`,
+    )
+  } else if (primary) {
+    exercises.push(
+      `Put ${primary.title} away and rebuild its main example from memory. Open it again and note every difference. 20 minutes.`,
+    )
+  }
+
+  exercises.push(
+    `Without looking at anything, write down the three ideas that matter most about ${node.step.title.toLowerCase()}. Then check what you missed — that list is your revision plan.`,
+  )
+
+  if (node.step.outcome) {
+    exercises.push(
+      `Do this for real, on something you care about rather than the example: ${lowerFirst(withoutStop(node.step.outcome))}.`,
+    )
+  }
+
+  exercises.push(
+    `Teach it back: explain ${node.step.title.toLowerCase()} out loud in three minutes to somebody who does not know it, and answer their questions.`,
+  )
+
+  return exercises
+}
+
 /** Projects of a stage, or an empty list when the topic has none yet. */
 export function stageProjects(topic: TopicGuide, stage: Stage): Project[] {
   return topic.projects?.[stage] ?? []
@@ -197,6 +243,7 @@ export function buildRoadmap(topic: TopicGuide): Roadmap {
         sourceCount: step.sources.length,
         introduction: [],
         getStarted: [],
+        exercises: [],
         projects: [],
       }
       nodes.push(node)
@@ -217,6 +264,7 @@ export function buildRoadmap(topic: TopicGuide): Roadmap {
     node.isLast = index === nodes.length - 1
     node.introduction = buildIntroduction(topic, node, nodes[index - 1])
     node.getStarted = buildGetStarted(node)
+    node.exercises = buildExercises(node)
     node.projects = stageProjects(topic, node.stage)
   })
 

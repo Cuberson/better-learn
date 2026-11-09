@@ -19,6 +19,18 @@ export const mathematics = defineTopic({
       [
         s("Khan Academy — Math", "https://www.khanacademy.org/math", "course", "Free, structured and exercise driven."),
         s("Paul's Online Math Notes", "https://tutorial.math.lamar.edu/", "docs"),
+        s(
+          "Set (mathematics)",
+          "https://en.wikipedia.org/wiki/Set_(mathematics)",
+          "article",
+          "Background reading on Set (mathematics) for this step.",
+        ),
+        s(
+          "AoPS — Alcumus",
+          "https://artofproblemsolving.com/alcumus",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -30,6 +42,18 @@ export const mathematics = defineTopic({
       [
         s("Trigonometry", "https://en.wikipedia.org/wiki/Trigonometry", "article"),
         s("Precalculus", "https://en.wikipedia.org/wiki/Precalculus", "article"),
+        s(
+          "Exponential function",
+          "https://en.wikipedia.org/wiki/Exponential_function",
+          "article",
+          "Background reading on Exponential function for this step.",
+        ),
+        s(
+          "Wolfram MathWorld",
+          "https://mathworld.wolfram.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -41,6 +65,18 @@ export const mathematics = defineTopic({
       [
         s("Book of Proof", "https://www.people.vcu.edu/~rhammack/BookOfProof/", "book", "Free, gentle introduction to proofs."),
         s("Mathematics for Computer Science (MIT)", "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/", "course"),
+        s(
+          "Mathematical proof",
+          "https://en.wikipedia.org/wiki/Mathematical_proof",
+          "article",
+          "Background reading on Mathematical proof for this step.",
+        ),
+        s(
+          "Cut the Knot",
+          "https://www.cut-the-knot.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -52,6 +88,18 @@ export const mathematics = defineTopic({
       [
         s("MIT OpenCourseWare — Mathematics", "https://ocw.mit.edu/search/?d=Mathematics", "course"),
         s("3Blue1Brown", "https://www.3blue1brown.com/", "video", "Visual intuition for hard ideas."),
+        s(
+          "Number theory",
+          "https://en.wikipedia.org/wiki/Number_theory",
+          "article",
+          "Background reading on Number theory for this step.",
+        ),
+        s(
+          "Desmos — Graphing calculator",
+          "https://www.desmos.com/calculator",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -63,6 +111,18 @@ export const mathematics = defineTopic({
       [
         s("Art of Problem Solving", "https://artofproblemsolving.com/", "practice"),
         s("Brilliant — Math", "https://brilliant.org/courses/", "interactive"),
+        s(
+          "Mathematical problem",
+          "https://en.wikipedia.org/wiki/Mathematical_problem",
+          "article",
+          "Background reading on Mathematical problem for this step.",
+        ),
+        s(
+          "Mathematics Stack Exchange",
+          "https://math.stackexchange.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -74,6 +134,18 @@ export const mathematics = defineTopic({
       [
         s("Real analysis", "https://en.wikipedia.org/wiki/Real_analysis", "article"),
         s("Abstract algebra", "https://en.wikipedia.org/wiki/Abstract_algebra", "article"),
+        s(
+          "Topology",
+          "https://en.wikipedia.org/wiki/Topology",
+          "article",
+          "Background reading on Topology for this step.",
+        ),
+        s(
+          "OpenStax — Mathematics",
+          "https://openstax.org/subjects/math",
+          "book",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -81,17 +153,19 @@ export const mathematics = defineTopic({
     beginner: [
       p("Problem set routine", "Fifty problems from one textbook, every solution written out, not just circled."),
       p("Function sketchbook", "Sketch and explain fifteen functions without a calculator."),
+      p("Speed drills", "Twenty timed algebra drills a day for two weeks."),
     ],
     intermediate: [
       p("Proof portfolio", "Ten complete proofs, written in LaTeX, each checked by someone."),
       p("Work through a real text", "The first third of an analysis or algebra book, exercises included."),
+      p("Study group", "Present one theorem a week and take questions."),
     ],
     advanced: [
       p("Lecture notes", "Follow a graduate lecture series and write notes you could hand to a friend."),
       p("One small result", "Prove a small theorem yourself and write it up formally."),
+      p("Read a paper", "Read a recent paper and summarise its main theorem."),
     ],
   },
-
 })
 
 export const calculus = defineTopic({
@@ -111,6 +185,18 @@ export const calculus = defineTopic({
       [
         s("3Blue1Brown — Essence of Calculus", "https://www.3blue1brown.com/topics/calculus", "video"),
         s("Khan Academy — Calculus", "https://www.khanacademy.org/math/calculus-1", "course"),
+        s(
+          "Function (mathematics)",
+          "https://en.wikipedia.org/wiki/Function_(mathematics)",
+          "article",
+          "Background reading on Function (mathematics) for this step.",
+        ),
+        s(
+          "AoPS — Alcumus",
+          "https://artofproblemsolving.com/alcumus",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -122,6 +208,18 @@ export const calculus = defineTopic({
       [
         s("Paul's Online Math Notes — Limits", "https://tutorial.math.lamar.edu/Classes/CalcI/LimitsIntro.aspx", "docs"),
         s("MIT 18.01 — Single Variable Calculus", "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/", "course"),
+        s(
+          "Limit (mathematics)",
+          "https://en.wikipedia.org/wiki/Limit_(mathematics)",
+          "article",
+          "Background reading on Limit (mathematics) for this step.",
+        ),
+        s(
+          "Brilliant — Math courses",
+          "https://brilliant.org/courses/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -133,6 +231,18 @@ export const calculus = defineTopic({
       [
         s("Paul's Online Math Notes — Derivatives", "https://tutorial.math.lamar.edu/Classes/CalcI/DerivativeIntro.aspx", "docs"),
         s("Derivative", "https://en.wikipedia.org/wiki/Derivative", "article"),
+        s(
+          "Product rule",
+          "https://en.wikipedia.org/wiki/Product_rule",
+          "article",
+          "Background reading on Product rule for this step.",
+        ),
+        s(
+          "Wolfram MathWorld",
+          "https://mathworld.wolfram.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -144,6 +254,18 @@ export const calculus = defineTopic({
       [
         s("Paul's Online Math Notes — Integrals", "https://tutorial.math.lamar.edu/Classes/CalcI/IntegralsIntro.aspx", "docs"),
         s("Khan Academy — Integrals", "https://www.khanacademy.org/math/integral-calculus", "course"),
+        s(
+          "Fundamental theorem of calculus",
+          "https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus",
+          "article",
+          "Background reading on Fundamental theorem of calculus for this step.",
+        ),
+        s(
+          "Cut the Knot",
+          "https://www.cut-the-knot.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -155,6 +277,18 @@ export const calculus = defineTopic({
       [
         s("Maximum and minimum", "https://en.wikipedia.org/wiki/Maximum_and_minimum", "article"),
         s("OpenStax — Calculus Volume 1", "https://openstax.org/details/books/calculus-volume-1", "book"),
+        s(
+          "Taylor series",
+          "https://en.wikipedia.org/wiki/Taylor_series",
+          "article",
+          "Background reading on Taylor series for this step.",
+        ),
+        s(
+          "Desmos — Graphing calculator",
+          "https://www.desmos.com/calculator",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -166,6 +300,18 @@ export const calculus = defineTopic({
       [
         s("MIT 18.02 — Multivariable Calculus", "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/", "course"),
         s("OpenStax — Calculus Volume 3", "https://openstax.org/details/books/calculus-volume-3", "book"),
+        s(
+          "Partial derivative",
+          "https://en.wikipedia.org/wiki/Partial_derivative",
+          "article",
+          "Background reading on Partial derivative for this step.",
+        ),
+        s(
+          "Mathematics Stack Exchange",
+          "https://math.stackexchange.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -173,17 +319,19 @@ export const calculus = defineTopic({
     beginner: [
       p("Forty derivatives", "Differentiate forty functions and check every answer with a CAS."),
       p("Limit notebook", "Compute ten limits by hand and justify each step."),
+      p("Graph matching", "Match fifteen graphs to their derivatives."),
     ],
     intermediate: [
       p("Three optimisation problems", "Solve real optimisation problems with derivatives and explain the answer."),
       p("Area and volume", "Compute areas and volumes with integrals and verify them numerically."),
+      p("Series practice", "Ten convergence problems with full justification."),
     ],
     advanced: [
       p("Multivariable problem set", "Gradients, double integrals and a vector field problem worked end to end."),
       p("Physics application", "Model a real physical system with a differential equation and solve it."),
+      p("Numerical solver", "Implement one and compare it with the analytic answer."),
     ],
   },
-
 })
 
 export const linearAlgebra = defineTopic({
@@ -203,6 +351,18 @@ export const linearAlgebra = defineTopic({
       [
         s("3Blue1Brown — Essence of Linear Algebra", "https://www.3blue1brown.com/topics/linear-algebra", "video", "The best visual introduction that exists."),
         s("Immersive Linear Algebra", "https://immersivemath.com/ila/index.html", "interactive"),
+        s(
+          "Euclidean vector",
+          "https://en.wikipedia.org/wiki/Euclidean_vector",
+          "article",
+          "Background reading on Euclidean vector for this step.",
+        ),
+        s(
+          "AoPS — Alcumus",
+          "https://artofproblemsolving.com/alcumus",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -214,6 +374,18 @@ export const linearAlgebra = defineTopic({
       [
         s("MIT 18.06 — Linear Algebra", "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/", "course", "Gilbert Strang's classic lectures."),
         s("Matrix (mathematics)", "https://en.wikipedia.org/wiki/Matrix_(mathematics)", "article"),
+        s(
+          "Linear map",
+          "https://en.wikipedia.org/wiki/Linear_map",
+          "article",
+          "Background reading on Linear map for this step.",
+        ),
+        s(
+          "Brilliant — Math courses",
+          "https://brilliant.org/courses/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -225,6 +397,18 @@ export const linearAlgebra = defineTopic({
       [
         s("Interactive Linear Algebra", "https://textbooks.math.gatech.edu/ila/", "book"),
         s("System of linear equations", "https://en.wikipedia.org/wiki/System_of_linear_equations", "article"),
+        s(
+          "Gaussian elimination",
+          "https://en.wikipedia.org/wiki/Gaussian_elimination",
+          "article",
+          "Background reading on Gaussian elimination for this step.",
+        ),
+        s(
+          "Wolfram MathWorld",
+          "https://mathworld.wolfram.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -236,6 +420,18 @@ export const linearAlgebra = defineTopic({
       [
         s("Eigenvalues and eigenvectors", "https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors", "article"),
         s("Diagonalizable matrix", "https://en.wikipedia.org/wiki/Diagonalizable_matrix", "article"),
+        s(
+          "Determinant",
+          "https://en.wikipedia.org/wiki/Determinant",
+          "article",
+          "Background reading on Determinant for this step.",
+        ),
+        s(
+          "Cut the Knot",
+          "https://www.cut-the-knot.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -247,6 +443,18 @@ export const linearAlgebra = defineTopic({
       [
         s("Mathematics for Machine Learning", "https://mml-book.github.io/", "book"),
         s("Linear Algebra (Strang, MIT)", "https://math.mit.edu/~gs/linearalgebra/", "book"),
+        s(
+          "Principal component analysis",
+          "https://en.wikipedia.org/wiki/Principal_component_analysis",
+          "article",
+          "Background reading on Principal component analysis for this step.",
+        ),
+        s(
+          "Desmos — Graphing calculator",
+          "https://www.desmos.com/calculator",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -258,6 +466,18 @@ export const linearAlgebra = defineTopic({
       [
         s("Vector space", "https://en.wikipedia.org/wiki/Vector_space", "article"),
         s("Book of Proof", "https://www.people.vcu.edu/~rhammack/BookOfProof/", "book"),
+        s(
+          "Linear algebra",
+          "https://en.wikipedia.org/wiki/Linear_algebra",
+          "article",
+          "Background reading on Linear algebra for this step.",
+        ),
+        s(
+          "Mathematics Stack Exchange",
+          "https://math.stackexchange.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -265,17 +485,19 @@ export const linearAlgebra = defineTopic({
     beginner: [
       p("Transform visualiser", "A small program that draws a 2D transform from any matrix you type."),
       p("Vector geometry set", "Ten geometry problems solved with vectors instead of trigonometry."),
+      p("Matrix drills", "Hand compute determinants, inverses and ranks for twenty matrices."),
     ],
     intermediate: [
       p("Least squares fit", "Fit a line and a plane to real data with the normal equations."),
       p("PCA from scratch", "Compute eigenvectors yourself and reduce a dataset with PCA."),
+      p("Image compression", "Compress a photo with the SVD and measure the loss."),
     ],
     advanced: [
       p("Spectral theorem proof", "Prove the spectral theorem and rank-nullity, written cleanly."),
       p("Low rank compression", "Compress an image with the SVD and measure the quality loss."),
+      p("Diagonalise by hand", "Five matrices, then check each numerically."),
     ],
   },
-
 })
 
 export const probability = defineTopic({
@@ -295,6 +517,18 @@ export const probability = defineTopic({
       [
         s("Seeing Theory", "https://seeing-theory.brown.edu/", "interactive", "Beautiful visual explanations."),
         s("Khan Academy — Probability", "https://www.khanacademy.org/math/statistics-probability", "course"),
+        s(
+          "Probability",
+          "https://en.wikipedia.org/wiki/Probability",
+          "article",
+          "Background reading on Probability for this step.",
+        ),
+        s(
+          "AoPS — Alcumus",
+          "https://artofproblemsolving.com/alcumus",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -306,6 +540,18 @@ export const probability = defineTopic({
       [
         s("Introduction to Probability (Blitzstein)", "https://projects.iq.harvard.edu/stat110", "course", "Harvard Stat 110, free lectures."),
         s("Probability Course", "https://www.probabilitycourse.com/", "book"),
+        s(
+          "Permutation",
+          "https://en.wikipedia.org/wiki/Permutation",
+          "article",
+          "Background reading on Permutation for this step.",
+        ),
+        s(
+          "Brilliant — Math courses",
+          "https://brilliant.org/courses/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -317,6 +563,18 @@ export const probability = defineTopic({
       [
         s("Random variable", "https://en.wikipedia.org/wiki/Random_variable", "article"),
         s("MIT 6.041 — Probabilistic Systems Analysis", "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/", "course"),
+        s(
+          "Normal distribution",
+          "https://en.wikipedia.org/wiki/Normal_distribution",
+          "article",
+          "Background reading on Normal distribution for this step.",
+        ),
+        s(
+          "Wolfram MathWorld",
+          "https://mathworld.wolfram.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -328,6 +586,18 @@ export const probability = defineTopic({
       [
         s("Conditional probability", "https://en.wikipedia.org/wiki/Conditional_probability", "article"),
         s("Bayes' theorem", "https://en.wikipedia.org/wiki/Bayes%27_theorem", "article"),
+        s(
+          "Bayesian inference",
+          "https://en.wikipedia.org/wiki/Bayesian_inference",
+          "article",
+          "Background reading on Bayesian inference for this step.",
+        ),
+        s(
+          "Cut the Knot",
+          "https://www.cut-the-knot.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -339,6 +609,12 @@ export const probability = defineTopic({
       [
         s("Law of large numbers", "https://en.wikipedia.org/wiki/Law_of_large_numbers", "article"),
         s("Central limit theorem", "https://en.wikipedia.org/wiki/Central_limit_theorem", "article"),
+        s(
+          "Desmos — Graphing calculator",
+          "https://www.desmos.com/calculator",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -350,6 +626,18 @@ export const probability = defineTopic({
       [
         s("Stochastic process", "https://en.wikipedia.org/wiki/Stochastic_process", "article"),
         s("Markov chain", "https://en.wikipedia.org/wiki/Markov_chain", "article"),
+        s(
+          "Brownian motion",
+          "https://en.wikipedia.org/wiki/Brownian_motion",
+          "article",
+          "Background reading on Brownian motion for this step.",
+        ),
+        s(
+          "Mathematics Stack Exchange",
+          "https://math.stackexchange.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -357,17 +645,19 @@ export const probability = defineTopic({
     beginner: [
       p("Dice simulator", "Simulate 100k rolls and compare the histogram with the theory."),
       p("Twenty counting problems", "Combinatorics problems with the reasoning written out."),
+      p("Paradox essay", "Explain three probability paradoxes precisely."),
     ],
     intermediate: [
       p("Bayes calculator", "A tool that updates beliefs for a real diagnostic test, with a result you can explain."),
       p("Fit a distribution", "Fit two distributions to a dataset and check which fits better."),
+      p("House edge", "Compute the edge of a casino game and verify by simulation."),
     ],
     advanced: [
       p("Markov chain model", "Model a real process as a Markov chain and compute the stationary distribution."),
       p("Monte Carlo estimate", "Estimate an integral or a rare event by simulation and quantify the error."),
+      p("Random walk study", "Simulate walks and verify the scaling laws."),
     ],
   },
-
 })
 
 export const statistics = defineTopic({
@@ -387,6 +677,18 @@ export const statistics = defineTopic({
       [
         s("OpenIntro Statistics", "https://www.openintro.org/book/os/", "book", "Free textbook used in universities."),
         s("Khan Academy — Statistics", "https://www.khanacademy.org/math/statistics-probability", "course"),
+        s(
+          "Standard deviation",
+          "https://en.wikipedia.org/wiki/Standard_deviation",
+          "article",
+          "Background reading on Standard deviation for this step.",
+        ),
+        s(
+          "AoPS — Alcumus",
+          "https://artofproblemsolving.com/alcumus",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -398,6 +700,12 @@ export const statistics = defineTopic({
       [
         s("Simple random sample", "https://en.wikipedia.org/wiki/Simple_random_sample", "article"),
         s("Sampling (statistics)", "https://en.wikipedia.org/wiki/Sampling_(statistics)", "article"),
+        s(
+          "Brilliant — Math courses",
+          "https://brilliant.org/courses/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -409,6 +717,18 @@ export const statistics = defineTopic({
       [
         s("Statistical inference", "https://en.wikipedia.org/wiki/Statistical_inference", "article"),
         s("Statistical hypothesis testing", "https://en.wikipedia.org/wiki/Statistical_hypothesis_testing", "article"),
+        s(
+          "P-value",
+          "https://en.wikipedia.org/wiki/P-value",
+          "article",
+          "Background reading on P-value for this step.",
+        ),
+        s(
+          "Wolfram MathWorld",
+          "https://mathworld.wolfram.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -420,6 +740,18 @@ export const statistics = defineTopic({
       [
         s("An Introduction to Statistical Learning", "https://www.statlearning.com/", "book", "Free book, the standard on applied modelling."),
         s("StatQuest", "https://statquest.org/", "video"),
+        s(
+          "Linear regression",
+          "https://en.wikipedia.org/wiki/Linear_regression",
+          "article",
+          "Background reading on Linear regression for this step.",
+        ),
+        s(
+          "Cut the Knot",
+          "https://www.cut-the-knot.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -431,6 +763,18 @@ export const statistics = defineTopic({
       [
         s("Penn State STAT 500", "https://online.stat.psu.edu/stat500/", "course"),
         s("Randomized controlled trial", "https://en.wikipedia.org/wiki/Randomized_controlled_trial", "article"),
+        s(
+          "Causal inference",
+          "https://en.wikipedia.org/wiki/Causal_inference",
+          "article",
+          "Background reading on Causal inference for this step.",
+        ),
+        s(
+          "Desmos — Graphing calculator",
+          "https://www.desmos.com/calculator",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -442,6 +786,18 @@ export const statistics = defineTopic({
       [
         s("Statistical Rethinking (lectures)", "https://xcelab.net/rm/statistical-rethinking/", "course"),
         s("Bayesian Methods for Hackers", "https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers", "book"),
+        s(
+          "Bayesian statistics",
+          "https://en.wikipedia.org/wiki/Bayesian_statistics",
+          "article",
+          "Background reading on Bayesian statistics for this step.",
+        ),
+        s(
+          "Mathematics Stack Exchange",
+          "https://math.stackexchange.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -449,15 +805,17 @@ export const statistics = defineTopic({
     beginner: [
       p("Descriptive report", "Take a public dataset and write a full descriptive summary with plots."),
       p("Audit a bad study", "Find five methodological problems in a published study."),
+      p("Chart library", "Recreate five chart types from a textbook with real data."),
     ],
     intermediate: [
       p("Run a hypothesis test", "Design the test, run it and report effect size, not just p."),
       p("Validated regression", "Build, check and interpret a regression on real data."),
+      p("A/B test analysis", "Take a public experiment dataset and analyse it end to end."),
     ],
     advanced: [
       p("Bayesian version", "Redo your regression as a Bayesian model and compare the conclusions."),
       p("Power analysis", "Design an experiment with a power calculation and a pre-registered plan."),
+      p("Bootstrap practice", "Build confidence intervals by hand and compare methods."),
     ],
   },
-
 })

@@ -19,6 +19,18 @@ export const physics = defineTopic({
       [
         s("MIT 8.01 — Classical Mechanics", "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/", "course", "Walter Lewin's lectures are famously good."),
         s("Khan Academy — Physics", "https://www.khanacademy.org/science/physics", "course"),
+        s(
+          "Newton's laws of motion",
+          "https://en.wikipedia.org/wiki/Newton's_laws_of_motion",
+          "article",
+          "Background reading on Newton's laws of motion for this step.",
+        ),
+        s(
+          "PhET — interactive simulations",
+          "https://phet.colorado.edu/",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -30,6 +42,18 @@ export const physics = defineTopic({
       [
         s("The Feynman Lectures, Volume I", "https://www.feynmanlectures.caltech.edu/I_toc.html", "book", "Free online, still unmatched for insight."),
         s("OpenStax — College Physics", "https://openstax.org/details/books/college-physics-2e", "book"),
+        s(
+          "Second law of thermodynamics",
+          "https://en.wikipedia.org/wiki/Second_law_of_thermodynamics",
+          "article",
+          "Background reading on Second law of thermodynamics for this step.",
+        ),
+        s(
+          "arXiv — preprints",
+          "https://arxiv.org/",
+          "paper",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -41,6 +65,18 @@ export const physics = defineTopic({
       [
         s("The Physics Classroom", "https://www.physicsclassroom.com/", "course"),
         s("Classical mechanics", "https://en.wikipedia.org/wiki/Classical_mechanics", "article"),
+        s(
+          "Dimensional analysis",
+          "https://en.wikipedia.org/wiki/Dimensional_analysis",
+          "article",
+          "Background reading on Dimensional analysis for this step.",
+        ),
+        s(
+          "Science News",
+          "https://www.sciencenews.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -52,6 +88,18 @@ export const physics = defineTopic({
       [
         s("MIT 8.02 — Electricity and Magnetism", "https://ocw.mit.edu/courses/8-02sc-physics-ii-electricity-and-magnetism-fall-2010/", "course"),
         s("HyperPhysics", "http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html", "article"),
+        s(
+          "Maxwell's equations",
+          "https://en.wikipedia.org/wiki/Maxwell's_equations",
+          "article",
+          "Background reading on Maxwell's equations for this step.",
+        ),
+        s(
+          "Nature — News",
+          "https://www.nature.com/news",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -63,6 +111,18 @@ export const physics = defineTopic({
       [
         s("The Feynman Lectures, Volume II", "https://www.feynmanlectures.caltech.edu/II_toc.html", "book"),
         s("MIT OpenCourseWare — Relativity", "https://ocw.mit.edu/search/?q=relativity", "course"),
+        s(
+          "Spacetime",
+          "https://en.wikipedia.org/wiki/Spacetime",
+          "article",
+          "Background reading on Spacetime for this step.",
+        ),
+        s(
+          "BioInteractive",
+          "https://www.biointeractive.org/",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -74,6 +134,18 @@ export const physics = defineTopic({
       [
         s("Theoretical Minimum (Susskind)", "https://theoreticalminimum.com/", "course"),
         s("The Feynman Lectures, Volume III", "https://www.feynmanlectures.caltech.edu/III_toc.html", "book"),
+        s(
+          "Standard Model",
+          "https://en.wikipedia.org/wiki/Standard_Model",
+          "article",
+          "Background reading on Standard Model for this step.",
+        ),
+        s(
+          "Quanta Magazine",
+          "https://www.quantamagazine.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -81,17 +153,19 @@ export const physics = defineTopic({
     beginner: [
       p("Measure g at home", "Measure gravity with household objects and estimate the uncertainty."),
       p("Sixty mechanics problems", "A full textbook chapter's problems, every one attempted."),
+      p("Pendulum measurement", "Time a hundred swings and extract g with error bars."),
     ],
     intermediate: [
       p("Simulate a system", "A pendulum, orbit or circuit simulation that matches the theory."),
       p("Electromagnetism experiment", "Build a coil, measure the field and compare with the formula."),
+      p("Circuit lab", "Build three circuits and measure voltage and current."),
     ],
     advanced: [
       p("Relativity exercise set", "Lorentz transformations, time dilation and the twin paradox worked through."),
       p("Read a paper", "Take a modern physics paper and write a summary a physicist would accept."),
+      p("Numerical orbit", "Integrate a two body orbit and check conservation laws."),
     ],
   },
-
 })
 
 export const quantumMechanics = defineTopic({
@@ -111,6 +185,18 @@ export const quantumMechanics = defineTopic({
       [
         s("The Feynman Lectures — Quantum Behaviour", "https://www.feynmanlectures.caltech.edu/III_01.html", "book", "Chapter III-1 needs no prerequisites."),
         s("Khan Academy — Quantum Physics", "https://www.khanacademy.org/science/physics/quantum-physics", "course"),
+        s(
+          "Black-body radiation",
+          "https://en.wikipedia.org/wiki/Black-body_radiation",
+          "article",
+          "Background reading on Black-body radiation for this step.",
+        ),
+        s(
+          "PhET — interactive simulations",
+          "https://phet.colorado.edu/",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -122,6 +208,18 @@ export const quantumMechanics = defineTopic({
       [
         s("Quantum Country", "https://quantum.country/", "interactive", "Spaced-repetition essays from Andy Matuschak and Michael Nielsen."),
         s("Linear Algebra — MIT 18.06", "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/", "course"),
+        s(
+          "Hilbert space",
+          "https://en.wikipedia.org/wiki/Hilbert_space",
+          "article",
+          "Background reading on Hilbert space for this step.",
+        ),
+        s(
+          "arXiv — preprints",
+          "https://arxiv.org/",
+          "paper",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -133,6 +231,18 @@ export const quantumMechanics = defineTopic({
       [
         s("MIT 8.04 — Quantum Physics I", "https://ocw.mit.edu/courses/8-04-quantum-physics-i-spring-2016/", "course"),
         s("The Feynman Lectures, Volume III", "https://www.feynmanlectures.caltech.edu/III_toc.html", "book"),
+        s(
+          "Schrödinger equation",
+          "https://en.wikipedia.org/wiki/Schrödinger_equation",
+          "article",
+          "Background reading on Schrödinger equation for this step.",
+        ),
+        s(
+          "OpenStax — Science",
+          "https://openstax.org/subjects/science",
+          "book",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -144,6 +254,18 @@ export const quantumMechanics = defineTopic({
       [
         s("Hydrogen atom", "https://en.wikipedia.org/wiki/Hydrogen_atom", "article"),
         s("HyperPhysics — Quantum", "http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html", "article"),
+        s(
+          "Quantum number",
+          "https://en.wikipedia.org/wiki/Quantum_number",
+          "article",
+          "Background reading on Quantum number for this step.",
+        ),
+        s(
+          "Science News",
+          "https://www.sciencenews.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -155,6 +277,18 @@ export const quantumMechanics = defineTopic({
       [
         s("Stanford Encyclopedia of Philosophy — Quantum Mechanics", "https://plato.stanford.edu/entries/qm/", "article"),
         s("The Theoretical Minimum — Courses", "https://theoreticalminimum.com/", "course"),
+        s(
+          "Copenhagen interpretation",
+          "https://en.wikipedia.org/wiki/Copenhagen_interpretation",
+          "article",
+          "Background reading on Copenhagen interpretation for this step.",
+        ),
+        s(
+          "MIT OpenCourseWare",
+          "https://ocw.mit.edu/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -166,6 +300,18 @@ export const quantumMechanics = defineTopic({
       [
         s("Quantum Country — Quantum Computing", "https://quantum.country/qcvc", "interactive"),
         s("Qiskit Textbook", "https://qiskit.org/learn/", "course"),
+        s(
+          "Quantum circuit",
+          "https://en.wikipedia.org/wiki/Quantum_circuit",
+          "article",
+          "Background reading on Quantum circuit for this step.",
+        ),
+        s(
+          "Nature — News",
+          "https://www.nature.com/news",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -173,17 +319,19 @@ export const quantumMechanics = defineTopic({
     beginner: [
       p("Explain double slit", "Explain the experiment with the maths, no hand waving allowed."),
       p("Operator warm-up", "Thirty complex vector and operator exercises."),
+      p("Wave packet plot", "Plot a Gaussian packet evolving in time."),
     ],
     intermediate: [
       p("Infinite well", "Solve the particle in a box and plot the states."),
       p("Hydrogen orbitals", "Plot hydrogen orbitals numerically and explain the quantum numbers."),
+      p("Perturbation exercises", "Ten first order perturbation problems."),
     ],
     advanced: [
       p("Bell inequality", "Compute a Bell violation for a simple state by hand."),
       p("Quantum circuit", "Build, run and interpret a small circuit on a simulator."),
+      p("Entanglement circuit", "Build a Bell state circuit and measure the correlations."),
     ],
   },
-
 })
 
 export const chemistry = defineTopic({
@@ -203,6 +351,18 @@ export const chemistry = defineTopic({
       [
         s("OpenStax — Chemistry 2e", "https://openstax.org/details/books/chemistry-2e", "book", "Free, complete textbook."),
         s("Khan Academy — Chemistry", "https://www.khanacademy.org/science/chemistry", "course"),
+        s(
+          "Periodic table",
+          "https://en.wikipedia.org/wiki/Periodic_table",
+          "article",
+          "Background reading on Periodic table for this step.",
+        ),
+        s(
+          "PhET — interactive simulations",
+          "https://phet.colorado.edu/",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -214,6 +374,18 @@ export const chemistry = defineTopic({
       [
         s("VSEPR theory", "https://en.wikipedia.org/wiki/VSEPR_theory", "article"),
         s("Chemical bond", "https://en.wikipedia.org/wiki/Chemical_bond", "article"),
+        s(
+          "Molecular geometry",
+          "https://en.wikipedia.org/wiki/Molecular_geometry",
+          "article",
+          "Background reading on Molecular geometry for this step.",
+        ),
+        s(
+          "HyperPhysics",
+          "http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -225,6 +397,18 @@ export const chemistry = defineTopic({
       [
         s("Stoichiometry", "https://en.wikipedia.org/wiki/Stoichiometry", "article"),
         s("Limiting reagent", "https://en.wikipedia.org/wiki/Limiting_reagent", "article"),
+        s(
+          "Mole (unit)",
+          "https://en.wikipedia.org/wiki/Mole_(unit)",
+          "article",
+          "Background reading on Mole (unit) for this step.",
+        ),
+        s(
+          "arXiv — preprints",
+          "https://arxiv.org/",
+          "paper",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -236,6 +420,18 @@ export const chemistry = defineTopic({
       [
         s("LibreTexts — Chemistry", "https://chem.libretexts.org/", "docs"),
         s("Chemical thermodynamics", "https://en.wikipedia.org/wiki/Chemical_thermodynamics", "article"),
+        s(
+          "Chemical kinetics",
+          "https://en.wikipedia.org/wiki/Chemical_kinetics",
+          "article",
+          "Background reading on Chemical kinetics for this step.",
+        ),
+        s(
+          "Science News",
+          "https://www.sciencenews.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -247,6 +443,18 @@ export const chemistry = defineTopic({
       [
         s("Master Organic Chemistry", "https://www.masterorganicchemistry.com/", "article"),
         s("Khan Academy — Organic Chemistry", "https://www.khanacademy.org/science/organic-chemistry", "course"),
+        s(
+          "Organic chemistry",
+          "https://en.wikipedia.org/wiki/Organic_chemistry",
+          "article",
+          "Background reading on Organic chemistry for this step.",
+        ),
+        s(
+          "MIT OpenCourseWare",
+          "https://ocw.mit.edu/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -258,6 +466,18 @@ export const chemistry = defineTopic({
       [
         s("Chemistry World", "https://www.chemistryworld.com/", "article"),
         s("Nature Chemistry", "https://www.nature.com/nchem/", "paper"),
+        s(
+          "Nuclear magnetic resonance",
+          "https://en.wikipedia.org/wiki/Nuclear_magnetic_resonance",
+          "article",
+          "Background reading on Nuclear magnetic resonance for this step.",
+        ),
+        s(
+          "Nature — News",
+          "https://www.nature.com/news",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -265,17 +485,19 @@ export const chemistry = defineTopic({
     beginner: [
       p("Periodic trends explainer", "Explain ten trends from electron configuration alone."),
       p("Twenty molecules", "Name and build twenty molecules with the correct geometry."),
+      p("Balancing equations", "Balance fifty equations without a solver."),
     ],
     intermediate: [
       p("Stoichiometry experiment", "Calculate a yield, then run the reaction and compare."),
       p("Titration", "Perform a titration and compute the concentration with an error estimate."),
+      p("Kinetics fit", "Fit a rate law to a public dataset."),
     ],
     advanced: [
       p("Mechanism set", "Draw five organic mechanisms step by step with curly arrows."),
       p("Paper presentation", "Read a recent paper in your area and present it to someone."),
+      p("Computational chemistry", "Optimise a small molecule with free software."),
     ],
   },
-
 })
 
 export const biology = defineTopic({
@@ -295,6 +517,18 @@ export const biology = defineTopic({
       [
         s("OpenStax — Biology 2e", "https://openstax.org/details/books/biology-2e", "book", "Free and comprehensive."),
         s("Khan Academy — Biology", "https://www.khanacademy.org/science/biology", "course"),
+        s(
+          "Cell (biology)",
+          "https://en.wikipedia.org/wiki/Cell_(biology)",
+          "article",
+          "Background reading on Cell (biology) for this step.",
+        ),
+        s(
+          "PhET — interactive simulations",
+          "https://phet.colorado.edu/",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -306,6 +540,18 @@ export const biology = defineTopic({
       [
         s("Genetics", "https://en.wikipedia.org/wiki/Genetics", "article"),
         s("Nature Scitable — Genetics", "https://www.nature.com/scitable/", "article"),
+        s(
+          "Mendelian inheritance",
+          "https://en.wikipedia.org/wiki/Mendelian_inheritance",
+          "article",
+          "Background reading on Mendelian inheritance for this step.",
+        ),
+        s(
+          "HyperPhysics",
+          "http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -317,6 +563,18 @@ export const biology = defineTopic({
       [
         s("HHMI BioInteractive", "https://www.biointeractive.org/", "course", "Free films and classroom resources."),
         s("Evolution", "https://en.wikipedia.org/wiki/Evolution", "article"),
+        s(
+          "Natural selection",
+          "https://en.wikipedia.org/wiki/Natural_selection",
+          "article",
+          "Background reading on Natural selection for this step.",
+        ),
+        s(
+          "arXiv — preprints",
+          "https://arxiv.org/",
+          "paper",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -328,6 +586,18 @@ export const biology = defineTopic({
       [
         s("OpenStax — Anatomy and Physiology", "https://openstax.org/details/books/anatomy-and-physiology-2e", "book"),
         s("Physiology", "https://en.wikipedia.org/wiki/Physiology", "article"),
+        s(
+          "Homeostasis",
+          "https://en.wikipedia.org/wiki/Homeostasis",
+          "article",
+          "Background reading on Homeostasis for this step.",
+        ),
+        s(
+          "Science News",
+          "https://www.sciencenews.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -339,6 +609,18 @@ export const biology = defineTopic({
       [
         s("NCBI Bookshelf", "https://www.ncbi.nlm.nih.gov/books/", "book"),
         s("Molecular biology", "https://en.wikipedia.org/wiki/Molecular_biology", "article"),
+        s(
+          "DNA replication",
+          "https://en.wikipedia.org/wiki/DNA_replication",
+          "article",
+          "Background reading on DNA replication for this step.",
+        ),
+        s(
+          "MIT OpenCourseWare",
+          "https://ocw.mit.edu/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -350,6 +632,18 @@ export const biology = defineTopic({
       [
         s("Nature", "https://www.nature.com/", "paper"),
         s("bioRxiv", "https://www.biorxiv.org/", "paper", "Preprints, the newest work in biology."),
+        s(
+          "Peer review",
+          "https://en.wikipedia.org/wiki/Peer_review",
+          "article",
+          "Background reading on Peer review for this step.",
+        ),
+        s(
+          "Quanta Magazine",
+          "https://www.quantamagazine.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -357,17 +651,19 @@ export const biology = defineTopic({
     beginner: [
       p("Cell from memory", "Draw a cell and label every organelle with its job."),
       p("Genetics crosses", "Twenty Punnett square problems including linked traits."),
+      p("Lab notebook", "Keep one for a month of small home experiments."),
     ],
     intermediate: [
       p("Genome exploration", "Find a gene in a public genome browser and explain what it does."),
       p("Physiology data", "Analyse a public physiology dataset and report the pattern."),
+      p("PCR explainer", "Design a protocol and explain every ingredient."),
     ],
     advanced: [
       p("Present a paper", "Present a recent research paper with the methods you would question."),
       p("Reproduce an analysis", "Re-run the analysis of an open dataset from a published paper."),
+      p("CRISPR case study", "Read one paper deeply and write the ethical analysis."),
     ],
   },
-
 })
 
 export const astronomy = defineTopic({
@@ -387,6 +683,18 @@ export const astronomy = defineTopic({
       [
         s("Stellarium", "https://stellarium.org/", "interactive", "Free planetarium software."),
         s("NASA — Skywatching", "https://science.nasa.gov/skywatching/", "docs"),
+        s(
+          "Celestial sphere",
+          "https://en.wikipedia.org/wiki/Celestial_sphere",
+          "article",
+          "Background reading on Celestial sphere for this step.",
+        ),
+        s(
+          "PhET — interactive simulations",
+          "https://phet.colorado.edu/",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -398,6 +706,18 @@ export const astronomy = defineTopic({
       [
         s("OpenStax — Astronomy 2e", "https://openstax.org/details/books/astronomy-2e", "book", "Free college-level textbook."),
         s("NASA — Solar System", "https://science.nasa.gov/solar-system/", "docs"),
+        s(
+          "Formation and evolution of the Solar System",
+          "https://en.wikipedia.org/wiki/Formation_and_evolution_of_the_Solar_System",
+          "article",
+          "Background reading on Formation and evolution of the Solar System for this step.",
+        ),
+        s(
+          "HyperPhysics",
+          "http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -409,6 +729,18 @@ export const astronomy = defineTopic({
       [
         s("Stellar evolution", "https://en.wikipedia.org/wiki/Stellar_evolution", "article"),
         s("Khan Academy — Cosmology and Astronomy", "https://www.khanacademy.org/science/cosmology-and-astronomy", "course"),
+        s(
+          "Main sequence",
+          "https://en.wikipedia.org/wiki/Main_sequence",
+          "article",
+          "Background reading on Main sequence for this step.",
+        ),
+        s(
+          "Science News",
+          "https://www.sciencenews.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -420,6 +752,18 @@ export const astronomy = defineTopic({
       [
         s("NASA — Universe", "https://science.nasa.gov/universe/", "docs"),
         s("ESA — Space Science", "https://www.esa.int/Science_Exploration/Space_Science", "docs"),
+        s(
+          "Milky Way",
+          "https://en.wikipedia.org/wiki/Milky_Way",
+          "article",
+          "Background reading on Milky Way for this step.",
+        ),
+        s(
+          "MIT OpenCourseWare",
+          "https://ocw.mit.edu/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -431,6 +775,18 @@ export const astronomy = defineTopic({
       [
         s("Sky & Telescope", "https://skyandtelescope.org/", "article"),
         s("NASA — Citizen Science", "https://science.nasa.gov/citizen-science/", "practice"),
+        s(
+          "Astrophotography",
+          "https://en.wikipedia.org/wiki/Astrophotography",
+          "article",
+          "Background reading on Astrophotography for this step.",
+        ),
+        s(
+          "Nature — News",
+          "https://www.nature.com/news",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -442,6 +798,18 @@ export const astronomy = defineTopic({
       [
         s("arXiv — Astrophysics", "https://arxiv.org/list/astro-ph/recent", "paper"),
         s("NASA ADS", "https://ui.adsabs.harvard.edu/", "docs", "Search every astronomy paper ever published."),
+        s(
+          "Astrophysics",
+          "https://en.wikipedia.org/wiki/Astrophysics",
+          "article",
+          "Background reading on Astrophysics for this step.",
+        ),
+        s(
+          "BioInteractive",
+          "https://www.biointeractive.org/",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -449,17 +817,19 @@ export const astronomy = defineTopic({
     beginner: [
       p("Star hop", "Find ten objects with binoculars using only a star chart."),
       p("Scale model", "Build a scale model of the solar system and explain the distances."),
+      p("Moon diary", "Photograph the moon daily for a month and log its phases."),
     ],
     intermediate: [
       p("Observing log", "A month of observations with sketches and conditions."),
       p("Deep sky image", "Take and stack a photo of a nebula or galaxy."),
+      p("Meteor count", "Count meteors during a shower and submit to a citizen science project."),
     ],
     advanced: [
       p("Analyse telescope data", "Take public data and extract a light curve or a spectrum."),
       p("Exoplanet transit", "Detect a transit in public data and estimate the planet's size."),
+      p("Stellar spectrum", "Identify the lines in a public spectrum."),
     ],
   },
-
 })
 
 export const neuroscience = defineTopic({
@@ -479,6 +849,18 @@ export const neuroscience = defineTopic({
       [
         s("BrainFacts", "https://www.brainfacts.org/", "article", "Short vetted explainers from the Society for Neuroscience."),
         s("Neuron", "https://en.wikipedia.org/wiki/Neuron", "article"),
+        s(
+          "Action potential",
+          "https://en.wikipedia.org/wiki/Action_potential",
+          "article",
+          "Background reading on Action potential for this step.",
+        ),
+        s(
+          "PhET — interactive simulations",
+          "https://phet.colorado.edu/",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -490,6 +872,18 @@ export const neuroscience = defineTopic({
       [
         s("Neuroscience Online", "https://nba.uth.tmc.edu/neuroscience/", "book"),
         s("Neuroscientifically Challenged", "https://neuroscientificallychallenged.com/", "article"),
+        s(
+          "Cerebral cortex",
+          "https://en.wikipedia.org/wiki/Cerebral_cortex",
+          "article",
+          "Background reading on Cerebral cortex for this step.",
+        ),
+        s(
+          "HyperPhysics",
+          "http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -501,6 +895,18 @@ export const neuroscience = defineTopic({
       [
         s("MIT 9.13 — The Human Brain", "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/", "course"),
         s("NCBI — Neuroscience (Purves)", "https://www.ncbi.nlm.nih.gov/books/NBK10799/", "book"),
+        s(
+          "Sensory nervous system",
+          "https://en.wikipedia.org/wiki/Sensory_nervous_system",
+          "article",
+          "Background reading on Sensory nervous system for this step.",
+        ),
+        s(
+          "arXiv — preprints",
+          "https://arxiv.org/",
+          "paper",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -512,6 +918,18 @@ export const neuroscience = defineTopic({
       [
         s("Neuroplasticity", "https://en.wikipedia.org/wiki/Neuroplasticity", "article"),
         s("Memory", "https://en.wikipedia.org/wiki/Memory", "article"),
+        s(
+          "Hippocampus",
+          "https://en.wikipedia.org/wiki/Hippocampus",
+          "article",
+          "Background reading on Hippocampus for this step.",
+        ),
+        s(
+          "OpenStax — Science",
+          "https://openstax.org/subjects/science",
+          "book",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -523,6 +941,18 @@ export const neuroscience = defineTopic({
       [
         s("Electroencephalography", "https://en.wikipedia.org/wiki/Electroencephalography", "article"),
         s("Nature Neuroscience", "https://www.nature.com/neuro/", "paper"),
+        s(
+          "Functional magnetic resonance imaging",
+          "https://en.wikipedia.org/wiki/Functional_magnetic_resonance_imaging",
+          "article",
+          "Background reading on Functional magnetic resonance imaging for this step.",
+        ),
+        s(
+          "Science News",
+          "https://www.sciencenews.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -534,6 +964,18 @@ export const neuroscience = defineTopic({
       [
         s("Theoretical Neuroscience (Dayan & Abbott)", "https://mitpress.mit.edu/9780262541855/theoretical-neuroscience/", "book"),
         s("Neuromatch Academy", "https://compneuro.neuromatch.io/", "course", "Free computational neuroscience course."),
+        s(
+          "Computational neuroscience",
+          "https://en.wikipedia.org/wiki/Computational_neuroscience",
+          "article",
+          "Background reading on Computational neuroscience for this step.",
+        ),
+        s(
+          "Khan Academy — Science",
+          "https://www.khanacademy.org/science",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -541,15 +983,17 @@ export const neuroscience = defineTopic({
     beginner: [
       p("Neuron explainer", "Explain resting and action potentials with the equations behind them."),
       p("Brain atlas", "Learn thirty structures and what each one does."),
+      p("Dissection study", "Watch a full dissection and label structures as they appear."),
     ],
     intermediate: [
       p("Analyse EEG data", "Take a public EEG dataset and find an effect in it."),
       p("Methods comparison", "Compare fMRI, EEG and single cell recording on what they can and cannot show."),
+      p("Reaction time experiment", "Run one on friends and analyse the data."),
     ],
     advanced: [
       p("Hodgkin-Huxley model", "Implement it and reproduce a spike."),
       p("Network model", "Build a small spiking network and study one emergent behaviour."),
+      p("Connectome analysis", "Analyse a small public connectome."),
     ],
   },
-
 })

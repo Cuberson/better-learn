@@ -56,6 +56,8 @@ export type Step = {
   intro?: string
   /** first concrete actions. Written for you from the sources when missing. */
   getStarted?: string[]
+  /** practice tasks. Written for you from the sources when missing. */
+  exercises?: string[]
   sources: Source[]
 }
 

@@ -84,16 +84,29 @@ globalThis.ResizeObserver = NoopObserver
 globalThis.IntersectionObserver = NoopObserver
 
 // jsdom has no canvas implementation, the landing page draws a force graph
+// counts the drawing calls so the smoke test can prove the background really
+// strokes lines between the topic words
+const drawStats = { lineTo: 0, moveTo: 0, stroke: 0 }
 const fakeContext = new Proxy(
   {},
   {
     get: (target, property) => {
       if (property in target) return target[property]
-      return () => ({ width: 0 })
+      const name = String(property)
+      return () => {
+        if (name in drawStats) drawStats[name]++
+        return { width: 0 }
+      }
     },
     set: () => true,
   },
 )
+
+// jsdom reports a 0x0 canvas, and the graph skips drawing at that size
+for (const property of ["clientWidth", "clientHeight"])
+  Object.defineProperty(window.HTMLCanvasElement.prototype, property, {
+    get: () => (property === "clientWidth" ? 1200 : 800),
+  })
 window.HTMLCanvasElement.prototype.getContext = () => fakeContext
 
 const errors = []
@@ -174,6 +187,21 @@ if (path === "/" || path === "") {
 
   report("landing search background", background(input))
 
+  const canvas = document.querySelector("canvas")
+  if (!canvas) throw new Error("landing background has no canvas")
+  report("landing canvas", `${window.getComputedStyle(canvas).cursor || "default"} cursor`)
+
+  // the background is locked: wheel and drag events must be ignored
+  for (const type of ["wheel", "pointerdown", "pointermove", "pointerup", "touchstart"])
+    canvas.dispatchEvent(new window.Event(type, { bubbles: true }))
+  await wait(60)
+  report("background lines drawn", JSON.stringify(drawStats))
+  if (drawStats.lineTo < 100)
+    throw new Error(`the background drew only ${drawStats.lineTo} line segments`)
+  report("canvas after gestures", `${window.getComputedStyle(canvas).cursor || "default"} cursor, still at ${window.location.pathname || "/"}`)
+  if (!document.querySelector("canvas")) throw new Error("background canvas disappeared after gestures")
+
+
   input.value = "pyhton"
   input.dispatchEvent(new window.Event("input", { bubbles: true }))
   await wait(60)
@@ -217,12 +245,15 @@ if (path === "/" || path === "") {
 
   // every opened box has to introduce the step, get the reader started and
   // hand over projects for the stage
-  for (const section of ["introduction", "get-started", "projects"]) {
+  for (const section of ["introduction", "get-started", "practice", "projects"]) {
     const el = dialog.querySelector(`[data-section='${section}']`)
     if (!el) throw new Error(`step dialog is missing the ${section} section`)
     report(`${section} section`, el.textContent.replace(/\s+/g, " ").slice(0, 90))
   }
   const actions = dialog.querySelectorAll("[data-section='get-started'] ol li").length
+  const exercises = dialog.querySelectorAll("[data-exercise]").length
+  report("practice exercises", exercises)
+  if (exercises < 3) throw new Error("practice lists fewer than three exercises")
   const projects = dialog.querySelectorAll("[data-project]").length
   report("get started actions", actions)
   report("stage projects", projects)
@@ -280,7 +311,54 @@ if (path === "/" || path === "") {
     )}`,
   )
   report("nav search first result", normalise(option))
-  option.click()
+
+  const openSearch = async () => {
+    const triggerElement = [...document.querySelectorAll("div")]
+      .filter((element) => element.textContent.trim() === "Search Topic")
+      .pop()
+    if (!triggerElement) throw new Error("search trigger missing")
+    triggerElement.click()
+    await wait(160)
+    const field = document.querySelector('input[role="combobox"]')
+    if (!field) throw new Error("search did not open")
+    return field
+  }
+
+  const closeSearch = document.querySelector('button[aria-label="Close search"]')
+  if (!closeSearch) throw new Error("topic search has no close button")
+  closeSearch.click()
+  await wait(80)
+  if (document.querySelector('input[role="combobox"]'))
+    throw new Error("close button left the search input behind")
+  report("search closed", "X button removed the search bar")
+
+  // one Escape closes the list, a second one closes the search itself
+  let field = await openSearch()
+  field.dispatchEvent(new window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }))
+  await wait(60)
+  if (!document.querySelector('input[role="combobox"]'))
+    throw new Error("a single Escape closed the whole search")
+  field.dispatchEvent(new window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }))
+  await wait(80)
+  if (document.querySelector('input[role="combobox"]'))
+    throw new Error("Escape did not close the search bar")
+  report("escape closes search", "second Escape removed the search bar")
+
+  // typing after closing the list reopens it instead of staying empty
+  field = await openSearch()
+  field.dispatchEvent(new window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }))
+  await wait(50)
+  field.value = "chemistry"
+  field.dispatchEvent(new window.Event("input", { bubbles: true }))
+  await wait(60)
+  if (!document.querySelector('[role="listbox"]'))
+    throw new Error("typing did not reopen the result list")
+  report("typing reopens list", "list came back after Escape")
+
+  await wait(60)
+  const freshOption = document.querySelector('[role="option"]')
+  if (!freshOption) throw new Error("reopened search returned no results")
+  freshOption.click()
   await wait(80)
 
   report("navigated", window.location.pathname)

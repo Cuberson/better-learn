@@ -20,6 +20,18 @@ export const psychology = defineTopic({
       [
         s("OpenStax — Psychology 2e", "https://openstax.org/details/books/psychology-2e", "book", "Free, well structured textbook."),
         s("Psychology", "https://en.wikipedia.org/wiki/Psychology", "article"),
+        s(
+          "History of psychology",
+          "https://en.wikipedia.org/wiki/History_of_psychology",
+          "article",
+          "Background reading on History of psychology for this step.",
+        ),
+        s(
+          "PubMed",
+          "https://pubmed.ncbi.nlm.nih.gov/",
+          "paper",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -31,6 +43,18 @@ export const psychology = defineTopic({
       [
         s("Noba Project", "https://nobaproject.com/", "book"),
         s("Behavioral neuroscience", "https://en.wikipedia.org/wiki/Behavioral_neuroscience", "article"),
+        s(
+          "Neurotransmitter",
+          "https://en.wikipedia.org/wiki/Neurotransmitter",
+          "article",
+          "Background reading on Neurotransmitter for this step.",
+        ),
+        s(
+          "Crash Course — Psychology",
+          "https://www.youtube.com/@crashcourse",
+          "video",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -42,6 +66,18 @@ export const psychology = defineTopic({
       [
         s("Khan Academy — Psychology", "https://www.khanacademy.org/test-prep/mcat/behavior", "course"),
         s("Cognitive psychology", "https://en.wikipedia.org/wiki/Cognitive_psychology", "article"),
+        s(
+          "Working memory",
+          "https://en.wikipedia.org/wiki/Working_memory",
+          "article",
+          "Background reading on Working memory for this step.",
+        ),
+        s(
+          "Psychology Today",
+          "https://www.psychologytoday.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -53,6 +89,18 @@ export const psychology = defineTopic({
       [
         s("Social psychology", "https://en.wikipedia.org/wiki/Social_psychology", "article"),
         s("Simply Psychology", "https://www.simplypsychology.org/", "article"),
+        s(
+          "Cognitive dissonance",
+          "https://en.wikipedia.org/wiki/Cognitive_dissonance",
+          "article",
+          "Background reading on Cognitive dissonance for this step.",
+        ),
+        s(
+          "Open Textbook Library",
+          "https://open.umn.edu/",
+          "book",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -64,6 +112,12 @@ export const psychology = defineTopic({
       [
         s("Replication crisis", "https://en.wikipedia.org/wiki/Replication_crisis", "article"),
         s("Retraction Watch", "https://retractionwatch.com/", "article"),
+        s(
+          "Effect size",
+          "https://en.wikipedia.org/wiki/Effect_size",
+          "article",
+          "Background reading on Effect size for this step.",
+        ),
       ],
     ),
     st(
@@ -75,6 +129,12 @@ export const psychology = defineTopic({
       [
         s("APA — Topics", "https://www.apa.org/topics", "docs"),
         s("Applied psychology", "https://en.wikipedia.org/wiki/Applied_psychology", "article"),
+        s(
+          "Cognitive behavioral therapy",
+          "https://en.wikipedia.org/wiki/Cognitive_behavioral_therapy",
+          "article",
+          "Background reading on Cognitive behavioral therapy for this step.",
+        ),
       ],
     ),
   ],
@@ -82,17 +142,19 @@ export const psychology = defineTopic({
     beginner: [
       p("Five classic studies", "Summarise five classic studies and the criticism each one earned."),
       p("Bias journal", "Track your own biases for a week and write what surprised you."),
+      p("Stroop experiment", "Run it on five friends and report the results."),
     ],
     intermediate: [
       p("Replication check", "Pick a famous effect and read its replication attempts."),
       p("Run a small study", "Design and run a survey experiment with a pre-registered hypothesis."),
+      p("Interview study", "Five interviews coded into themes."),
     ],
     advanced: [
       p("Behaviour change design", "Design an intervention with a measurable outcome and a control."),
       p("Meta-analysis reading", "Read a meta-analysis and explain what it does and does not prove."),
+      p("Pre-register a study", "Write and register a complete study plan."),
     ],
   },
-
 })
 
 export const philosophy = defineTopic({
@@ -112,6 +174,18 @@ export const philosophy = defineTopic({
       [
         s("Stanford Encyclopedia of Philosophy", "https://plato.stanford.edu/", "docs", "The reference work for philosophy."),
         s("Philosophy", "https://en.wikipedia.org/wiki/Philosophy", "article"),
+        s(
+          "Metaphysics",
+          "https://en.wikipedia.org/wiki/Metaphysics",
+          "article",
+          "Background reading on Metaphysics for this step.",
+        ),
+        s(
+          "Philosophy Now",
+          "https://philosophynow.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -123,6 +197,18 @@ export const philosophy = defineTopic({
       [
         s("Internet Encyclopedia of Philosophy", "https://iep.utm.edu/", "docs"),
         s("Philosophy Basics", "https://www.philosophybasics.com/", "article"),
+        s(
+          "Propositional calculus",
+          "https://en.wikipedia.org/wiki/Propositional_calculus",
+          "article",
+          "Background reading on Propositional calculus for this step.",
+        ),
+        s(
+          "TED — talks",
+          "https://www.ted.com/talks",
+          "video",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -134,6 +220,18 @@ export const philosophy = defineTopic({
       [
         s("Stanford Encyclopedia of Philosophy — Ethics", "https://plato.stanford.edu/entries/ethics-virtue/", "article"),
         s("OpenStax — Introduction to Philosophy", "https://openstax.org/details/books/introduction-philosophy", "book"),
+        s(
+          "Utilitarianism",
+          "https://en.wikipedia.org/wiki/Utilitarianism",
+          "article",
+          "Background reading on Utilitarianism for this step.",
+        ),
+        s(
+          "LibriVox — audiobooks",
+          "https://librivox.org/",
+          "book",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -145,6 +243,18 @@ export const philosophy = defineTopic({
       [
         s("Stanford Encyclopedia of Philosophy — Epistemology", "https://plato.stanford.edu/entries/epistemology/", "article"),
         s("PhilPapers", "https://philpapers.org/", "docs"),
+        s(
+          "Epistemology",
+          "https://en.wikipedia.org/wiki/Epistemology",
+          "article",
+          "Background reading on Epistemology for this step.",
+        ),
+        s(
+          "Google Arts & Culture",
+          "https://artsandculture.google.com/",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -156,6 +266,12 @@ export const philosophy = defineTopic({
       [
         s("Project Gutenberg — Philosophy", "https://www.gutenberg.org/ebooks/bookshelf/93", "book"),
         s("Socratic method", "https://en.wikipedia.org/wiki/Socratic_method", "article"),
+        s(
+          "Allegory of the Cave",
+          "https://en.wikipedia.org/wiki/Allegory_of_the_Cave",
+          "article",
+          "Background reading on Allegory of the Cave for this step.",
+        ),
       ],
     ),
     st(
@@ -167,6 +283,12 @@ export const philosophy = defineTopic({
       [
         s("Philosophy of mind", "https://en.wikipedia.org/wiki/Philosophy_of_mind", "article"),
         s("Analytic philosophy", "https://en.wikipedia.org/wiki/Analytic_philosophy", "article"),
+        s(
+          "Phenomenology (philosophy)",
+          "https://en.wikipedia.org/wiki/Phenomenology_(philosophy)",
+          "article",
+          "Background reading on Phenomenology (philosophy) for this step.",
+        ),
       ],
     ),
   ],
@@ -174,17 +296,19 @@ export const philosophy = defineTopic({
     beginner: [
       p("Argument maps", "Reconstruct three arguments in premise and conclusion form."),
       p("Fallacy hunt", "Find ten fallacies in real opinion pieces and explain them."),
+      p("Counterexample practice", "Break three arguments with counterexamples you invent."),
     ],
     intermediate: [
       p("Ethics essay", "Argue a position on a dilemma and answer the strongest objection."),
       p("Read a dialogue", "Read a Platonic dialogue alongside a commentary."),
+      p("Argue the other side", "Take the opposite position of your ethics essay and defend it."),
     ],
     advanced: [
       p("Respond to a paper", "Write a response to a contemporary journal article."),
       p("Original argument", "Make a small original argument and defend it against yourself."),
+      p("Teach a seminar", "Run a thirty minute discussion on a text you chose."),
     ],
   },
-
 })
 
 export const history = defineTopic({
@@ -204,6 +328,18 @@ export const history = defineTopic({
       [
         s("Khan Academy — World History", "https://www.khanacademy.org/humanities/world-history", "course"),
         s("Crash Course", "https://www.youtube.com/@crashcourse", "video", "Fast, entertaining overview series."),
+        s(
+          "World history (field)",
+          "https://en.wikipedia.org/wiki/World_history_(field)",
+          "article",
+          "Background reading on World history (field) for this step.",
+        ),
+        s(
+          "Library of Congress",
+          "https://www.loc.gov/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -215,6 +351,18 @@ export const history = defineTopic({
       [
         s("Purdue OWL — Research", "https://owl.purdue.edu/owl/research_and_citation/conducting_research/index.html", "docs"),
         s("Internet History Sourcebooks", "https://sourcebooks.fordham.edu/", "docs"),
+        s(
+          "Primary source",
+          "https://en.wikipedia.org/wiki/Primary_source",
+          "article",
+          "Background reading on Primary source for this step.",
+        ),
+        s(
+          "Our World in Data",
+          "https://ourworldindata.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -226,6 +374,18 @@ export const history = defineTopic({
       [
         s("OpenStax — World History", "https://openstax.org/details/books/world-history-volume-1", "book"),
         s("Secondary source", "https://en.wikipedia.org/wiki/Secondary_source", "article"),
+        s(
+          "Middle Ages",
+          "https://en.wikipedia.org/wiki/Middle_Ages",
+          "article",
+          "Background reading on Middle Ages for this step.",
+        ),
+        s(
+          "BBC History",
+          "https://www.bbc.co.uk/history",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -237,6 +397,18 @@ export const history = defineTopic({
       [
         s("Internet Encyclopedia of Philosophy", "https://iep.utm.edu/", "docs"),
         s("The American Historical Review", "https://academic.oup.com/ahr", "paper"),
+        s(
+          "Annales school",
+          "https://en.wikipedia.org/wiki/Annales_school",
+          "article",
+          "Background reading on Annales school for this step.",
+        ),
+        s(
+          "Wikisource",
+          "https://en.wikisource.org/",
+          "book",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -248,6 +420,12 @@ export const history = defineTopic({
       [
         s("Purdue OWL — Argument", "https://owl.purdue.edu/owl/general_writing/academic_writing/index.html", "docs"),
         s("Historiography", "https://en.wikipedia.org/wiki/Historiography", "article"),
+        s(
+          "Historical method",
+          "https://en.wikipedia.org/wiki/Historical_method",
+          "article",
+          "Background reading on Historical method for this step.",
+        ),
       ],
     ),
     st(
@@ -259,6 +437,12 @@ export const history = defineTopic({
       [
         s("Internet Archive", "https://archive.org/", "docs"),
         s("JSTOR", "https://www.jstor.org/", "paper"),
+        s(
+          "Archive",
+          "https://en.wikipedia.org/wiki/Archive",
+          "article",
+          "Background reading on Archive for this step.",
+        ),
       ],
     ),
   ],
@@ -266,17 +450,19 @@ export const history = defineTopic({
     beginner: [
       p("Century timeline", "Build a timeline from memory, then correct it against sources."),
       p("Source triangulation", "Three primary sources on one event and what each leaves out."),
+      p("Local history", "Research one building or street near you from primary sources."),
     ],
     intermediate: [
       p("Period deep dive", "Read three books on one period and compare their claims."),
       p("Argument essay", "Answer a historical question with evidence and a counter-argument."),
+      p("Book review", "Review a history book and place it in its historiography."),
     ],
     advanced: [
       p("Archival paper", "Use a database or archive and write a paper with a bibliography."),
       p("Historiography review", "Compare how two schools of historians treat the same event."),
+      p("Public history", "Write a walking tour or exhibit text with citations."),
     ],
   },
-
 })
 
 export const musicTheory = defineTopic({
@@ -296,6 +482,18 @@ export const musicTheory = defineTopic({
       [
         s("musictheory.net", "https://www.musictheory.net/", "interactive", "Free interactive lessons and exercises."),
         s("Interval (music)", "https://en.wikipedia.org/wiki/Interval_(music)", "article"),
+        s(
+          "Time signature",
+          "https://en.wikipedia.org/wiki/Time_signature",
+          "article",
+          "Background reading on Time signature for this step.",
+        ),
+        s(
+          "IMSLP — public domain scores",
+          "https://imslp.org/",
+          "docs",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -307,6 +505,18 @@ export const musicTheory = defineTopic({
       [
         s("LightNote — Music Theory", "https://www.lightnote.co/", "interactive"),
         s("musictheory.net — Lessons", "https://www.musictheory.net/lessons", "interactive"),
+        s(
+          "Major scale",
+          "https://en.wikipedia.org/wiki/Major_scale",
+          "article",
+          "Background reading on Major scale for this step.",
+        ),
+        s(
+          "Ear training — 8notes",
+          "https://www.8notes.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -318,6 +528,18 @@ export const musicTheory = defineTopic({
       [
         s("Open Music Theory", "https://openmusictheory.github.io/", "book"),
         s("Hooktheory", "https://www.hooktheory.com/", "interactive"),
+        s(
+          "Chord progression",
+          "https://en.wikipedia.org/wiki/Chord_progression",
+          "article",
+          "Background reading on Chord progression for this step.",
+        ),
+        s(
+          "MuseScore",
+          "https://musescore.org/",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -329,6 +551,18 @@ export const musicTheory = defineTopic({
       [
         s("teoria", "https://www.teoria.com/", "interactive"),
         s("musictheory.net — Exercises", "https://www.musictheory.net/exercises", "practice"),
+        s(
+          "Ear training",
+          "https://en.wikipedia.org/wiki/Ear_training",
+          "article",
+          "Background reading on Ear training for this step.",
+        ),
+        s(
+          "Open Textbook Library",
+          "https://open.umn.edu/",
+          "book",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -340,6 +574,12 @@ export const musicTheory = defineTopic({
       [
         s("Musical form", "https://en.wikipedia.org/wiki/Musical_form", "article"),
         s("Ableton — Learning Music", "https://learningmusic.ableton.com/", "interactive"),
+        s(
+          "Motif (music)",
+          "https://en.wikipedia.org/wiki/Motif_(music)",
+          "article",
+          "Background reading on Motif (music) for this step.",
+        ),
       ],
     ),
     st(
@@ -351,6 +591,12 @@ export const musicTheory = defineTopic({
       [
         s("Counterpoint", "https://en.wikipedia.org/wiki/Counterpoint", "article"),
         s("Music theory", "https://en.wikipedia.org/wiki/Music_theory", "article"),
+        s(
+          "Modulation (music)",
+          "https://en.wikipedia.org/wiki/Modulation_(music)",
+          "article",
+          "Background reading on Modulation (music) for this step.",
+        ),
       ],
     ),
   ],
@@ -358,17 +604,19 @@ export const musicTheory = defineTopic({
     beginner: [
       p("Interval trainer", "Identify intervals by ear until you hit 90%."),
       p("Transcribe a melody", "Take a simple melody by ear and write it down in notation."),
+      p("Rhythm drills", "Clap and notate ten rhythms, then write your own."),
     ],
     intermediate: [
       p("Four part harmony", "Harmonise a melody with correct voice leading."),
       p("Thirty-two bar piece", "Write a piece and label every chord in it."),
+      p("Reharmonise a standard", "Take a jazz standard and change its harmony three ways."),
     ],
     advanced: [
       p("Movement analysis", "Write a harmonic analysis of a classical movement."),
       p("Compose in a form", "Write a piece in sonata or fugue form and analyse your own choices."),
+      p("Orchestrate", "Arrange your own piece for four instruments."),
     ],
   },
-
 })
 
 export const photography = defineTopic({
@@ -388,6 +636,18 @@ export const photography = defineTopic({
       [
         s("Cambridge in Colour", "https://www.cambridgeincolour.com/", "article", "Technical explanations that actually make sense."),
         s("Digital Photography School", "https://digital-photography-school.com/", "article"),
+        s(
+          "Exposure (photography)",
+          "https://en.wikipedia.org/wiki/Exposure_(photography)",
+          "article",
+          "Background reading on Exposure (photography) for this step.",
+        ),
+        s(
+          "DPReview",
+          "https://www.dpreview.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -399,6 +659,18 @@ export const photography = defineTopic({
       [
         s("Photography Life", "https://photographylife.com/", "article"),
         s("Cambridge in Colour — Composition", "https://www.cambridgeincolour.com/techniques/composition.htm", "article"),
+        s(
+          "Rule of thirds",
+          "https://en.wikipedia.org/wiki/Rule_of_thirds",
+          "article",
+          "Background reading on Rule of thirds for this step.",
+        ),
+        s(
+          "PetaPixel",
+          "https://petapixel.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -410,6 +682,18 @@ export const photography = defineTopic({
       [
         s("Photographic lighting", "https://en.wikipedia.org/wiki/Photographic_lighting", "article"),
         s("Strobist", "https://strobist.blogspot.com/", "article", "Classic free course on lighting."),
+        s(
+          "Golden hour (photography)",
+          "https://en.wikipedia.org/wiki/Golden_hour_(photography)",
+          "article",
+          "Background reading on Golden hour (photography) for this step.",
+        ),
+        s(
+          "Fstoppers",
+          "https://fstoppers.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -421,6 +705,18 @@ export const photography = defineTopic({
       [
         s("Cambridge in Colour — Post Processing", "https://www.cambridgeincolour.com/techniques.htm", "article"),
         s("Image editing", "https://en.wikipedia.org/wiki/Image_editing", "article"),
+        s(
+          "Raw image format",
+          "https://en.wikipedia.org/wiki/Raw_image_format",
+          "article",
+          "Background reading on Raw image format for this step.",
+        ),
+        s(
+          "Flickr — critique groups",
+          "https://www.flickr.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -432,6 +728,18 @@ export const photography = defineTopic({
       [
         s("LensCulture", "https://www.lensculture.com/", "interactive"),
         s("Magnum Photos", "https://www.magnumphotos.com/", "interactive"),
+        s(
+          "Photo essay",
+          "https://en.wikipedia.org/wiki/Photo_essay",
+          "article",
+          "Background reading on Photo essay for this step.",
+        ),
+        s(
+          "500px",
+          "https://500px.com/",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -443,6 +751,12 @@ export const photography = defineTopic({
       [
         s("Stock photography", "https://en.wikipedia.org/wiki/Stock_photography", "article"),
         s("Photo shoot", "https://en.wikipedia.org/wiki/Photo_shoot", "article"),
+        s(
+          "Copyright",
+          "https://en.wikipedia.org/wiki/Copyright",
+          "article",
+          "Background reading on Copyright for this step.",
+        ),
       ],
     ),
   ],
@@ -450,17 +764,19 @@ export const photography = defineTopic({
     beginner: [
       p("Exposure drill", "Shoot the same scene at nine exposure combinations and compare."),
       p("Composition series", "Ten photos, each exploring one compositional idea."),
+      p("One lens week", "Shoot a full week at a single focal length."),
     ],
     intermediate: [
       p("Photo essay", "One subject, twelve images, sequenced to tell a story."),
       p("Consistent edit", "Develop an edit and apply it to a full set without drifting."),
+      p("Portrait session", "Light and direct one portrait session start to finish."),
     ],
     advanced: [
       p("Client shoot", "Plan, shoot and deliver a real shoot on a deadline."),
       p("Printed portfolio", "Print twelve images and sequence them into a book."),
+      p("Exhibition proposal", "Write and mock up a small exhibition of your work."),
     ],
   },
-
 })
 
 export const spanish = defineTopic({
@@ -480,6 +796,18 @@ export const spanish = defineTopic({
       [
         s("SpanishDict", "https://www.spanishdict.com/", "docs", "Dictionary plus conjugation tables."),
         s("StudySpanish", "https://studyspanish.com/", "course"),
+        s(
+          "Spanish phonology",
+          "https://en.wikipedia.org/wiki/Spanish_phonology",
+          "article",
+          "Background reading on Spanish phonology for this step.",
+        ),
+        s(
+          "Duolingo",
+          "https://www.duolingo.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -491,6 +819,18 @@ export const spanish = defineTopic({
       [
         s("StudySpanish — Grammar", "https://studyspanish.com/grammar", "course"),
         s("Spanish grammar", "https://en.wikipedia.org/wiki/Spanish_grammar", "article"),
+        s(
+          "Grammatical gender",
+          "https://en.wikipedia.org/wiki/Grammatical_gender",
+          "article",
+          "Background reading on Grammatical gender for this step.",
+        ),
+        s(
+          "Anki — spaced repetition",
+          "https://apps.ankiweb.net/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -502,6 +842,18 @@ export const spanish = defineTopic({
       [
         s("Dreaming Spanish", "https://www.dreamingspanish.com/", "video"),
         s("Radio Ambulante", "https://radioambulante.org/", "video", "Great intermediate listening once you are ready."),
+        s(
+          "Input hypothesis",
+          "https://en.wikipedia.org/wiki/Input_hypothesis",
+          "article",
+          "Background reading on Input hypothesis for this step.",
+        ),
+        s(
+          "Forvo — pronunciation",
+          "https://forvo.com/",
+          "interactive",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -513,6 +865,18 @@ export const spanish = defineTopic({
       [
         s("italki", "https://www.italki.com/", "practice"),
         s("Language Transfer — Spanish", "https://www.languagetransfer.org/", "video"),
+        s(
+          "Second-language acquisition",
+          "https://en.wikipedia.org/wiki/Second-language_acquisition",
+          "article",
+          "Background reading on Second-language acquisition for this step.",
+        ),
+        s(
+          "Wiktionary",
+          "https://en.wiktionary.org/",
+          "docs",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -524,6 +888,12 @@ export const spanish = defineTopic({
       [
         s("SpanishDict — Conjugation", "https://www.spanishdict.com/conjugation", "docs"),
         s("Spanish conjugation", "https://en.wikipedia.org/wiki/Spanish_conjugation", "article"),
+        s(
+          "Subjunctive mood",
+          "https://en.wikipedia.org/wiki/Subjunctive_mood",
+          "article",
+          "Background reading on Subjunctive mood for this step.",
+        ),
       ],
     ),
     st(
@@ -535,6 +905,12 @@ export const spanish = defineTopic({
       [
         s("Instituto Cervantes", "https://www.cervantes.es/default.htm", "docs"),
         s("Language immersion", "https://en.wikipedia.org/wiki/Language_immersion", "article"),
+        s(
+          "Language proficiency",
+          "https://en.wikipedia.org/wiki/Language_proficiency",
+          "article",
+          "Background reading on Language proficiency for this step.",
+        ),
       ],
     ),
   ],
@@ -542,17 +918,19 @@ export const spanish = defineTopic({
     beginner: [
       p("One minute introduction", "Record a spoken self-introduction and compare with a native speaker."),
       p("Core deck", "Build a 500 word core vocabulary deck and use it daily for a month."),
+      p("Daily journal", "Five sentences a day in Spanish for a month."),
     ],
     intermediate: [
       p("Input log", "Twenty hours of comprehensible input with a log of what you understood."),
       p("Speaking practice", "Three thirty minute conversations with a tutor, recorded."),
+      p("Tandem exchange", "A weekly exchange with a native speaker, recorded."),
     ],
     advanced: [
       p("Read a novel", "Read a Spanish novel and summarise it in Spanish."),
       p("Write and get corrected", "Write ten short texts and have a native speaker correct them."),
+      p("Subtitles off", "Finish a series season with Spanish subtitles, then without."),
     ],
   },
-
 })
 
 export const publicSpeaking = defineTopic({
@@ -572,6 +950,18 @@ export const publicSpeaking = defineTopic({
       [
         s("Speaking.io", "https://speaking.io/", "docs", "Practical advice on technical talks."),
         s("Rhetoric", "https://en.wikipedia.org/wiki/Rhetoric", "article"),
+        s(
+          "Three-act structure",
+          "https://en.wikipedia.org/wiki/Three-act_structure",
+          "article",
+          "Background reading on Three-act structure for this step.",
+        ),
+        s(
+          "Six Minutes — speaking skills",
+          "https://sixminutes.dlugan.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -583,6 +973,12 @@ export const publicSpeaking = defineTopic({
       [
         s("Toastmasters", "https://www.toastmasters.org/", "course"),
         s("Public speaking", "https://en.wikipedia.org/wiki/Public_speaking", "article"),
+        s(
+          "Crash Course — Communication",
+          "https://www.youtube.com/@crashcourse",
+          "video",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -594,6 +990,18 @@ export const publicSpeaking = defineTopic({
       [
         s("Presentation Zen", "https://www.presentationzen.com/", "article"),
         s("Presentation slide", "https://en.wikipedia.org/wiki/Presentation_slide", "article"),
+        s(
+          "Slide show",
+          "https://en.wikipedia.org/wiki/Slide_show",
+          "article",
+          "Background reading on Slide show for this step.",
+        ),
+        s(
+          "Duarte — presentation resources",
+          "https://www.duarte.com/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -605,6 +1013,18 @@ export const publicSpeaking = defineTopic({
       [
         s("TED — Talks", "https://www.ted.com/talks", "video"),
         s("Toastmasters — Resources", "https://www.toastmasters.org/resources", "docs"),
+        s(
+          "Body language",
+          "https://en.wikipedia.org/wiki/Body_language",
+          "article",
+          "Background reading on Body language for this step.",
+        ),
+        s(
+          "Coursera — public speaking",
+          "https://www.coursera.org/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -616,6 +1036,18 @@ export const publicSpeaking = defineTopic({
       [
         s("Impromptu speaking", "https://en.wikipedia.org/wiki/Impromptu_speaking", "article"),
         s("TED (conference)", "https://en.wikipedia.org/wiki/TED_(conference)", "article"),
+        s(
+          "Active listening",
+          "https://en.wikipedia.org/wiki/Active_listening",
+          "article",
+          "Background reading on Active listening for this step.",
+        ),
+        s(
+          "National Communication Association",
+          "https://www.natcom.org/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -627,6 +1059,12 @@ export const publicSpeaking = defineTopic({
       [
         s("Storytelling", "https://en.wikipedia.org/wiki/Storytelling", "article"),
         s("Presentation", "https://en.wikipedia.org/wiki/Presentation", "article"),
+        s(
+          "Dale Carnegie — speaking tips",
+          "https://www.dalecarnegie.com/",
+          "article",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -634,15 +1072,17 @@ export const publicSpeaking = defineTopic({
     beginner: [
       p("Three minute talk", "Write and deliver a three minute talk to one person."),
       p("Daily recording", "Record one minute a day for two weeks and review each one."),
+      p("Read aloud", "Record a page a day, working on pace and pauses."),
     ],
     intermediate: [
       p("One idea per slide", "Build a deck where every slide makes exactly one point."),
       p("Hard questions on camera", "Answer five difficult questions on video and watch yourself."),
+      p("Impromptu drills", "Answer a random question in sixty seconds, daily."),
     ],
     advanced: [
       p("Twenty minute keynote", "Deliver a keynote at a meetup or a company event."),
       p("Tell a story", "Build a talk around one personal story with a technical point."),
+      p("Coach someone", "Help a colleague prepare a talk and give structured feedback."),
     ],
   },
-
 })

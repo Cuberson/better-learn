@@ -339,6 +339,26 @@ function StepModal(props: {
             </ol>
           </section>
 
+          <section class="flex flex-col gap-2" data-section="practice">
+            <SectionLabel>Practice</SectionLabel>
+            <p class="text-[13px] text-neutral-400 leading-[1.5]">
+              Do at least one of these before you open the next box. Reading is
+              not learning; the exercises are.
+            </p>
+            <ol class="flex flex-col gap-2.5">
+              <For each={props.node.exercises}>
+                {(exercise, index) => (
+                  <li class="flex items-start gap-3" data-exercise>
+                    <span class="shrink-0 mt-[1px] w-6 h-6 rounded-full border border-neutral-700 text-neutral-400 text-[12px] font-bold flex items-center justify-center">
+                      {index() + 1}
+                    </span>
+                    <span class="text-[14px] text-neutral-200 leading-[1.55]">{exercise}</span>
+                  </li>
+                )}
+              </For>
+            </ol>
+          </section>
+
           <Show when={props.node.step.outcome}>
             <div class="rounded-lg bg-neutral-900 border border-neutral-800 px-4 py-3">
               <div class="text-[11px] uppercase tracking-[0.08em] text-neutral-500 pb-1">

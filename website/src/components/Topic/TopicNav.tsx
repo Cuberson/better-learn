@@ -81,7 +81,11 @@ export default function TopicNav() {
             </div>
 
             <div
-              onClick={() => setShowInput(true)}
+              onClick={() => {
+                // the box opens the search, but a click on the close button
+                // inside it must not immediately reopen what it just closed
+                if (!showInput()) setShowInput(true)
+              }}
               class={`relative rounded-[4px] h-full flex items-center font-light border w-full max-w-[500px] min-w-0 transition-all ${
                 showInput()
                   ? "bg-white border-white"
@@ -118,13 +122,34 @@ export default function TopicNav() {
                   </div>
                 }
               >
-                <Search
-                  variant="night"
-                  autofocus
-                  placeholder="Search Topic"
-                  searchResults={searchItems()}
-                  onSelect={openTopic}
-                />
+                <div class="flex items-center w-full pr-1.5">
+                  <Search
+                    variant="night"
+                    autofocus
+                    placeholder="Search Topic"
+                    searchResults={searchItems()}
+                    onSelect={openTopic}
+                    onDismiss={() => setShowInput(false)}
+                  />
+                  <button
+                    type="button"
+                    aria-label="Close search"
+                    class="shrink-0 ml-1 w-7 h-7 rounded-full flex items-center justify-center text-[#696969] hover:text-black hover:bg-neutral-100"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      setShowInput(false)
+                    }}
+                  >
+                    <svg width="11" height="11" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                      <path
+                        d="M1 1l11 11M12 1L1 12"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </Show>
             </div>
           </div>

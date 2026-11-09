@@ -20,6 +20,8 @@ type Props = {
   inputClass?: string
   panelClass?: string
   onQueryChange?: (query: string) => void
+  /** called on Escape once the result list is already closed */
+  onDismiss?: () => void
 }
 
 // Fuzzy, keyboard friendly topic search. Used by the landing page and by the
@@ -82,7 +84,14 @@ export default function Search(props: Props) {
     }
 
     if (event.key === "Escape") {
+      event.preventDefault()
+      // first escape closes the list, a second one closes the search itself
+      if (open()) {
+        setOpen(false)
+        return
+      }
       setOpen(false)
+      props.onDismiss?.()
     }
   }
 
@@ -140,7 +149,11 @@ export default function Search(props: Props) {
         value={query()}
         class={props.inputClass ?? defaultInputClass()}
         style={{ height: theme() === "dark" ? "52px" : undefined }}
-        onInput={(event) => updateQuery(event.currentTarget.value)}
+        // typing always reopens the list, even after Escape or a click outside
+        onInput={(event) => {
+          updateQuery(event.currentTarget.value)
+          setOpen(true)
+        }}
         onFocus={() => setOpen(true)}
         onKeyDown={onKeyDown}
       />

@@ -30,6 +30,18 @@ export const javascript = defineTopic({
           "interactive",
           "Best paced text-first course on the language.",
         ),
+        s(
+          "JavaScript",
+          "https://en.wikipedia.org/wiki/JavaScript",
+          "article",
+          "Background reading on JavaScript for this step.",
+        ),
+        s(
+          "Exercism — practice exercises",
+          "https://exercism.org/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -49,6 +61,18 @@ export const javascript = defineTopic({
           "https://javascript.info/document",
           "docs",
         ),
+        s(
+          "Document Object Model",
+          "https://en.wikipedia.org/wiki/Document_Object_Model",
+          "article",
+          "Background reading on Document Object Model for this step.",
+        ),
+        s(
+          "Codewars — coding katas",
+          "https://www.codewars.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -67,6 +91,18 @@ export const javascript = defineTopic({
           "MDN — Asynchronous JavaScript",
           "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous",
           "docs",
+        ),
+        s(
+          "Event loop",
+          "https://en.wikipedia.org/wiki/Event_loop",
+          "article",
+          "Background reading on Event loop for this step.",
+        ),
+        s(
+          "Advent of Code",
+          "https://adventofcode.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
         ),
       ],
     ),
@@ -89,6 +125,18 @@ export const javascript = defineTopic({
           "docs",
         ),
         s("npm — Documentation", "https://docs.npmjs.com/", "docs"),
+        s(
+          "Modular programming",
+          "https://en.wikipedia.org/wiki/Modular_programming",
+          "article",
+          "Background reading on Modular programming for this step.",
+        ),
+        s(
+          "The Odin Project",
+          "https://www.theodinproject.com/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -108,6 +156,18 @@ export const javascript = defineTopic({
           "MDN — Web APIs",
           "https://developer.mozilla.org/en-US/docs/Web/API",
           "docs",
+        ),
+        s(
+          "Single-page application",
+          "https://en.wikipedia.org/wiki/Single-page_application",
+          "article",
+          "Background reading on Single-page application for this step.",
+        ),
+        s(
+          "freeCodeCamp — curriculum",
+          "https://www.freecodecamp.org/learn/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
         ),
       ],
     ),
@@ -134,6 +194,18 @@ export const javascript = defineTopic({
           "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop",
           "docs",
         ),
+        s(
+          "V8 (JavaScript engine)",
+          "https://en.wikipedia.org/wiki/V8_(JavaScript_engine)",
+          "article",
+          "Background reading on V8 (JavaScript engine) for this step.",
+        ),
+        s(
+          "DevDocs — offline API docs",
+          "https://devdocs.io/",
+          "docs",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -141,17 +213,19 @@ export const javascript = defineTopic({
     beginner: [
       p("Interactive to-do page", "Add, complete and delete tasks with plain DOM APIs and localStorage. Proves you can select elements, handle events and keep state in the page."),
       p("Quiz game", "Ten questions, a score and an end screen. Proves functions, arrays and objects working together."),
+      p("Form validator", "Validate a signup form in the browser with inline errors and no libraries."),
     ],
     intermediate: [
       p("Weather dashboard", "Fetch a public weather API, show loading and error states and cache the last result. Proves async JavaScript and modules."),
       p("Bundled habit tracker", "Split a small app into ES modules, bundle it and ship a production build. Proves the tooling around the language."),
+      p("Infinite scroll feed", "Load more items as you scroll, with a loading state and request cancellation."),
     ],
     advanced: [
       p("Promise from scratch", "Implement a Promise with then/catch/finally and a microtask queue. Proves you understand the event loop."),
       p("Profile a slow page", "Find a real bottleneck with the profiler, fix it and write down the before/after numbers."),
+      p("Tiny test runner", "Build describe/it/expect and run your earlier projects with it."),
     ],
   },
-
 })
 
 export const typescript = defineTopic({
@@ -180,6 +254,18 @@ export const typescript = defineTopic({
           "interactive",
           "Experiment with types without installing anything.",
         ),
+        s(
+          "Type system",
+          "https://en.wikipedia.org/wiki/Type_system",
+          "article",
+          "Background reading on Type system for this step.",
+        ),
+        s(
+          "Exercism — practice exercises",
+          "https://exercism.org/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -198,6 +284,18 @@ export const typescript = defineTopic({
           "TypeScript Handbook — Narrowing",
           "https://www.typescriptlang.org/docs/handbook/2/narrowing.html",
           "docs",
+        ),
+        s(
+          "Structural type system",
+          "https://en.wikipedia.org/wiki/Structural_type_system",
+          "article",
+          "Background reading on Structural type system for this step.",
+        ),
+        s(
+          "Codewars — coding katas",
+          "https://www.codewars.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
         ),
       ],
     ),
@@ -218,6 +316,18 @@ export const typescript = defineTopic({
           "https://type-level-typescript.com/",
           "course",
         ),
+        s(
+          "Generic programming",
+          "https://en.wikipedia.org/wiki/Generic_programming",
+          "article",
+          "Background reading on Generic programming for this step.",
+        ),
+        s(
+          "Advent of Code",
+          "https://adventofcode.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -233,6 +343,18 @@ export const typescript = defineTopic({
           "TypeScript Handbook — Modules",
           "https://www.typescriptlang.org/docs/handbook/2/modules.html",
           "docs",
+        ),
+        s(
+          "TypeScript",
+          "https://en.wikipedia.org/wiki/TypeScript",
+          "article",
+          "Background reading on TypeScript for this step.",
+        ),
+        s(
+          "The Odin Project",
+          "https://www.theodinproject.com/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
         ),
       ],
     ),
@@ -253,6 +375,18 @@ export const typescript = defineTopic({
           "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html",
           "docs",
         ),
+        s(
+          "Type inference",
+          "https://en.wikipedia.org/wiki/Type_inference",
+          "article",
+          "Background reading on Type inference for this step.",
+        ),
+        s(
+          "freeCodeCamp — curriculum",
+          "https://www.freecodecamp.org/learn/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -272,6 +406,18 @@ export const typescript = defineTopic({
           "https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html",
           "docs",
         ),
+        s(
+          "DefinitelyTyped — community type definitions",
+          "https://github.com/DefinitelyTyped/DefinitelyTyped",
+          "article",
+          "Background reading on Type inference for this step.",
+        ),
+        s(
+          "DevDocs — offline API docs",
+          "https://devdocs.io/",
+          "docs",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -279,17 +425,19 @@ export const typescript = defineTopic({
     beginner: [
       p("Type a helper library", "Give five small utility functions real signatures and fix everything the compiler complains about."),
       p("Convert a JavaScript file", "Take an old JS file and type it fully without falling back to any. Proves unions, narrowing and optional fields."),
+      p("Model a JSON API", "Describe a real API response with types and parse it safely with narrowing."),
     ],
     intermediate: [
       p("Typed API client", "A client whose request, response and error types are inferred from the endpoint you call."),
       p("Strict mode migration", "Turn on strict mode in a small project and fix every error honestly instead of casting it away."),
+      p("Typed event emitter", "An emitter whose listen and emit pairs the compiler checks for you."),
     ],
     advanced: [
       p("Publish a typed package", "Ship a tiny package with declaration files, generics and a type-level test suite."),
       p("Type-challenge set", "Solve ten type challenges and write one paragraph on why each solution works."),
+      p("Augment a library", "Extend a third party library's types and prove it with a type test."),
     ],
   },
-
 })
 
 export const python = defineTopic({
@@ -319,6 +467,18 @@ export const python = defineTopic({
           "book",
           "Free book built around practical automation.",
         ),
+        s(
+          "Python (programming language)",
+          "https://en.wikipedia.org/wiki/Python_(programming_language)",
+          "article",
+          "Background reading on Python (programming language) for this step.",
+        ),
+        s(
+          "Exercism — practice exercises",
+          "https://exercism.org/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -333,6 +493,18 @@ export const python = defineTopic({
           "The Python Tutorial — Data Structures",
           "https://docs.python.org/3/tutorial/datastructures.html",
           "docs",
+        ),
+        s(
+          "List (abstract data type)",
+          "https://en.wikipedia.org/wiki/List_(abstract_data_type)",
+          "article",
+          "Background reading on List (abstract data type) for this step.",
+        ),
+        s(
+          "Codewars — coding katas",
+          "https://www.codewars.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
         ),
       ],
     ),
@@ -353,6 +525,18 @@ export const python = defineTopic({
           "https://docs.python.org/3/tutorial/errors.html",
           "docs",
         ),
+        s(
+          "Object-oriented programming",
+          "https://en.wikipedia.org/wiki/Object-oriented_programming",
+          "article",
+          "Background reading on Object-oriented programming for this step.",
+        ),
+        s(
+          "Advent of Code",
+          "https://adventofcode.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -372,6 +556,18 @@ export const python = defineTopic({
           "https://packaging.python.org/en/latest/tutorials/packaging-projects/",
           "docs",
         ),
+        s(
+          "Virtual environment",
+          "https://en.wikipedia.org/wiki/Virtual_environment",
+          "article",
+          "Background reading on Virtual environment for this step.",
+        ),
+        s(
+          "The Odin Project",
+          "https://www.theodinproject.com/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -384,6 +580,18 @@ export const python = defineTopic({
         s("FastAPI Tutorial", "https://fastapi.tiangolo.com/tutorial/", "docs"),
         s("Pandas — User Guide", "https://pandas.pydata.org/docs/user_guide/index.html", "docs"),
         s("The Hitchhiker's Guide to Python", "https://docs.python-guide.org/", "book"),
+        s(
+          "Web framework",
+          "https://en.wikipedia.org/wiki/Web_framework",
+          "article",
+          "Background reading on Web framework for this step.",
+        ),
+        s(
+          "freeCodeCamp — curriculum",
+          "https://www.freecodecamp.org/learn/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -403,6 +611,18 @@ export const python = defineTopic({
           "https://docs.python.org/3/howto/index.html",
           "docs",
         ),
+        s(
+          "CPython",
+          "https://en.wikipedia.org/wiki/CPython",
+          "article",
+          "Background reading on CPython for this step.",
+        ),
+        s(
+          "DevDocs — offline API docs",
+          "https://devdocs.io/",
+          "docs",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -410,17 +630,19 @@ export const python = defineTopic({
     beginner: [
       p("Command-line to-do", "A script that adds, lists and completes to-dos stored in a JSON file, driven by arguments."),
       p("Word frequency report", "Read a text file and print the most common words as an aligned table."),
+      p("CSV to chart", "Turn a CSV into a summary table and a simple matplotlib chart."),
     ],
     intermediate: [
       p("Personal web scraper", "Scrape a site into a CSV with requests and BeautifulSoup, wrapped in a small package with error handling."),
       p("Expense tracking API", "Three endpoints, validation and tests for a small FastAPI service backed by SQLite."),
+      p("Multi-command CLI", "Build one with subcommands, config, logging and tests."),
     ],
     advanced: [
       p("Speed up a hot loop", "Rewrite a slow function as a compiled extension and show the benchmark before and after."),
       p("Package with CI", "Publish a package with tests, type hints and a GitHub Actions workflow that runs on every push."),
+      p("Async crawler", "Fetch a hundred pages concurrently with asyncio and rate limits."),
     ],
   },
-
 })
 
 export const rust = defineTopic({
@@ -440,6 +662,18 @@ export const rust = defineTopic({
       [
         s("The Rust Book", "https://doc.rust-lang.org/book/", "book", "Read it cover to cover, it is the official path."),
         s("Rust by Example", "https://doc.rust-lang.org/rust-by-example/", "interactive"),
+        s(
+          "Cargo (software)",
+          "https://en.wikipedia.org/wiki/Cargo_(software)",
+          "article",
+          "Background reading on Cargo (software) for this step.",
+        ),
+        s(
+          "Exercism — practice exercises",
+          "https://exercism.org/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -455,6 +689,18 @@ export const rust = defineTopic({
           "book",
         ),
         s("Rustlings", "https://github.com/rust-lang/rustlings", "practice", "Small exercises that teach the compiler."),
+        s(
+          "Memory management",
+          "https://en.wikipedia.org/wiki/Memory_management",
+          "article",
+          "Background reading on Memory management for this step.",
+        ),
+        s(
+          "Codewars — coding katas",
+          "https://www.codewars.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -473,6 +719,18 @@ export const rust = defineTopic({
           "The Rust Book — Error Handling",
           "https://doc.rust-lang.org/book/ch09-00-error-handling.html",
           "book",
+        ),
+        s(
+          "Algebraic data type",
+          "https://en.wikipedia.org/wiki/Algebraic_data_type",
+          "article",
+          "Background reading on Algebraic data type for this step.",
+        ),
+        s(
+          "Advent of Code",
+          "https://adventofcode.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
         ),
       ],
     ),
@@ -493,6 +751,18 @@ export const rust = defineTopic({
           "https://doc.rust-lang.org/book/ch15-00-smart-pointers.html",
           "book",
         ),
+        s(
+          "Generic programming",
+          "https://en.wikipedia.org/wiki/Generic_programming",
+          "article",
+          "Background reading on Generic programming for this step.",
+        ),
+        s(
+          "The Odin Project",
+          "https://www.theodinproject.com/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -509,6 +779,18 @@ export const rust = defineTopic({
         ),
         s("The Cargo Book", "https://doc.rust-lang.org/cargo/", "docs"),
         s("Tokio Tutorial", "https://tokio.rs/tokio/tutorial", "docs", "Async Rust in practice."),
+        s(
+          "Unit testing",
+          "https://en.wikipedia.org/wiki/Unit_testing",
+          "article",
+          "Background reading on Unit testing for this step.",
+        ),
+        s(
+          "freeCodeCamp — curriculum",
+          "https://www.freecodecamp.org/learn/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -525,6 +807,18 @@ export const rust = defineTopic({
           "book",
         ),
         s("Learn Rust With Entirely Too Many Linked Lists", "https://rust-unofficial.github.io/too-many-lists/", "book"),
+        s(
+          "Borrow checker",
+          "https://en.wikipedia.org/wiki/Borrow_checker",
+          "article",
+          "Background reading on Borrow checker for this step.",
+        ),
+        s(
+          "DevDocs — offline API docs",
+          "https://devdocs.io/",
+          "docs",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -532,17 +826,19 @@ export const rust = defineTopic({
     beginner: [
       p("CLI text stats", "Read a file and report lines, words and characters. Proves ownership and Cargo basics."),
       p("Inventory program", "Model items with structs and enums and handle a missing item without panicking."),
+      p("Guess the number", "A tiny game that makes io, parsing and match feel natural."),
     ],
     intermediate: [
       p("Generic CSV parser", "Parse rows into any type that implements your trait. Proves traits, generics and lifetimes."),
       p("Tested library crate", "Publish a small crate with unit tests, integration tests and doc comments."),
+      p("Concurrent directory search", "Walk a tree with threads and channels, reporting progress."),
     ],
     advanced: [
       p("Safe wrapper over C", "Wrap a C function in a documented safe API. Proves unsafe and FFI discipline."),
       p("Declarative macro", "Write a macro that removes the boilerplate from your earlier crate."),
+      p("Async echo server", "A small tokio server with graceful shutdown and backpressure."),
     ],
   },
-
 })
 
 export const go = defineTopic({
@@ -562,6 +858,18 @@ export const go = defineTopic({
       [
         s("A Tour of Go", "https://go.dev/tour/", "interactive"),
         s("Go — Getting Started", "https://go.dev/doc/tutorial/getting-started", "docs"),
+        s(
+          "Go (programming language)",
+          "https://en.wikipedia.org/wiki/Go_(programming_language)",
+          "article",
+          "Background reading on Go (programming language) for this step.",
+        ),
+        s(
+          "Exercism — practice exercises",
+          "https://exercism.org/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -573,6 +881,18 @@ export const go = defineTopic({
       [
         s("Effective Go", "https://go.dev/doc/effective_go", "docs"),
         s("Learn Go with Tests", "https://github.com/quii/learn-go-with-tests", "book"),
+        s(
+          "Interface (computing)",
+          "https://en.wikipedia.org/wiki/Interface_(computing)",
+          "article",
+          "Background reading on Interface (computing) for this step.",
+        ),
+        s(
+          "Codewars — coding katas",
+          "https://www.codewars.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -584,6 +904,18 @@ export const go = defineTopic({
       [
         s("A Tour of Go — Concurrency", "https://go.dev/tour/concurrency/1", "interactive"),
         s("Go Concurrency Patterns (talk)", "https://go.dev/talks/2012/concurrency.slide", "video"),
+        s(
+          "Communicating sequential processes",
+          "https://en.wikipedia.org/wiki/Communicating_sequential_processes",
+          "article",
+          "Background reading on Communicating sequential processes for this step.",
+        ),
+        s(
+          "Advent of Code",
+          "https://adventofcode.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -599,6 +931,18 @@ export const go = defineTopic({
           "https://go.dev/doc/tutorial/web-service-gin",
           "docs",
         ),
+        s(
+          "Standard library",
+          "https://en.wikipedia.org/wiki/Standard_library",
+          "article",
+          "Background reading on Standard library for this step.",
+        ),
+        s(
+          "The Odin Project",
+          "https://www.theodinproject.com/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -610,6 +954,18 @@ export const go = defineTopic({
       [
         s("Go — Accessing a relational database", "https://go.dev/doc/database/", "docs"),
         s("Go Blog", "https://go.dev/blog/", "article"),
+        s(
+          "Microservices",
+          "https://en.wikipedia.org/wiki/Microservices",
+          "article",
+          "Background reading on Microservices for this step.",
+        ),
+        s(
+          "freeCodeCamp — curriculum",
+          "https://www.freecodecamp.org/learn/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -622,6 +978,18 @@ export const go = defineTopic({
         s("Go Diagnostics", "https://go.dev/doc/diagnostics", "docs"),
         s("Go Blog — Profiling", "https://go.dev/blog/pprof", "article"),
         s("Ardan Labs training", "https://github.com/ardanlabs/gotraining", "course"),
+        s(
+          "Garbage collection (computer science)",
+          "https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)",
+          "article",
+          "Background reading on Garbage collection (computer science) for this step.",
+        ),
+        s(
+          "DevDocs — offline API docs",
+          "https://devdocs.io/",
+          "docs",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -629,17 +997,19 @@ export const go = defineTopic({
     beginner: [
       p("CLI file tool", "A tool that searches or renames files with flags. Proves packages, errors and the standard library."),
       p("Link checker", "Check the status of a list of URLs and report failures with proper error wrapping."),
+      p("Persistent todo CLI", "Store todos in JSON with subcommands and flags."),
     ],
     intermediate: [
       p("Worker pool", "Process 10k jobs with a fixed number of goroutines, a context timeout and graceful shutdown."),
       p("Tested JSON API", "A small REST service backed by SQLite with table-driven tests."),
+      p("Rate limited scraper", "Fetch many URLs with a semaphore, retries and per result logging."),
     ],
     advanced: [
       p("Benchmark and profile", "Profile a service with pprof, fix the allocation that dominates and prove it with benchmarks."),
       p("Scheduler visualiser", "Instrument goroutines to show how work moves between Ps and Ms in the runtime."),
+      p("LRU cache", "Implement one with generics, eviction and benchmarks against a map."),
     ],
   },
-
 })
 
 export const react = defineTopic({
@@ -659,6 +1029,18 @@ export const react = defineTopic({
       [
         s("React — Describing the UI", "https://react.dev/learn/describing-the-ui", "docs"),
         s("React — Quick Start", "https://react.dev/learn", "docs"),
+        s(
+          "Component-based software engineering",
+          "https://en.wikipedia.org/wiki/Component-based_software_engineering",
+          "article",
+          "Background reading on Component-based software engineering for this step.",
+        ),
+        s(
+          "Exercism — practice exercises",
+          "https://exercism.org/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -670,6 +1052,18 @@ export const react = defineTopic({
       [
         s("React — Adding Interactivity", "https://react.dev/learn/adding-interactivity", "docs"),
         s("React — Tic-Tac-Toe tutorial", "https://react.dev/learn/tutorial-tic-tac-toe", "interactive"),
+        s(
+          "State management",
+          "https://en.wikipedia.org/wiki/State_management",
+          "article",
+          "Background reading on State management for this step.",
+        ),
+        s(
+          "Codewars — coding katas",
+          "https://www.codewars.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -681,6 +1075,18 @@ export const react = defineTopic({
       [
         s("React — Synchronizing with Effects", "https://react.dev/learn/synchronizing-with-effects", "docs"),
         s("React — You Might Not Need an Effect", "https://react.dev/learn/you-might-not-need-an-effect", "docs"),
+        s(
+          "Reactive programming",
+          "https://en.wikipedia.org/wiki/Reactive_programming",
+          "article",
+          "Background reading on Reactive programming for this step.",
+        ),
+        s(
+          "Advent of Code",
+          "https://adventofcode.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -692,6 +1098,18 @@ export const react = defineTopic({
       [
         s("TanStack Query", "https://tanstack.com/query/latest/docs/framework/react/overview", "docs"),
         s("React Router Tutorial", "https://reactrouter.com/en/main/start/tutorial", "course"),
+        s(
+          "Single-page application",
+          "https://en.wikipedia.org/wiki/Single-page_application",
+          "article",
+          "Background reading on Single-page application for this step.",
+        ),
+        s(
+          "The Odin Project",
+          "https://www.theodinproject.com/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -703,6 +1121,18 @@ export const react = defineTopic({
       [
         s("Next.js Learn", "https://nextjs.org/learn", "course"),
         s("React — Managing State", "https://react.dev/learn/managing-state", "docs"),
+        s(
+          "Web application",
+          "https://en.wikipedia.org/wiki/Web_application",
+          "article",
+          "Background reading on Web application for this step.",
+        ),
+        s(
+          "freeCodeCamp — curriculum",
+          "https://www.freecodecamp.org/learn/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -714,6 +1144,18 @@ export const react = defineTopic({
       [
         s("React — Render and Commit", "https://react.dev/learn/render-and-commit", "docs"),
         s("React — Reference", "https://react.dev/reference/react", "docs"),
+        s(
+          "Virtual DOM",
+          "https://en.wikipedia.org/wiki/Virtual_DOM",
+          "article",
+          "Background reading on Virtual DOM for this step.",
+        ),
+        s(
+          "DevDocs — offline API docs",
+          "https://devdocs.io/",
+          "docs",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -721,17 +1163,19 @@ export const react = defineTopic({
     beginner: [
       p("Filterable list", "A searchable list with local state and controlled inputs."),
       p("Multi-step form", "A signup flow with per-step validation and a summary screen."),
+      p("Accessible tabs and modal", "Build both with keyboard and focus management."),
     ],
     intermediate: [
       p("Data-backed app with routing", "Three routes, fetched data and honest loading and error UI."),
       p("Optimistic updates", "A list where edits appear instantly and roll back when the request fails."),
+      p("Paged list with Suspense", "Load pages lazily with Suspense and error boundaries."),
     ],
     advanced: [
       p("Mini hooks runtime", "Implement useState and useEffect yourself and re-render a small app with it."),
       p("Fix a re-render storm", "Find one, fix it and show the before/after render counts."),
+      p("Small state library", "Write a store with selectors and convert your app to it."),
     ],
   },
-
 })
 
 export const sql = defineTopic({
@@ -751,6 +1195,18 @@ export const sql = defineTopic({
       [
         s("SQLBolt", "https://sqlbolt.com/", "interactive", "Learn SQL in the browser with exercises."),
         s("PostgreSQL Tutorial", "https://www.postgresql.org/docs/current/tutorial.html", "docs"),
+        s(
+          "Select (SQL)",
+          "https://en.wikipedia.org/wiki/Select_(SQL)",
+          "article",
+          "Background reading on Select (SQL) for this step.",
+        ),
+        s(
+          "Exercism — practice exercises",
+          "https://exercism.org/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -762,6 +1218,18 @@ export const sql = defineTopic({
       [
         s("SQLBolt — Joins", "https://sqlbolt.com/lesson/select_queries_with_joins", "interactive"),
         s("PG Exercises", "https://pgexercises.com/", "practice", "Progressively harder exercises on a real schema."),
+        s(
+          "Join (SQL)",
+          "https://en.wikipedia.org/wiki/Join_(SQL)",
+          "article",
+          "Background reading on Join (SQL) for this step.",
+        ),
+        s(
+          "Codewars — coding katas",
+          "https://www.codewars.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -773,6 +1241,18 @@ export const sql = defineTopic({
       [
         s("PostgreSQL — Data Definition", "https://www.postgresql.org/docs/current/ddl.html", "docs"),
         s("PostgreSQL — Constraints", "https://www.postgresql.org/docs/current/ddl-constraints.html", "docs"),
+        s(
+          "Database normalization",
+          "https://en.wikipedia.org/wiki/Database_normalization",
+          "article",
+          "Background reading on Database normalization for this step.",
+        ),
+        s(
+          "Advent of Code",
+          "https://adventofcode.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -784,6 +1264,18 @@ export const sql = defineTopic({
       [
         s("Use The Index, Luke", "https://use-the-index-luke.com/", "book", "The best free resource on SQL performance."),
         s("PostgreSQL — Performance Tips", "https://www.postgresql.org/docs/current/performance-tips.html", "docs"),
+        s(
+          "Database index",
+          "https://en.wikipedia.org/wiki/Database_index",
+          "article",
+          "Background reading on Database index for this step.",
+        ),
+        s(
+          "The Odin Project",
+          "https://www.theodinproject.com/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -795,6 +1287,18 @@ export const sql = defineTopic({
       [
         s("PostgreSQL — Window Functions", "https://www.postgresql.org/docs/current/tutorial-window.html", "docs"),
         s("Mode SQL Tutorial", "https://mode.com/sql-tutorial/", "course"),
+        s(
+          "Window function",
+          "https://en.wikipedia.org/wiki/Window_function",
+          "article",
+          "Background reading on Window function for this step.",
+        ),
+        s(
+          "freeCodeCamp — curriculum",
+          "https://www.freecodecamp.org/learn/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -806,6 +1310,18 @@ export const sql = defineTopic({
       [
         s("PostgreSQL — Concurrency Control", "https://www.postgresql.org/docs/current/mvcc.html", "docs"),
         s("PostgreSQL — Index Types", "https://www.postgresql.org/docs/current/indexes-types.html", "docs"),
+        s(
+          "B-tree",
+          "https://en.wikipedia.org/wiki/B-tree",
+          "article",
+          "Background reading on B-tree for this step.",
+        ),
+        s(
+          "DevDocs — offline API docs",
+          "https://devdocs.io/",
+          "docs",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -813,17 +1329,19 @@ export const sql = defineTopic({
     beginner: [
       p("Answer ten questions", "Query a public dataset to answer ten business questions with SELECT, WHERE and ORDER BY."),
       p("Monthly sales report", "Aggregate orders per month and per customer with GROUP BY and HAVING."),
+      p("Cohort count", "Count users who returned in week two, grouped by signup week."),
     ],
     intermediate: [
       p("Design a schema", "Model a small product with normalisation, constraints and foreign keys, then seed it."),
       p("Speed up a slow query", "Take a query that takes seconds, add the right index and show the plan before and after."),
+      p("Normalise a messy table", "Split a denormalised export into three tables with foreign keys."),
     ],
     advanced: [
       p("Tiny storage engine", "Build a B-tree backed key/value store in a language you know. Proves how databases store data."),
       p("Window function report", "Build a retention or ranking report on a large public dataset and optimise it."),
+      p("Query JSON columns", "Model semi-structured data and query it with jsonb functions."),
     ],
   },
-
 })
 
 export const algorithms = defineTopic({
@@ -847,6 +1365,18 @@ export const algorithms = defineTopic({
           "course",
         ),
         s("Algorithms, 4th Edition (Princeton)", "https://algs4.cs.princeton.edu/home/", "book"),
+        s(
+          "Big O notation",
+          "https://en.wikipedia.org/wiki/Big_O_notation",
+          "article",
+          "Background reading on Big O notation for this step.",
+        ),
+        s(
+          "Exercism — practice exercises",
+          "https://exercism.org/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -866,6 +1396,18 @@ export const algorithms = defineTopic({
           "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/",
           "book",
         ),
+        s(
+          "Binary search tree",
+          "https://en.wikipedia.org/wiki/Binary_search_tree",
+          "article",
+          "Background reading on Binary search tree for this step.",
+        ),
+        s(
+          "Codewars — coding katas",
+          "https://www.codewars.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -877,6 +1419,18 @@ export const algorithms = defineTopic({
       [
         s("CP-Algorithms", "https://cp-algorithms.com/", "docs"),
         s("Breadth-first search", "https://en.wikipedia.org/wiki/Breadth-first_search", "article"),
+        s(
+          "Dijkstra's algorithm",
+          "https://en.wikipedia.org/wiki/Dijkstra's_algorithm",
+          "article",
+          "Background reading on Dijkstra's algorithm for this step.",
+        ),
+        s(
+          "Advent of Code",
+          "https://adventofcode.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -888,6 +1442,18 @@ export const algorithms = defineTopic({
       [
         s("NeetCode Roadmap", "https://neetcode.io/roadmap", "practice", "Ordered problem list by pattern."),
         s("LeetCode Explore", "https://leetcode.com/explore/", "practice"),
+        s(
+          "Competitive programming",
+          "https://en.wikipedia.org/wiki/Competitive_programming",
+          "article",
+          "Background reading on Competitive programming for this step.",
+        ),
+        s(
+          "The Odin Project",
+          "https://www.theodinproject.com/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -899,6 +1465,18 @@ export const algorithms = defineTopic({
       [
         s("Dynamic programming", "https://en.wikipedia.org/wiki/Dynamic_programming", "article"),
         s("Greedy algorithm", "https://en.wikipedia.org/wiki/Greedy_algorithm", "article"),
+        s(
+          "Divide-and-conquer algorithm",
+          "https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm",
+          "article",
+          "Background reading on Divide-and-conquer algorithm for this step.",
+        ),
+        s(
+          "freeCodeCamp — curriculum",
+          "https://www.freecodecamp.org/learn/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -910,6 +1488,18 @@ export const algorithms = defineTopic({
       [
         s("Codeforces", "https://codeforces.com/", "practice"),
         s("Competitive Programmer's Handbook", "https://cses.fi/book/book.pdf", "book"),
+        s(
+          "International Collegiate Programming Contest",
+          "https://en.wikipedia.org/wiki/International_Collegiate_Programming_Contest",
+          "article",
+          "Background reading on International Collegiate Programming Contest for this step.",
+        ),
+        s(
+          "DevDocs — offline API docs",
+          "https://devdocs.io/",
+          "docs",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -917,17 +1507,19 @@ export const algorithms = defineTopic({
     beginner: [
       p("Implement the core structures", "Dynamic array, linked list, stack and queue, each with tests."),
       p("Hash map from scratch", "Build a hash table with resizing and collision handling, then compare with the standard one."),
+      p("Sorting race", "Implement five sorts and compare them on real data."),
     ],
     intermediate: [
       p("Path finder", "BFS, DFS and Dijkstra on a real grid, drawn to the screen."),
       p("Thirty problems by pattern", "Work through 30 ordered problems, writing the pattern down before the solution."),
+      p("Union find lab", "Implement union-find and solve a connectivity problem with it."),
     ],
     advanced: [
       p("Dynamic programming set", "Solve ten DP problems, writing the recurrence before any code."),
       p("Virtual contest", "Complete a full timed contest and write up every problem you could not solve."),
+      p("Segment tree", "Build one with range queries and lazy updates."),
     ],
   },
-
 })
 
 export const linux = defineTopic({
@@ -951,6 +1543,18 @@ export const linux = defineTopic({
           "https://ubuntu.com/tutorials/command-line-for-beginners",
           "course",
         ),
+        s(
+          "Bash (Unix shell)",
+          "https://en.wikipedia.org/wiki/Bash_(Unix_shell)",
+          "article",
+          "Background reading on Bash (Unix shell) for this step.",
+        ),
+        s(
+          "Exercism — practice exercises",
+          "https://exercism.org/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -962,6 +1566,18 @@ export const linux = defineTopic({
       [
         s("Introduction to Linux (TLDP)", "https://tldp.org/LDP/intro-linux/html/index.html", "book"),
         s("Linux kernel", "https://en.wikipedia.org/wiki/Linux_kernel", "article"),
+        s(
+          "File system permissions",
+          "https://en.wikipedia.org/wiki/File_system_permissions",
+          "article",
+          "Background reading on File system permissions for this step.",
+        ),
+        s(
+          "Codewars — coding katas",
+          "https://www.codewars.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -973,6 +1589,18 @@ export const linux = defineTopic({
       [
         s("Advanced Bash-Scripting Guide", "https://tldp.org/LDP/abs/html/", "book"),
         s("Shell script", "https://en.wikipedia.org/wiki/Shell_script", "article"),
+        s(
+          "Pipeline (Unix)",
+          "https://en.wikipedia.org/wiki/Pipeline_(Unix)",
+          "article",
+          "Background reading on Pipeline (Unix) for this step.",
+        ),
+        s(
+          "Advent of Code",
+          "https://adventofcode.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -984,6 +1612,18 @@ export const linux = defineTopic({
       [
         s("The Missing Semester — Tooling", "https://missing.csail.mit.edu/", "course"),
         s("Unix shell", "https://en.wikipedia.org/wiki/Unix_shell", "article"),
+        s(
+          "Terminal emulator",
+          "https://en.wikipedia.org/wiki/Terminal_emulator",
+          "article",
+          "Background reading on Terminal emulator for this step.",
+        ),
+        s(
+          "The Odin Project",
+          "https://www.theodinproject.com/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -995,6 +1635,18 @@ export const linux = defineTopic({
       [
         s("systemd Documentation", "https://www.freedesktop.org/wiki/Software/systemd/", "docs"),
         s("DigitalOcean Tutorials", "https://www.digitalocean.com/community/tutorials", "article"),
+        s(
+          "Systemd",
+          "https://en.wikipedia.org/wiki/Systemd",
+          "article",
+          "Background reading on Systemd for this step.",
+        ),
+        s(
+          "freeCodeCamp — curriculum",
+          "https://www.freecodecamp.org/learn/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -1006,6 +1658,18 @@ export const linux = defineTopic({
       [
         s("The Linux Kernel Documentation", "https://www.kernel.org/doc/html/latest/", "docs"),
         s("Linux source code", "https://github.com/torvalds/linux", "docs"),
+        s(
+          "System call",
+          "https://en.wikipedia.org/wiki/System_call",
+          "article",
+          "Background reading on System call for this step.",
+        ),
+        s(
+          "DevDocs — offline API docs",
+          "https://devdocs.io/",
+          "docs",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -1013,17 +1677,19 @@ export const linux = defineTopic({
     beginner: [
       p("Terminal-only day", "Do a full day of work without leaving the shell: files, search, processes, permissions."),
       p("Permission repair", "Break a directory tree's permissions on purpose, then fix it with chmod, chown and ACLs."),
+      p("Dotfiles repo", "Put your shell config and prompt in version control."),
     ],
     intermediate: [
       p("Idempotent backup script", "A script that can run twice safely, with cron, logging and error handling."),
       p("Host a service", "Run an app behind a reverse proxy with systemd, logs and a firewall."),
+      p("Containerise a service", "Run your app in Docker and compose it with a database."),
     ],
     advanced: [
       p("Trace a program", "Use strace and perf to explain exactly what a binary does when it starts."),
       p("Load a kernel module", "Build, load and unload a trivial module and read the output in dmesg."),
+      p("Build from source", "Compile and install a program by hand and fix the missing dependency."),
     ],
   },
-
 })
 
 export const git = defineTopic({
@@ -1043,6 +1709,18 @@ export const git = defineTopic({
       [
         s("Pro Git (free book)", "https://git-scm.com/book/en/v2", "book", "The official book, chapters 1–3 are enough to start."),
         s("Learn Git Branching", "https://learngitbranching.js.org/", "interactive"),
+        s(
+          "Version control",
+          "https://en.wikipedia.org/wiki/Version_control",
+          "article",
+          "Background reading on Version control for this step.",
+        ),
+        s(
+          "Exercism — practice exercises",
+          "https://exercism.org/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -1058,6 +1736,18 @@ export const git = defineTopic({
           "book",
         ),
         s("Git — Basic branching and merging", "https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging", "book"),
+        s(
+          "Fork (software development)",
+          "https://en.wikipedia.org/wiki/Fork_(software_development)",
+          "article",
+          "Background reading on Fork (software development) for this step.",
+        ),
+        s(
+          "Codewars — coding katas",
+          "https://www.codewars.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -1072,6 +1762,18 @@ export const git = defineTopic({
           "Pro Git — Distributed Workflows",
           "https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows",
           "book",
+        ),
+        s(
+          "Pull request",
+          "https://en.wikipedia.org/wiki/Pull_request",
+          "article",
+          "Background reading on Pull request for this step.",
+        ),
+        s(
+          "Advent of Code",
+          "https://adventofcode.com/",
+          "practice",
+          "Extra source for this step — practise here, or keep it as a reference.",
         ),
       ],
     ),
@@ -1088,6 +1790,18 @@ export const git = defineTopic({
           "https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History",
           "book",
         ),
+        s(
+          "Patch (computing)",
+          "https://en.wikipedia.org/wiki/Patch_(computing)",
+          "article",
+          "Background reading on Patch (computing) for this step.",
+        ),
+        s(
+          "The Odin Project",
+          "https://www.theodinproject.com/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -1099,6 +1813,18 @@ export const git = defineTopic({
       [
         s("GitHub Actions Documentation", "https://docs.github.com/en/actions", "docs"),
         s("Pro Git — Customising Git", "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration", "book"),
+        s(
+          "Continuous integration",
+          "https://en.wikipedia.org/wiki/Continuous_integration",
+          "article",
+          "Background reading on Continuous integration for this step.",
+        ),
+        s(
+          "freeCodeCamp — curriculum",
+          "https://www.freecodecamp.org/learn/",
+          "course",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
     st(
@@ -1114,6 +1840,18 @@ export const git = defineTopic({
           "book",
         ),
         s("Git reference manual", "https://git-scm.com/docs", "docs"),
+        s(
+          "SHA-1",
+          "https://en.wikipedia.org/wiki/SHA-1",
+          "article",
+          "Background reading on SHA-1 for this step.",
+        ),
+        s(
+          "DevDocs — offline API docs",
+          "https://devdocs.io/",
+          "docs",
+          "Extra source for this step — practise here, or keep it as a reference.",
+        ),
       ],
     ),
   ],
@@ -1121,15 +1859,17 @@ export const git = defineTopic({
     beginner: [
       p("Build an honest history", "Take a messy folder and commit it as ten meaningful commits."),
       p("Branch and merge", "Create a feature branch, merge it and resolve a real conflict."),
+      p("Bisect a bug", "Use git bisect to find the commit that broke something."),
     ],
     intermediate: [
       p("Collaborate on a pull request", "Open a PR in a real repository and address review comments with amend and rebase."),
       p("Recover lost work", "Delete a commit, drop a branch, then recover both with the reflog."),
+      p("Rebase a messy branch", "Clean it with interactive rebase and explain every step."),
     ],
     advanced: [
       p("Rebuild a commit by hand", "Inspect blobs, trees and commits with cat-file and create a commit without git commit."),
       p("Hooks that protect you", "Add pre-commit hooks that run tests and block secrets."),
+      p("Repository layout", "Set up a monorepo with sparse checkout or submodules and justify the choice."),
     ],
   },
-
 })

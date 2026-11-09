@@ -47,6 +47,8 @@ export default function Home() {
 
   const [hankoCookie] = createSignal(getHankoCookie())
 
+  let openTopicRef: (topic: TopicSearchItem) => void = () => {}
+
   // every topic we support, drawn behind the search box
   const background = generateTopicGraph(buildTopicSearchItems())
   const graph = background.graph
@@ -84,35 +86,80 @@ export default function Home() {
   })
   onCleanup(() => ro.disconnect())
 
-  const gestures = Canvas.canvasGestures({
-    canvas,
-    onTranslate() {
-      Anim.requestFrame(animation)
-    },
-    onNodeClick(node) {
-      const topic = background.topics.get(String(node.key))
-      if (topic) navigate(topicHref(topic.name))
-    },
-    onNodeHover(node) {
-      canvas.hovered_node = node
-    },
-    onNodeDrag(node, pos) {
-      Graph.changeNodePosition(canvas.options.graph.grid, node, pos.x, pos.y)
-      Anim.requestFrame(animation)
-    },
-    onModeChange(mode) {
-      if (mode === Canvas.Mode.DraggingNode) {
-        Anim.start(animation)
-      } else {
-        Anim.pause(animation)
-      }
-    },
+  // The background is decoration, not a map: it can be hovered and clicked,
+  // but never panned, zoomed or dragged, so it always stays exactly where it
+  // is while you scroll and read. (It used to be a free-roaming canvas.)
+  const pointerToGraph = (event: PointerEvent) => {
+    const rect = el.getBoundingClientRect()
+    if (rect.width === 0 || rect.height === 0) return
+
+    const grid = graph.grid.size
+    const { scale, translate } = canvas
+    const scaled = grid / scale
+    const correct = grid / 2 - scaled / 2
+    const width = canvas.size.width || rect.width
+    const height = canvas.size.height || rect.height
+
+    const ratioX = (event.clientX - rect.left) / rect.width
+    const ratioY = (event.clientY - rect.top) / rect.height
+
+    return {
+      x:
+        (ratioX * Math.min(1, width / height) + Canvas.arMargin(width / height)) *
+          scaled +
+        correct +
+        translate.x,
+      y:
+        (ratioY * Math.min(1, height / width) + Canvas.arMargin(height / width)) *
+          scaled +
+        correct +
+        translate.y,
+    }
+  }
+
+  const nodeAt = (event: PointerEvent) => {
+    const point = pointerToGraph(event)
+    if (!point) return
+    return Graph.findClosestNodeLinear(
+      graph.nodes,
+      point,
+      Canvas.pointerNodeRadius(canvas.max_size, graph.grid.size),
+    )
+  }
+
+  const onPointerMove = (event: PointerEvent) => {
+    const node = nodeAt(event) ?? null
+    if (node === canvas.hovered_node) return
+    canvas.hovered_node = node
+    el.style.cursor = node ? "pointer" : "default"
+    Anim.requestFrame(animation)
+  }
+
+  const onPointerLeave = () => {
+    if (!canvas.hovered_node) return
+    canvas.hovered_node = null
+    Anim.requestFrame(animation)
+  }
+
+  const onBackgroundClick = (event: MouseEvent) => {
+    const node = nodeAt(event as PointerEvent)
+    const topic = node ? background.topics.get(String(node.key)) : undefined
+    if (topic) openTopicRef(topic)
+  }
+
+  el.addEventListener("pointermove", onPointerMove)
+  el.addEventListener("pointerleave", onPointerLeave)
+  el.addEventListener("click", onBackgroundClick)
+  onCleanup(() => {
+    el.removeEventListener("pointermove", onPointerMove)
+    el.removeEventListener("pointerleave", onPointerLeave)
+    el.removeEventListener("click", onBackgroundClick)
   })
-  onCleanup(() => Canvas.cleanupCanvasGestures(gestures))
 
   const openTopic = (topic: TopicSearchItem) => {
     navigate(topicHref(topic.name))
   }
+  openTopicRef = openTopic
 
   return (
     <>
